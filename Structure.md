@@ -1,28 +1,42 @@
+## The State of the Art in automatic, fixed class, single-image Segmentation
+
 1. Introduction (Marvin + Martin)
     - Applications
-    - Types of classification
+        * Health informatics - NOTE: describe very detailed
+        * Robotics
+        * Autonomous cars (street / no street, street signs)
+    - Types of segmentation
         * by result:
             * fixed-class: A set of classes is defined before hand, then
-                * binary (street / no street) <---- we write about this type
+                * binary (street / no street) <---- NOTE: we write about this type
             * open: any number of objects might be in the image. (only overview)
-        * by data:
+        * by input data:
             * greyscale / colored
-            * single image (we write about this) / time series (only mention it)
+            * single image (NOTE: we write about this) / time series (NOTE: only mention it)
+        * by "operation state" (TODO: find better word)
+            * completely automatically <-- we write about this type
+            * interactive (e.g. user clicks on background or user makes a
+              coarse segmentation and automatically refinement)
 2. Segmentation Quality Evaluation and Datasets (Marvin + Martin)
-    - Quality measures:
+    - Quality measures (Martin):
         * Accuracy:
             * Normalized Probabilistic Rand (NPR) index
         * Speed
         * Stability:
             * Image choice
             * Parameter choice
-    - Datasets:
-        * KITTI
-        * Berkeley Image segmentation database: D. Martin, C. Fowlkes, D. Tal,
-          J. Malik, “A Database of Human Segmented Natural Images and its
-          Application to Evaluating Segmentation Algorithms and Measuring
-          Ecological Statistics”, Intl Conf on Computer Vision, 2001.
-3. Traditional Segmentation Algorithms (Martin)
+    - Datasets (Marvin):
+        - Pixel-labels
+            * KITTI
+            * Berkeley Image segmentation database: D. Martin, C. Fowlkes, D.
+              Tal, J. Malik, “A Database of Human Segmented Natural Images and
+              its Application to Evaluating Segmentation Algorithms and
+              Measuring Ecological Statistics”, Intl Conf on Computer Vision,
+              2001.
+            * PascalVoc?
+        - Image labels
+            * ImageNet
+3. Traditional Segmentation Algorithms (Martin) --------------------- most work
     * Sliding Window approach + Standard fixed-size classifier
     * SVM
     * Mean shift segmentation
@@ -37,14 +51,27 @@
            Segmentation”, Intl Journal of Computer Vision, 2004, 59 (2)
     * Watershed algorithm
     * k-Means
-4. Neural Networks for Segmentation (Marvin)
+4. Neural Networks for Segmentation (Marvin) ------------------------ most work
     * Convolutional Networks
-5. Typical problems (Marvin+Martin): Only an overview with some nice images
+        * Sliding-Window based approaches
+        * FCNNs
+5. Typical problems (Martin)
+    (Only an overview with some nice images)
     * Lens blur
     * Smoke
     * occlusions
-6. Speed-ups for segmentation (Marvin+Martin)
+6. Speed-ups for segmentation (Marvin)
     (Only an overview, not detailed)
     * Downsampling (reducing the resolution of the image)
     * Superpixels
     * Refinement of coarse segmentations
+
+Bibliography
+Glossary
+    * SVM
+    * CNN
+    * FCNN
+    * GPU
+    * ...
+Appendix
+    Algorithms, Tables, Figures, ...
