@@ -1,0 +1,72 @@
+\documentclass[11pt, a4paper,twoside]{scrartcl}
+
+
+% packages
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ae}
+\usepackage{tabularx}
+\usepackage{amsmath,amssymb}
+\usepackage[pdftex]{graphicx}
+\usepackage{subfigure}
+\usepackage{url}
+\usepackage[T1]{fontenc}
+\usepackage{ifthen}
+\usepackage{hyperref}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{tikz}
+\usepackage[english,ngerman]{babel}
+\usepackage[headsepline,footsepline,plainheadsepline]{scrpage2}
+\usepackage{changepage}
+\usepackage[inner=3cm,outer=2.5cm,top=2.5cm,bottom=2cm,includeheadfoot]{geometry}
+
+% /packages
+
+\DeclareGraphicsExtensions{.jpg}
+
+\newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
+
+% edit this:
+\newcommand{\myname}{Marvin Teichmann und Martin Thoma}
+\newcommand{\mytitle}{The State of the Art in automatic, fixed class, single-image Segmentation}
+\newcommand{\myinstitute}{Institut für Anthropomatik\\ Humanoids and Intelligence Systems Lab}
+\newcommand{\advisor}{Dipl.-Inform. Sebastian Bodenstedt}
+\newcommand{\submissiontime}{DD.02.2016}  % TODO
+\newcommand{\term}{Wintersemester 2015/16}
+\newcommand{\myabstract}{\input{00-abstract}}
+
+% coordinates for the bg shape on the titlepage - Don't change this
+\newcommand{\diameter}{20}
+\newcommand{\xone}{-10}
+\newcommand{\xtwo}{490}
+\newcommand{\yone}{85}
+\newcommand{\ytwo}{-675}
+
+\begin{document}
+
+% add the following line for English text
+%\selectlanguage{english}
+
+% titlepage
+\input{titlepage}
+\clearpage
+\tableofcontents
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hier beginnt die eigentliche Arbeit
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{01-introduction}
+\input{02-evaluation-and-datasets}
+\input{03-traditional-approaches}
+\input{04-nn-approaches}
+\input{05-typical-problems}
+\input{06-speed-ups}
+
+
+\newpage
+\bibliography{example}
+\bibliographystyle{IEEEtran}
+\end{document}
