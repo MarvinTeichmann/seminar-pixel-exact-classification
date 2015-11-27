@@ -1,3 +1,29 @@
 %!TEX root = vorlage.tex
 % Martin Thoma
-\section{Traditional Approaches}
+\section{Traditional Approaches}\label{sec:traditional-approaches}
+
+\subsection{k-Means}\label{subsec:k-means}
+
+\begin{itemize}
+    \item Represent every pixel of the image as a vector (x, y, r, g, b, h, s,
+          v, ...).
+    \item Define distance function which weights the components
+\end{itemize}
+
+
+\subsection{Watershed Algorithm}\label{subsec:watershed}
+
+\begin{itemize}
+    \item Apply to image intensity gives some long superpixels
+    \item apply to image gradient magnitude gives rounder superpixels
+\end{itemize}
+
+
+\subsection{Mean Shift Algorithm}\label{subsec:mean-shift}
+The mean shift algorithm was introduced by~\cite{comaniciu2002mean} for
+segmentation tasks.
+
+
+\subsection{Graph Based Image Segmentation}\label{subsec:graph-based-image-segmentation}
+\href{http://cs.brown.edu/~pff/segment/}{cs.brown.edu}
+See \cite{felzenszwalb2004efficient}.

@@ -1,21 +1,46 @@
 %!TEX root = vorlage.tex
 % Martin Thoma
-\subsection{Quality measures for evaluation}\label{sec:q}
+\subsection{Quality measures for evaluation}\label{subsec:quality-measures}
 
 A performance measure is a crucial part of any machine learning system, but
 there are other measures of quality which matter when segmentation algorithms
-are compared. This section gives an overview of 
+are compared. This section gives an overview of those quality measures.
 
-* Accuracy:
-    * Normalized Probabilistic Rand (NPR) index, see
-        - http://repository.cmu.edu/cgi/viewcontent.cgi?article=1365&context=robotics
-        - http://www.cs.cmu.edu/~hebert/segs.htm
-        - M. Emre Celebi, Gerald Schaefer, Hitoshi Iyatomi, William V.
-          Stoecker, Joseph M. Malters, James M. Grichnik, "An Improved
-          Objective Evaluation Measure for Border Detection in
-          Dermoscopy Images", 2010. http://arxiv.org/abs/1009.1020
-        - http://people.rit.edu/mij7272/My%20Publications/IEEE%20AIPR2010%20A%20Probabilistic%20Framework%20for%20Unsupervised%20Evaluation%20and%20Ranking%20of%20Image%20Segmentations.pdf
-* Speed
-* Stability:
-    * Image choice
-    * Parameter choice
+
+\subsubsection{Accuracy}
+One way to compare segmentation algorithms is by the accuracy of the
+segmentation they find.
+
+One accuracy measure is \textit{Normalized Probabilistic Rand} (NPR) index
+which was introduced in \cite{unnikrishnan2005measure}.
+
+Another measure was introduced by~\cite{celebi2009improved}. TODO: Explain it
+
+Another framework is introduced by~\cite{jaber2010probabilistic}. TODO: Explain
+it
+
+\subsubsection{Speed}\label{subsubsec:speed-quality-measure}
+One obvious quality measure is speed. For many applications, this is a hard
+requirement. For example, in the case of self-driving cars an algorithm which
+classifies pixel as street or no-street and thus makes a semantic segmentation,
+every image needs to be processed within
+\SI{20}{\milli\second}~\cite{bittel2015pixel}.
+
+TODO: Which categories are there?
+
+TODO: Health informatics: Which times?
+
+
+\subsubsection{Stability}\label{subsubsec:stability-quality-measure}
+The stability of segmentation is a desirable quality measure. One the one hand,
+there are some variants of images like slight bluring, gaussian noise and
+similar which should not change the segmentation at all. Also, two images which
+show a slight change in perspective should also only result in slight changes
+in the segmentation.
+
+The other desirable stability criterium is parameter choice. If the
+segmentation algorithm has hyperparameters, then slightly changing those should
+also only result in minor differences of the resulting segmentations.
+
+(TODO: Explain why)
+TODO: Cite who uses it.
