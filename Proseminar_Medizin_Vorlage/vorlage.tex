@@ -1,7 +1,7 @@
 \documentclass[11pt, a4paper,twoside]{scrartcl}
 
 % packages
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{ae}
 \usepackage{tabularx}
@@ -9,7 +9,6 @@
 \usepackage[pdftex]{graphicx}
 \usepackage{subfigure}
 \usepackage{url}
-\usepackage[T1]{fontenc}
 \usepackage{ifthen}
 \usepackage{hyperref}
 \usepackage[absolute,overlay]{textpos}
@@ -18,6 +17,13 @@
 \usepackage[headsepline,footsepline,plainheadsepline]{scrpage2}
 \usepackage{changepage}
 \usepackage[inner=3cm,outer=2.5cm,top=2.5cm,bottom=2cm,includeheadfoot]{geometry}
+
+% Packages like in our pixel-wise-street-segmentation
+% nameinlink, noabbrev: not supported by arxiv :-(
+\usepackage[capitalise]{cleveref} % has to be after hyperref, nthe l.137 ...eam attr{/N 4}  file{sRGBIEC1966-2.1.icmorem, amsthm
+\usepackage[binary-units,group-separator={,}]{siunitx}
+\sisetup{per-mode=fraction,binary-units=true}
+\DeclareSIUnit\pixel{px}
 
 % /packages
 
@@ -63,6 +69,7 @@
 \input{04-nn-approaches}
 \input{05-typical-problems}
 \input{06-speed-ups}
+\input{07-image-enhancement}
 
 
 \newpage
