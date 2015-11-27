@@ -1,4 +1,49 @@
 %!TEX root = vorlage.tex
 % Marvin Teichmann and Martin Thoma
-\section{Introduction}
-adsf \cite{long2014fully}
+\section{Introduction}\label{sec:introduction}
+Semantic segmentation is the task of clustering parts of images together which
+belong to the same object. This type of algorithm has several use-cases such as
+detecting objects in robotics (TODO: cite), detecting street signs in
+self-driving car software (TODO: cite), detecting tumors in medicine (TODO: cite),
+detecting medical instruments in operations and distingushing them from
+tissue (TODO: cite).
+
+Taking a step back, the task of semantic segmentation can be grouped in several
+categories:
+
+\begin{itemize}
+    \item \textbf{By possible classes}: Are the classes which should be distinguised
+          known at the time when the algorithm is developed / trained or might
+          there occur several objects which were never seen before?
+          \begin{itemize}
+              \item Fixed-class: All classes are known at training time.
+              \begin{itemize}
+                  \item Binary: street/no street.
+              \end{itemize}
+              \item Open-class: There might be completely new classes
+          \end{itemize}
+    \item \textbf{By class affiliation of pixels}:
+        \begin{itemize}
+            \item Single class affiliation: Every pixel belongs to exactly one class. There might
+                  be probabilities, but a pixel cannot belong with a 100\%
+                  probability to two classes.
+            \item Multiple class affiliation: A single pixel might belong to
+                  multiple classes. An example is a glass on a table: One
+                  knows that the glass is there and it is possible to see the
+                  table below / behind. Another example is hair. Mattening
+                  methods produce maps which reflect this property for hair.\cite{levin2008spectral}
+        \end{itemize}
+    \item \textbf{By input data}:
+          \begin{itemize}
+              \item greyscale / colored
+              \item single image (NOTE: we write about this) / time series (NOTE: only mention it)
+          \end{itemize}
+    \item \textbf{Operation state}:
+        \begin{itemize}
+            \item completely automatically <-- we write about this type
+            \item interactive (e.g. user clicks on background or user makes a
+                  coarse segmentation and automatically refinement) as
+                  described in
+                  \cite{protiere2007interactive,rother2004grabcut}.
+        \end{itemize}
+\end{itemize}
