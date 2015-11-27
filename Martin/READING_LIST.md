@@ -1,3 +1,6 @@
+1. 27.11.2015: A Measure for Objective Evaluation of Image Segmentation Algorithms
+
+## TODO
 * [A comparison of spectral clustering algorithms](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.57.6424). D. Verma, M. Meila.
 * http://www.medicalimagingandgraphics.com/article/S0895-6111(14)00203-1/abstract?cc=y=
 * [A PIXEL CLASSIFICATION SYSTEM FOR SEGMENTING BIOMEDICAL IMAGES USING
