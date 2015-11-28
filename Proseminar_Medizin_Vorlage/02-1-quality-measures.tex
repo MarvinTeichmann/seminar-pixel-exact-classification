@@ -9,7 +9,24 @@ are compared. This section gives an overview of those quality measures.
 
 \subsubsection{Accuracy}
 One way to compare segmentation algorithms is by the accuracy of the
-segmentation they find.
+segmentation they find. Taking the classification accuracy has two major
+drawbacks:
+
+\begin{itemize}
+    \item Tasks like segmenting images for self-driving cars have large regions
+          which have one class. This makes achieving classification accuracies
+          of more than \SI{30}{\percent} only with a priori knowledge possible.
+    \item The manually labeled images could have a more coarse labeling. For
+          example, a human classifier could have labeled a region as
+          \enquote{car} and the algortihm could have split that region into
+          the general \enquote{car} and the more specific \enquote{wheel of a
+          car}
+\end{itemize}
+
+Let $k \in \mathbb{N}$ be the number of classes, $n_{ij} \in \mathbb{N}_0$ with
+$i,j \in 1, \dot, k$ be the number of pixels which belong to class~$i$ and were
+labeled as class~$j$. Let $t_i = \sum_{j=1}^k n_{ij}$ be the total number of
+pixels of class $k$.
 
 One accuracy measure is \textit{Normalized Probabilistic Rand} (NPR) index
 which was introduced in \cite{unnikrishnan2005measure}.
@@ -18,6 +35,33 @@ Another measure was introduced by~\cite{celebi2009improved}. TODO: Explain it
 
 Another framework is introduced by~\cite{jaber2010probabilistic}. TODO: Explain
 it
+
+\cite{long2014fully} makes use of three metrics:
+
+\begin{itemize}
+    \item pixel accuracy: $\sum_{i=1}^k \frac{n_{ii}}{\sum_{i=1}^k t_i}$
+    \item mean accuracy: $\frac{1}{k} \cdot \sum_{i=1}^n \frac{n_{ii}}{t_i}$
+    \item mean intersection over union: $\frac{1}{k} \cdot \sum_{i=1}^k \frac{n_{ii}}{t_i + \sum_{j=1}^k n_{ji}-n_{ii}}$
+    \item frequency weighted intersection over union:
+          ${({\sum_{p=1}^k t_p})}^{-1} \sum_i \frac{t_i n_{ii}}{t_i + \sum_{j=1}^k n_{ji} - n_{ii}}$
+\end{itemize}
+
+Several accuracy measures were suggested for non-semantic
+segmentation,\cite{martin2001database} but the reason for creating them seems
+to be to deal with the under-defined task description of non-semantic
+segmentation. These accuracy measures try to deal with different levels of
+coarsity of the segmentation. This is much less of a problem in semantic
+segmentation.
+
+$F$-measure
+
+\enquote{The reported statistic is the F-measure, the harmonic mean of the precision
+and recall. This measure has the downside of considering only region boundaries
+in- stead of the regions themselves. Since region difference is a quadratic
+measure whereas boundary difference is a linear measure, small boundary
+imperfections will affect the measure more than they necessarily should.} in
+A Comparison of Image Segmentation Algorithms
+
 
 \subsubsection{Speed}\label{subsubsec:speed-quality-measure}
 One obvious quality measure is speed. For many applications, this is a hard
@@ -36,11 +80,8 @@ The stability of segmentation is a desirable quality measure. One the one hand,
 there are some variants of images like slight bluring, gaussian noise and
 similar which should not change the segmentation at all. Also, two images which
 show a slight change in perspective should also only result in slight changes
-in the segmentation.
+in the segmentation.\cite{pantofaru2005comparison}
 
 The other desirable stability criterium is parameter choice. If the
 segmentation algorithm has hyperparameters, then slightly changing those should
-also only result in minor differences of the resulting segmentations.
-
-(TODO: Explain why)
-TODO: Cite who uses it.
+also only result in minor differences of the resulting segmentations.\cite{pantofaru2005comparison}

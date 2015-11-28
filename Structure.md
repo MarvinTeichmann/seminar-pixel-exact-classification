@@ -15,6 +15,10 @@
       Measuring Ecological Statistics”, Intl Conf on Computer Vision,
       2001.
     * PascalVoc?
+    * Berkeley Segmentation dataset
+    * A Database of Human Segmented Natural Images and its Application to
+      Evaluating Segmentation Algorithms and Measuring Ecological Statistics
+      - http://www.ics.uci.edu/~fowlkes/papers/mftm-iccv01.pdf
 - Image labels
     * ImageNet
 

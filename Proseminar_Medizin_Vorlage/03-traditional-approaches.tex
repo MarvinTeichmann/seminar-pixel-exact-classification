@@ -2,7 +2,12 @@
 % Martin Thoma
 \section{Traditional Approaches}\label{sec:traditional-approaches}
 
-\subsection{k-Means}\label{subsec:k-means}
+Image segmentation algorithms which use traditional approaches, hence don't
+apply neural networks, are wide-spread in the computer vision community.
+This section discribes the most popular ones and discusses their respective
+advantages in \cref{subsec:traditional-approaches-discussion}.
+
+\subsection{$k$-Means}\label{subsec:k-means}
 
 \begin{itemize}
     \item Represent every pixel of the image as a vector (x, y, r, g, b, h, s,
@@ -18,12 +23,34 @@
     \item apply to image gradient magnitude gives rounder superpixels
 \end{itemize}
 
+% http://docs.opencv.org/master/d3/db4/tutorial_py_watershed.html#gsc.tab=0
+% http://docs.opencv.org/master/d2/dbd/tutorial_distance_transform.html#gsc.tab=0
+
 
 \subsection{Mean Shift Algorithm}\label{subsec:mean-shift}
 The mean shift algorithm was introduced by~\cite{comaniciu2002mean} for
-segmentation tasks.
+segmentation tasks. The algorithm first applies mean shift filtering on the
+original image data and then clusters the remaining points.
+
+TODO: Understand this algorithm. Use \cite{comaniciu2002mean} and
+\cite{pantofaru2005comparison} for it.
 
 
 \subsection{Graph Based Image Segmentation}\label{subsec:graph-based-image-segmentation}
 \href{http://cs.brown.edu/~pff/segment/}{cs.brown.edu}
 See \cite{felzenszwalb2004efficient}.
+
+TODO: See also \cite{pantofaru2005comparison} for another description.
+
+EDISON is a publicly available software for mean shift segmentation.\cite{christoudias2002synergism}
+
+
+\subsection{Discussion}\label{subsec:traditional-approaches-discussion}
+
+According to \cite{pantofaru2005comparison}, the mean shift algorithm produces
+segmentations that correspond well to human perception, but it is sensitive to
+its parameters. Depending on them, different granularities of the segmentation
+can be achieved. \cite{pantofaru2005comparison} draws the conclusion, that
+the segmentations found by the graph based image segmentation approach
+in \cite{felzenszwalb2004efficient} are inferior to the segmentations found
+by the mean shift algorithm described in \cite{comaniciu2002mean}.
