@@ -1,5 +1,6 @@
 1. 27.11.2015: A Measure for Objective Evaluation of Image Segmentation Algorithms
 2. 28.11.2015: A Comparison of Image Segmentation Algorithms
+3. 29.11.2015: Memory Based Active Contour Algorithm using Pixel-level Classified Images for Colon Crypt Segmentation
 
 ## TODO
 * [A comparison of spectral clustering algorithms](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.57.6424). D. Verma, M. Meila.
@@ -18,7 +19,6 @@
 
 Source: A Comparison of Image Segmentation Algorithms
 
-* http://www.medicalimagingandgraphics.com/article/S0895-6111(14)00203-1/abstract?cc=y=
 * [A PIXEL CLASSIFICATION SYSTEM FOR SEGMENTING BIOMEDICAL IMAGES USING
   INTENSITY NEIGHBORHOODS AND DIMENSION
   REDUCTION](https://www.andrew.cmu.edu/user/gustavor/chen_isbi_11.pdf)
@@ -28,7 +28,9 @@ Source: A Comparison of Image Segmentation Algorithms
   Space](http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=1675208&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel5%2F12%2F35173%2F01675208.pdf%3Farnumber%3D1675208)
 * [Learning segmentation by random walks](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.143.153)
 * "Studies in Using Image Segmentation to Improve Object Recognition" by "Caroline Rebecca Pantofaru"
-
+* "machine learning in medical imaging"
+* Prostate cancer grading: Gland segmentation and structural features
+* Snakes: Active contour models
 
 ## Begun
 * http://riweb-backend.ri.cmu.edu/pub_files/pub4/pantofaru_caroline_2005_1/pantofaru_caroline_2005_1.pdf

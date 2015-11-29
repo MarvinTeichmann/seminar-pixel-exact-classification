@@ -3,9 +3,10 @@
 \section{Traditional Approaches}\label{sec:traditional-approaches}
 
 Image segmentation algorithms which use traditional approaches, hence don't
-apply neural networks, are wide-spread in the computer vision community.
-This section discribes the most popular ones and discusses their respective
-advantages in \cref{subsec:traditional-approaches-discussion}.
+apply neural networks and make heavy use of domain knowledge, are wide-spread
+in the computer vision community. This section discribes the most popular ones
+and discusses their respective advantages in
+\cref{subsec:traditional-approaches-discussion}.
 
 \subsection{$k$-Means}\label{subsec:k-means}
 
@@ -45,8 +46,18 @@ TODO: See also \cite{pantofaru2005comparison} for another description.
 EDISON is a publicly available software for mean shift segmentation.\cite{christoudias2002synergism}
 
 
-\subsection{Discussion}\label{subsec:traditional-approaches-discussion}
+\subsection{Pre-processing}\label{subsec:preprocessing}
+A typical image is opened in RGB color space, but depending on the classifier
+and the problem another color space might result in better segmentations. RGB,
+YcBcr, HSL, Lab and YIQ are some examples used by \cite{cohen2015memory}.
 
+\subsection{Post-processing methods}\label{subsec:post-processing-methods}
+Post-processing methods are an important part of traditional pixel-level
+segmentation approaches. Active contour models are one example of a
+post-processing method~\cite{kass1988snakes}.
+
+
+\subsection{Discussion}\label{subsec:traditional-approaches-discussion}
 According to \cite{pantofaru2005comparison}, the mean shift algorithm produces
 segmentations that correspond well to human perception, but it is sensitive to
 its parameters. Depending on them, different granularities of the segmentation
