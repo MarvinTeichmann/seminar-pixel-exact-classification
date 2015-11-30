@@ -2,6 +2,7 @@ SOURCE = vorlage
 
 make:
 	pdflatex $(SOURCE).tex -output-format=pdf # Referenzen erstellen
+	makeglossaries $(SOURCE)
 	bibtex $(SOURCE)
 	pdflatex $(SOURCE).tex -output-format=pdf # Referenzen einbinden
 	pdflatex $(SOURCE).tex -output-format=pdf # Referenzen einbinden
@@ -13,4 +14,5 @@ ebook:
 	ebook-convert $(SOURCE).html $(SOURCE).epub --language de --no-default-epub-cover
 
 clean:
-	rm -rf  $(TARGET) *.class *.html *.log *.aux *.out *.thm *.idx *.toc *.ind *.ilg *.glg *.glo *.gls *.ist *.xdy *.blg *.bak
+	rm -rf  $(TARGET) *.class *.html *.aux *.out *.thm *.idx *.toc *.ilg *.glg *.glo *.ist *.xdy *.fdb_latexmk *.bak *.blg *.glsdefs *.acn *.acr *.alg *.nls *.nlo *.bak *.pyg *.lot *.lof
+	# rm -rf *.bbl *.ind *.gls # Needed for arxiv

@@ -1,3 +1,4 @@
+\RequirePackage[l2tabu, orthodox]{nag}%TODO: Remove this line after checking
 \documentclass[11pt, a4paper,twoside]{scrartcl}
 
 % packages
@@ -18,6 +19,9 @@
 \usepackage[headsepline,footsepline,plainheadsepline]{scrpage2}
 \usepackage{changepage}
 \usepackage[inner=3cm,outer=2.5cm,top=2.5cm,bottom=2cm,includeheadfoot]{geometry}
+\usepackage[xindy,toc]{glossaries}
+\loadglsentries[main]{glossary}
+\makeglossaries
 
 % Packages like in our pixel-wise-street-segmentation
 % nameinlink, noabbrev: not supported by arxiv :-(
@@ -26,10 +30,10 @@
 \sisetup{per-mode=fraction,binary-units=true}
 \DeclareSIUnit\pixel{px}
 \usepackage{microtype}
-% /packages
 
 \DeclareGraphicsExtensions{.jpg}
 
+% arXiv: Remove the following lines
 \newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
 
 % edit this:
@@ -42,6 +46,7 @@
 \newcommand{\myabstract}{\input{00-abstract}}
 
 % coordinates for the bg shape on the titlepage - Don't change this
+% arXiv: Remove the following lines
 \newcommand{\diameter}{20}
 \newcommand{\xone}{-10}
 \newcommand{\xtwo}{490}
@@ -49,20 +54,11 @@
 \newcommand{\ytwo}{-675}
 
 \begin{document}
-
-% add the following line for English text
 \selectlanguage{english}
-
-% titlepage
-\input{titlepage}
-\clearpage
-\tableofcontents
-\clearpage
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Hier beginnt die eigentliche Arbeit
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{titlepage}% arXiv: Remove this line
+\clearpage% arXiv: Remove this line
+\tableofcontents% arXiv: Remove this line
+\clearpage% arXiv: Remove this line
 
 \input{01-introduction}
 \input{02-0-evaluation-and-datasets}
@@ -76,4 +72,6 @@
 \newpage
 \bibliography{marvin,martin}
 \bibliographystyle{IEEEtran}
+%\bibliographystyle{IEEEtranSA}
+\printglossaries%
 \end{document}
