@@ -1,6 +1,9 @@
 1. 27.11.2015: A Measure for Objective Evaluation of Image Segmentation Algorithms
 2. 28.11.2015: A Comparison of Image Segmentation Algorithms
-3. 29.11.2015: Memory Based Active Contour Algorithm using Pixel-level Classified Images for Colon Crypt Segmentation
+3. 29.11.2015: Memory Based Active Contour Algorithm using Pixel-level
+               Classified Images for Colon Crypt Segmentation
+4. 30.11.2015: A pixel classification system for segmenting biomedical images
+               using intensity neighborhoods and dimension reduction
 
 ## TODO
 * [A comparison of spectral clustering algorithms](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.57.6424). D. Verma, M. Meila.
