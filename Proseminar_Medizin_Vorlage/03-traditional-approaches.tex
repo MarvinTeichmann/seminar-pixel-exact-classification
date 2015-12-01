@@ -46,6 +46,25 @@ TODO: See also \cite{pantofaru2005comparison} for another description.
 EDISON is a publicly available software for mean shift segmentation.\cite{christoudias2002synergism}
 
 
+\subsection{Random Walks}
+NOT supervised hence not semantic?!?
+
+Notes from \cite{meilpa2001learning}:
+
+\begin{itemize}
+    \item Normalized Cut (see \cite{shi2000normalized}) seems to be a special
+          case of this
+    \item Seems to be a \enquote{spectral method}
+    \item This is pairwise clustering. Clusters points which are similar and
+          optimize e.g. for maximum total intracluster similarity. In contrast,
+          to statistical clustering which assumes a probabilistic model which
+          generates the data, this only defines a similarity function.
+    \item Spectral clustering is a similarity based method. Spectral clustering
+          methods use eingenvalues / eigenvectors of the matrix obtained by the
+          similarity function.
+\end{itemize}
+
+
 \subsection{Pre-processing}\label{subsec:preprocessing}
 A typical image is opened in RGB color space, but depending on the classifier
 and the problem another color space might result in better segmentations. RGB,

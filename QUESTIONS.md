@@ -2,6 +2,9 @@
 
 * Gliederung besprechen
 * IEEE-Vorlage ok?
+* Dürfen wir ein Korrektorat / Lektorat nutzen? Muss das dann im Paper erwähnt
+  werden? Kannst du eine Empfehlung abgeben?
+
 
 ## Martin
 
@@ -10,6 +13,10 @@
     * Paper vom KIT, die man hier zitieren kann?
 * What is "single linkage clustering" (A Comparison of Image Segmentation
   Algorithms)
+* What is KL divergence and how does it relate to segmentation?
+* Should I skip all unsupervised methods (e.g. spectral methods like NCut /
+  random walks) as it is not semantic segmentation?
+
 
 ## Details
 * How is clustering exactly related to (semantic) segmentation?
