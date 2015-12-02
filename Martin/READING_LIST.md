@@ -49,6 +49,11 @@ Source: A Comparison of Image Segmentation Algorithms
 * Segmentation of moving objects by long term video analysis
 
 
+## KIT
+
+* SEEDS / SLIC by Pedriam Azad (PhD)
+
+
 ## Begun
 * http://riweb-backend.ri.cmu.edu/pub_files/pub4/pantofaru_caroline_2005_1/pantofaru_caroline_2005_1.pdf
 * Simultaneous detection and segmentation

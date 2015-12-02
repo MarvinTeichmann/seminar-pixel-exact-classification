@@ -21,6 +21,10 @@
       - http://www.ics.uci.edu/~fowlkes/papers/mftm-iccv01.pdf
 - Image labels
     * ImageNet
+- Labroscopy? (Kann nicht lesen -> Frag sebastian nochmal)
+- Endoscopy
+- Microscopy
+- Pathologie
 
 ### 3. Traditional Segmentation Algorithms (Martin) --------------------- most work
 * Sliding Window approach + Standard fixed-size classifier
