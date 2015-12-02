@@ -29,12 +29,41 @@ Source: A Comparison of Image Segmentation Algorithms
 * Prostate cancer grading: Gland segmentation and structural features
 * Snakes: Active contour models
 * Normalized cuts and image segmentation
+* Contour and texture analysis for image segmentation
+* Multiclass spectral clustering
+* A random walks view of spectral segmentation
+* Spectral segmentation with multiscale graph decomposition
+* Automated choroid segmentation based on gradual intensity distance in HD-OCT
+  images
+* A Partition-Based Active Contour Model Incorporating Local Information for
+  Image Segmentation
+* Machine learning of hierarchical clustering to segment 2D and 3D images
+* Multiscale Combinatorial Grouping for Image Segmentation and Object Proposal
+  Generation
+* Learning to Segment Moving Objects in Videos
+* Hypercolumns for object segmentation and fine-grained localization
+* Large scale region-merging segmentation using the local mutual best fitting
+  concept
+* Rich feature hierarchies for accurate object detection and semantic
+  segmentation
+* Segmentation of moving objects by long term video analysis
+
 
 ## Begun
 * http://riweb-backend.ri.cmu.edu/pub_files/pub4/pantofaru_caroline_2005_1/pantofaru_caroline_2005_1.pdf
+* Simultaneous detection and segmentation
 
 
 ## Too old
 
 * 1978: [Image Segmentation by Pixel Classification in (Gray Level, Edge Value)
   Space](http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=1675208&url=http%3A%2F%2Fieeexplore.ieee.org%2Fiel5%2F12%2F35173%2F01675208.pdf%3Farnumber%3D1675208)
+
+## Wrong domain / topic
+* Indoor scene understanding with RGB-D images: Bottom-up segmentation, object
+  detection and semantic segmentation
+* Learning Rich Features from RGB-D Images for Object Detection and
+  Segmentation: Supplementary Material
+* Learning rich features from RGB-D images for object detection and
+  segmentation
+* Volumetric semantic segmentation using pyramid context features

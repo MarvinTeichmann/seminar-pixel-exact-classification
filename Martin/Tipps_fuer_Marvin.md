@@ -1,5 +1,9 @@
 ## Data sets
 
+* D Martin, C Fowlkes, D Tal, J Malik: A database of human segmented natural
+  images and its application to evaluating segmentation algorithms and
+  measuring ecological statistics.
+
 ### Berkeley
 > Our dataset for this evaluation is the Berkeley Segmentation Database [5],
 > whichcontains 300 natural images with multiple ground truth hand
