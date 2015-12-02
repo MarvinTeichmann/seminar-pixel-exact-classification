@@ -1,5 +1,6 @@
 \RequirePackage[l2tabu, orthodox]{nag}%TODO: Remove this line after checking
-\documentclass[11pt, a4paper,twoside]{scrartcl}
+%\documentclass[11pt, a4paper,twoside]{scrartcl} % Seminar
+\documentclass[technote,a4paper,leqno]{IEEEtran}
 \pdfoutput=1
 
 % packages
@@ -37,31 +38,23 @@
 % ORCID: http://orcid.org/0000-0002-9178-2970 Teichmann, Marvin
 % ORCID: http://orcid.org/0000-0002-6517-1690 Thoma, Martin
 
-% arXiv: Remove the following lines
-\newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
+\title{Pixel-wise Segmentation of Street with Neural Networks}
+\author{%
+\makebox[.4\linewidth]{Marvin Teichmann\thanks{\IEEEauthorrefmark{1} These authors contributed equally to this work}\IEEEauthorrefmark{1}} % ORCID: http://orcid.org/0000-0002-9178-2970
+\and \makebox[.4\linewidth]{Martin Thoma\IEEEauthorrefmark{1}}} % ORCID: http://orcid.org/0000-0002-6517-1690
 
-\newcommand{\myname}{Marvin Teichmann und Martin Thoma}
-\newcommand{\mytitle}{The State of the Art in automatic, fixed class, single-image Segmentation}
-\newcommand{\myinstitute}{Institut für Anthropomatik\\ Humanoids and Intelligence Systems Lab}
-\newcommand{\advisor}{Dipl.-Inform. Sebastian Bodenstedt}
-\newcommand{\submissiontime}{DD.02.2016}  % TODO
-\newcommand{\term}{Wintersemester 2015/16}
-\newcommand{\myabstract}{\input{00-abstract}}
-
-% coordinates for the bg shape on the titlepage - Don't change this
-% arXiv: Remove the following lines
-\newcommand{\diameter}{20}
-\newcommand{\xone}{-10}
-\newcommand{\xtwo}{490}
-\newcommand{\yone}{85}
-\newcommand{\ytwo}{-675}
+% arxiv doesn't like \sep
+\hypersetup{
+    pdfauthor   = {Marvin Teichmann, Martin Thoma},
+    pdfkeywords = {semantic segmentation, pixelwise classification, pixel-level classification},
+    pdfsubject  = {Segmentation},
+    pdftitle    = {The State of the Art in automatic, fixed class, single-image Segmentation},
+}
 
 \begin{document}
 \selectlanguage{english}
-\input{titlepage}% arXiv: Remove this line
-\clearpage% arXiv: Remove this line
-\tableofcontents% arXiv: Remove this line
-\clearpage% arXiv: Remove this line
+\maketitle
+\input{00-abstract.tex}
 
 \input{01-introduction}
 \input{02-0-evaluation-and-datasets}
@@ -74,7 +67,6 @@
 
 \newpage
 \bibliography{marvin,martin}
-\bibliographystyle{IEEEtran}
-%\bibliographystyle{IEEEtranSA}
+\bibliographystyle{IEEEtranSA}
 \printglossaries%
 \end{document}
