@@ -5,8 +5,15 @@
 4. 30.11.2015: A pixel classification system for segmenting biomedical images
                using intensity neighborhoods and dimension reduction
 5. 01.12.2015: Learning segmentation by random walks
+6. 03.12.2015: Simultaneous detection and segmentation
 
 ## TODO
+* Scene parsing with object instances and occlusion ordering
+* Layered object models for image segmentation
+* Textonboost: Joint appearance, shape and context modeling for multi-class object recognition and segmentation
+* Fast approximate energy minimization via graph cuts
+* Efficient object detection and segmentation for fine-grained recognition
+* Hypercolumns for Object Segmentation and Fine-grained Localization
 * [A comparison of spectral clustering algorithms](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.57.6424). D. Verma, M. Meila.
 
 > The authors attempted to compare variants of four popular spectral clustering
@@ -47,6 +54,9 @@ Source: A Comparison of Image Segmentation Algorithms
 * Rich feature hierarchies for accurate object detection and semantic
   segmentation
 * Segmentation of moving objects by long term video analysis
+* [Loss Functions for Top-k Error: Analysis and Insights](http://arxiv.org/abs/1512.00486)
+* Rich feature hierarchies for accurate object detection and semantic
+  segmentation
 
 
 ## KIT
@@ -56,7 +66,6 @@ Source: A Comparison of Image Segmentation Algorithms
 
 ## Begun
 * http://riweb-backend.ri.cmu.edu/pub_files/pub4/pantofaru_caroline_2005_1/pantofaru_caroline_2005_1.pdf
-* Simultaneous detection and segmentation
 
 
 ## Too old

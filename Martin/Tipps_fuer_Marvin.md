@@ -65,3 +65,13 @@ Source: A pixel classification system for segmenting biomedical images using
 ## Papers for Classification
 
 * [From Image-level to Pixel-level Labeling with Convolutional Networks](http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Pinheiro_From_Image-Level_to_2015_CVPR_paper.pdf)
+* Object detection via a multi-region & semantic segmentation-aware CNN model
+
+
+## Techniques for speedups
+
+### Refinement
+
+* Region refinement as in "Textonboost: Joint appearance, shape and context
+  modeling for multi-class object recognition and segmentation"
+* "Object Detection Combining Recognition and Segmentation"

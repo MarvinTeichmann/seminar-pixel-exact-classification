@@ -1,46 +1,49 @@
 %!TEX root = vorlage.tex
 % Marvin Teichmann and Martin Thoma
 \section{Taxonomy of Segmentation Algorithms}\label{sec:taxonomy}
-Taking a step back, the task of semantic segmentation can be grouped in several
-categories:
+As far as the authors of this paper know, a complete taxonomy of segmentation
+algorithms was never done. While reading publications about segmentation
+algorithms, the authors of this paper noticed the following ways to describe
+segmentation algorithms.
 
+\textbf{By possible classes}: Are the classes which should be distinguised
+known at the time when the algorithm is developed / trained or might there
+occur several objects which were never seen before?
 \begin{itemize}
-    \item \textbf{By possible classes}: Are the classes which should be distinguised
-          known at the time when the algorithm is developed / trained or might
-          there occur several objects which were never seen before?
+    \item Fixed-class: All classes are known at training time.
           \begin{itemize}
-              \item Fixed-class: All classes are known at training time.
-                    \begin{itemize}
-                        \item Binary: street/no street.
-                    \end{itemize}
-              \item Open-class: There might be completely new classes
+              \item Binary: street/no street.
           \end{itemize}
-    \item \textbf{By class affiliation of pixels}:
-          \begin{itemize}
-              \item Single class affiliation: Every pixel belongs to exactly one class. There might
-                    be probabilities, but a pixel cannot belong with a 100\%
-                    probability to two classes.
-              \item Multiple class affiliation: A single pixel might belong to
-                    multiple classes. An example is a glass on a table: One
-                    knows that the glass is there and it is possible to see the
-                    table below / behind. Another example is hair. Mattening
-                    methods produce maps which reflect this property for hair.\cite{levin2008spectral}
-          \end{itemize}
-    \item \textbf{By input data}:
-          \begin{itemize}
-              \item greyscale / colored / with depth (RGB-D)
-              \item single image (NOTE: we write about this) / time series (NOTE: only mention it)
-              \item pixels / voxels \cite{wolz2012multi}
-          \end{itemize}
-    \item \textbf{Operation state}:
-          \begin{itemize}
-              \item completely automatically <-- we write about this type
-              \item interactive (e.g. user clicks on background or user makes a
-                    coarse segmentation and automatically refinement) as
-                    described in
-                    \cite{protiere2007interactive,rother2004grabcut}.
-              \item active as in
-                    \cite{schiebener2011segmentation,schiebener2012discovery} or
-                    passive, where the received image cannot be influenced
-          \end{itemize}
+    \item Open-class: There might be completely new classes
 \end{itemize}
+
+\textbf{By class affiliation of pixels}: Humans do an increadible job when
+looking at the world. For example, when we see a glass of water standing on a
+table we can automatically say that there is the glass and behind it the table,
+even if we only had a single image and were not allowed to move. This means we
+assign the coordinates of the glass at the same time two labels: Glass and
+table. Although there is much more work being done on \textit{single class
+affiliation} segmentation algorithms, there is a publication about multiple
+class affiliation segmentation~\cite{levin2008spectral}.
+
+\textbf{By input data}:
+\begin{itemize}
+    \item greyscale / colored / with depth (RGB-D)
+    \item single image / time series
+    \item pixels / voxels \cite{wolz2012multi}
+\end{itemize}
+
+\textbf{Operation state}: The operation state of the classifying machine can
+either be \textit{active} as in
+\cite{schiebener2011segmentation,schiebener2012discovery} or passive, where the
+received image cannot be influenced. However, being in a passive situation can
+be divided further by separating segmentation algorithms working in a
+completely automatic fashing versus algorithms working in an interactive mode.
+One example would a system where the user clicks on the background or marks a
+coarse segmentation and the algorithm finds a fine-grained segmentation.
+\cite{protiere2007interactive,rother2004grabcut}~describe systems which work
+in an interactive mode.
+
+This survey describes fixed-class, single-class affiliation algorithms which
+work on greyscale or colored single pixel images in a completely automated,
+passive fashion.
