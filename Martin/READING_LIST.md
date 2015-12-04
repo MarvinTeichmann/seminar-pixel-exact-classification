@@ -6,9 +6,9 @@
                using intensity neighborhoods and dimension reduction
 5. 01.12.2015: Learning segmentation by random walks
 6. 03.12.2015: Simultaneous detection and segmentation
+7. 04.12.2015: Scene parsing with object instances and occlusion ordering
 
 ## TODO
-* Scene parsing with object instances and occlusion ordering
 * Layered object models for image segmentation
 * Textonboost: Joint appearance, shape and context modeling for multi-class object recognition and segmentation
 * Fast approximate energy minimization via graph cuts
@@ -57,7 +57,23 @@ Source: A Comparison of Image Segmentation Algorithms
 * [Loss Functions for Top-k Error: Analysis and Insights](http://arxiv.org/abs/1512.00486)
 * Rich feature hierarchies for accurate object detection and semantic
   segmentation
-
+* D. Eigen and R. Fergus. Nonparametric image parsing using adaptive neighbor
+  sets. In CVPR, 2012.
+* C. Farabet, C. Couprie, L. Najman, and Y. LeCun. Scene parsing with
+  multiscale feature learning, purity trees, and optimal covers. In ICML, 2012.
+* R. Guo and D. Hoiem. Beyond the line of sight: labeling the under- lying
+  surfaces. In ECCV, 2012.
+* L. Ladický, P. Sturgess, K. Alahari, C. Russell, and P. H. Torr. What, where
+  & how many? Combining object detectors and CRFs. In ECCV, 2010.
+* C. Liu, J. Yuen, and A. Torralba. Nonparametric scene parsing via label
+  transfer. PAMI, 33(12):2368–2382, 2011.
+* J. Shotton, J. M. Winn, C. Rother, and A. Criminisi. TextonBoost for image
+  understanding: Multi-class object recognition and segmenta- tion by jointly
+  modeling texture, layout, and context. IJCV, 81(1):2– 23, 2009.
+* J. Tighe and S. Lazebnik. Finding things: Image parsing with regions and
+  per-exemplar detectors. In CVPR, Jun 2013.
+* P. Isola and C. Liu. Scene collaging: Analysis and synthesis of natural
+  images with semantic layers. In ICCV, Dec 2013
 
 ## KIT
 

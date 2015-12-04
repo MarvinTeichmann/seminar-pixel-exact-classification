@@ -62,6 +62,35 @@ Source: A pixel classification system for segmenting biomedical images using
   2009. IEEE, 2009, pp. 518–521.
 
 
+### LabelMe
+
+B. C. Russell, A. Torralba, K. P. Murphy, and W. T. Freeman. La-
+belMe: A database and web-based tool for image annotation. IJCV,
+77(1-3):157–173, 2008
+
+#### LabelMe Outdoor (LMO) dataset
+
+> * "subset of LabelMe" (see )
+> * "2,488 training images, 200 test images, and 33 labels"
+> * "ground truth in the form of overlapping object polygons"
+
+Source: Scene parsing with object instances and occlusion ordering
+
+* C. Liu, J. Yuen, and A. Torralba. Nonparametric scene parsing via label
+  transfer. PAMI, 33(12):2368–2382, 2011. http://people.csail.mit.edu/celiu/pdfs/LabelTransferTPAMI.pdf
+
+
+### SUN
+
+"offshot of LabelMe"
+
+J. Xiao, J. Hays, K. A. Ehinger, A. Oliva, and A. Torralba. Sun
+database: Large-scale scene recognition from abbey to zoo. In
+CVPR, 2010. 5
+
+
+
+
 ## Papers for Classification
 
 * [From Image-level to Pixel-level Labeling with Convolutional Networks](http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Pinheiro_From_Image-Level_to_2015_CVPR_paper.pdf)

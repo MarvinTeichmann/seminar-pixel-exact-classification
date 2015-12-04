@@ -9,8 +9,8 @@ are compared. This section gives an overview of those quality measures.
 
 \subsubsection{Accuracy}
 One way to compare segmentation algorithms is by the accuracy of the
-segmentation they find. Taking the classification accuracy has two major
-drawbacks:
+segmentation they find (per-pixel rate). Taking the classification accuracy has
+two major drawbacks:
 
 \begin{itemize}
     \item Tasks like segmenting images for self-driving cars have large regions
@@ -65,6 +65,19 @@ A Comparison of Image Segmentation Algorithms
 See also: \cite{yang2012layered,tighe2014scene} correct if hypothesis and
 ground trouth overlap by more than \SI{50}{\percent}.
 Mention Precision, Recall, $F$-Score?
+
+----
+
+\cite{tighe2014scene} makes use of per-pixel rate and per-class rate.
+
+\enquote{For our pixel labeling, consistent with [20], we report the
+number of pixels correctly classified (per-pixel rate) and the
+average of per-class rates. The per-pixel rate indicates how
+well the system is doing on the large common classes, while
+the average per-class rate is more affected by the smaller,
+less common classes.}
+
+TODO: How is per-class rate defined?
 
 
 \subsubsection{Speed}\label{subsubsec:speed-quality-measure}
