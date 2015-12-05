@@ -8,9 +8,10 @@ are compared. This section gives an overview of those quality measures.
 
 
 \subsubsection{Accuracy}
-One way to compare segmentation algorithms is by the accuracy of the
-segmentation they find (per-pixel rate). Taking the classification accuracy has
-two major drawbacks:
+One way to compare segmentation algorithms is by the pixel-wise accuracy of the
+segmentation they find (per-pixel rate) as done in many publications
+\cite{shotton2006textonboost} (TODO: Name more). Taking the pixel-wise
+classification accuracy only has two major drawbacks:
 
 \begin{itemize}
     \item Tasks like segmenting images for self-driving cars have large regions
@@ -22,6 +23,15 @@ two major drawbacks:
           the general \enquote{car} and the more specific \enquote{wheel of a
           car}
 \end{itemize}
+
+Another problem might be pixels which cannot be assigend one of the known
+classes. For this reason, \cite{shotton2006textonboost} makes use of a void
+class. This class gets completely ignored for all quality measures. Hence the
+total number of pixels is assumed to be $\text{width} \cdot \text{height} - \text{nr of void pixels}$.
+
+One way to deal with this problem is giving a confuscation matrix as done in
+\cite{shotton2006textonboost}. However, this approach is not feasible if many
+classes are given.
 
 Let $k \in \mathbb{N}$ be the number of classes, $n_{ij} \in \mathbb{N}_0$ with
 $i,j \in 1, \dot, k$ be the number of pixels which belong to class~$i$ and were
@@ -90,6 +100,10 @@ every image needs to be processed within
 TODO: Which categories are there?
 
 TODO: Health informatics: Which times?
+
+The \gls{CRF} approach presented in \cite{shotton2006textonboost} takes
+approximately three minutes to segment per image on a \SI{2.1}{\giga\hertz}
+machine with \SI{2}{\giga\byte} memory.
 
 
 \subsubsection{Stability}\label{subsubsec:stability-quality-measure}

@@ -89,7 +89,39 @@ database: Large-scale scene recognition from abbey to zoo. In
 CVPR, 2010. 5
 
 
+### Microsoft
 
+* http://research.microsoft.com/vision/cambridge/recognition/
+* 591 photographs of the following 21 object classes: building, grass, tree,
+  cow, sheep, sky, aeroplane, water, face, car, bike, flower, sign, bird, book,
+  chair, road, cat, dog, body, boat (fig. 1). The training images were
+  hand-labeled with the assigned colors acting as indices into the list of
+  object classes. Note that we consider completely general lighting conditions,
+  camera viewpoint, scene geom- etry, object pose and articulation. Our
+  database is split randomly into roughly 45% training, 10% validation and 45%
+  test sets, while ensuring approximately proportional contributions from each
+  class. Note that the ground-truth labeling of the 21-class database contains
+  pixels labeled as ‘void’. These were included both to cope with pixels that
+  do not belong to a database class, and to allow for a rough and quick
+  hand-segmentation which does not align exactly with the object boundaries.
+  Void pixels are ignored for both training and testing.
+  - Source: "Textonboost: Joint appearance, shape and context modeling for
+    multi-class object recognition and segmentation"
+
+
+### Corel database
+* For comparison with previous work we have also used the 7-class Corel data-
+  base subset (where images are 180×120 pixels) and the 7-class Sowerby
+  database (96 × 64 pixels) used in [1]. For those two databases the numbers of
+  images in the training and test sets are exactly as for [1].
+* Source: "Textonboost: Joint appearance, shape and context modeling for
+  multi-class object recognition and segmentation"
+
+
+### Sowerby database
+
+* He et al [1]: "He, X., Zemel, R.S., Carreira-Perpiñán, M.A.: Multiscale
+  conditional random fields for image labeling. Proc. of IEEE CVPR (2004)"
 
 ## Papers for Classification
 
@@ -98,6 +130,11 @@ CVPR, 2010. 5
 
 
 ## Techniques for speedups
+
+### Stride
+
+* Applied in "Textonboost: Joint appearance, shape and context modeling for
+  multi-class object recognition and segmentation"
 
 ### Refinement
 

@@ -1,16 +1,16 @@
-1. 27.11.2015: A Measure for Objective Evaluation of Image Segmentation Algorithms
-2. 28.11.2015: A Comparison of Image Segmentation Algorithms
+1. 27.11.2015: A Measure for Objective Evaluation of Image Segmentation Algorithms - Cited by 164
+2. 28.11.2015: A Comparison of Image Segmentation Algorithms - Cited by 97
 3. 29.11.2015: Memory Based Active Contour Algorithm using Pixel-level
-               Classified Images for Colon Crypt Segmentation
+               Classified Images for Colon Crypt Segmentation - Cited by 2
 4. 30.11.2015: A pixel classification system for segmenting biomedical images
-               using intensity neighborhoods and dimension reduction
-5. 01.12.2015: Learning segmentation by random walks
-6. 03.12.2015: Simultaneous detection and segmentation
-7. 04.12.2015: Scene parsing with object instances and occlusion ordering
+               using intensity neighborhoods and dimension reduction - Cited by 6
+5. 01.12.2015: Learning segmentation by random walks - Cited by 363
+6. 03.12.2015: Simultaneous detection and segmentation - Cited by 108
+7. 04.12.2015: Scene parsing with object instances and occlusion ordering - Cited by 20
+8. 05.12.2015: Textonboost: Joint appearance, shape and context modeling for multi-class object recognition and segmentation - Cited by 854
 
 ## TODO
 * Layered object models for image segmentation
-* Textonboost: Joint appearance, shape and context modeling for multi-class object recognition and segmentation
 * Fast approximate energy minimization via graph cuts
 * Efficient object detection and segmentation for fine-grained recognition
 * Hypercolumns for Object Segmentation and Fine-grained Localization
@@ -74,6 +74,24 @@ Source: A Comparison of Image Segmentation Algorithms
   per-exemplar detectors. In CVPR, Jun 2013.
 * P. Isola and C. Liu. Scene collaging: Analysis and synthesis of natural
   images with semantic layers. In ICCV, Dec 2013
+* Finding Things: Image Parsing with Regions and Per-Exemplar Detector
+* Borenstein, E., Sharon, E., Ullman, S.: Combining top-down and bottom-up seg-
+  mentation. In: Proceedings IEEE workshop on Perceptual Organization in Com-
+  puter Vision, CVPR 2004. (2004)
+* Winn, J., Jojic, N.: LOCUS: Learning Object Classes with Unsupervised Segmen-
+  tation. Proc. of IEEE ICCV. (2005)
+* Kumar, P., Torr, P., Zisserman, A.: Obj cut. Proc. of IEEE CVPR. (2005)
+* Leibe, B., Schiele, B.: Interleaved object categorization and segmentation.
+  In: BMVC’03. Volume II. (2003) 264–271
+* Tu, Z., Chen, X., Yuille, A.L., Zhu, S.: Image parsing: Unifying
+  segmentation, detection, and recognition. In: CVPR. (2003)
+* Konishi, S., Yuille, A.L.: Statistical cues for domain specific image
+  segmentation with performance analysis. In: CVPR. (2000)
+* Lafferty, J., McCallum, A., Pereira, F.: Conditional random fields:
+  Probabilistic models for segmenting and labeling sequence data. In: ICML.
+  (2001)
+* Boykov, Y., Jolly, M.P.: Interactive graph cuts for optimal boundary and
+  region segmentation of objects in n-d images. Proc. of IEEE ICCV. (2001)
 
 ## KIT
 
