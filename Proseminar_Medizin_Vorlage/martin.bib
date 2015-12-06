@@ -2,6 +2,32 @@
 % Encoding: UTF-8
 
 
+@InProceedings{angelova2013efficient,
+  Title                    = {Efficient object detection and segmentation for fine-grained recognition},
+  Author                   = {Angelova, Anelia and Zhu, Shenghuo},
+  Booktitle                = {Computer Vision and Pattern Recognition (CVPR), 2013 IEEE Conference on},
+  Year                     = {2013},
+  Organization             = {IEEE},
+  Pages                    = {811--818},
+
+  Abstract                 = {We propose a detection and segmentation algorithm for the purposes of fine-grained recognition. The algorithm first detects low-level regions that could potentially belong to the object and then performs a full-object segmentation through propagation. Apart from segmenting the object, we can also `zoom in' on the object, i.e. center it, normalize it for scale, and thus discount the effects of the background. We then show that combining this with a state-of-the-art classification algorithm leads to significant improvements in performance especially for datasets which are considered particularly hard for recognition, e.g. birds species. The proposed algorithm is much more efficient than other known methods in similar scenarios. Our method is also simpler and we apply it here to different classes of objects, e.g. birds, flowers, cats and dogs. We tested the algorithm on a number of benchmark datasets for fine-grained categorization. It outperforms all the known state-of-the-art methods on these datasets, sometimes by as much as 11%. It improves the performance of our baseline algorithm by 3-4%, consistently on all datasets. We also observed more than a 4% improvement in the recognition performance on a challenging large-scale flower dataset, containing 578 species of flowers and 250,000 images.},
+  Comment                  = {- super-pixel based approach
+- uses SVM for classification
+- This paper is about single object classification},
+  Url                      = {http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6618954}
+}
+
+@Article{beucher1992morphological,
+  Title                    = {The morphological approach to segmentation: the watershed transformation},
+  Author                   = {Beucher, Serge and Meyer, Fernand},
+  Journal                  = {Mathematical Morphology in Image Processing},
+  Year                     = {1992},
+  Pages                    = {433--433},
+  Volume                   = {34},
+
+  Publisher                = {MARCEL DEKKER AG}
+}
+
 @Article{bittel2015pixel,
   Title                    = {Pixel-wise Segmentation of Street with Neural Networks},
   Author                   = {Bittel, Sebastian and Kaiser, Vitali and Teichmann, Marvin and Thoma, Martin},
@@ -95,6 +121,24 @@ They apply data augmentation (rotating, flipping).},
   Url                      = {http://link.springer.com/article/10.1023/B:VISI.0000022288.19776.77}
 }
 
+@Article{grau2004improved,
+  Title                    = {Improved watershed transform for medical image segmentation using prior information},
+  Author                   = {Grau, Vicente and Mewes, AUJ and Alcaniz, M and Kikinis, Ron and Warfield, Simon K},
+  Journal                  = {Medical Imaging, IEEE Transactions on},
+  Year                     = {2004},
+
+  Month                    = apr,
+  Number                   = {4},
+  Pages                    = {447--458},
+  Volume                   = {23},
+
+  Abstract                 = {The watershed transform has interesting properties that make it useful for many different image segmentation applications: it is simple and intuitive, can be parallelized, and always produces a complete division of the image. However, when applied to medical image analysis, it has important drawbacks (oversegmentation, sensitivity to noise, poor detection of thin or low signal to noise ratio structures). We present an improvement to the watershed transform that enables the introduction of prior information in its calculation. We propose to introduce this information via the use of a previous probability calculation. Furthermore, we introduce a method to combine the watershed transform and atlas registration, through the use of markers. We have applied our new algorithm to two challenging applications: knee cartilage and gray matter/white matter segmentation in MR images. Numerical validation of the results is provided, demonstrating the strength of the algorithm for medical image segmentation.},
+  Doi                      = {10.1109/TMI.2004.824224},
+  ISSN                     = {0278-0062},
+  Keywords                 = {biological tissues;biomedical MRI;brain;image registration;image segmentation;medical image processing;MR images;atlas registration;gray matter segmentation;improved watershed transform;knee cartilage;medical image segmentation;noise sensitivity;oversegmentation;white matter segmentation;Biomedical imaging;Filters;Hospitals;Image analysis;Image segmentation;Medical signal detection;Morphological operations;Probability;Signal to noise ratio;Surgery;Algorithms;Brain;Cartilage;Computer Simulation;Image Enhancement;Image Interpretation, Computer-Assisted;Imaging, Three-Dimensional;Knee Joint;Magnetic Resonance Imaging;Models, Biological;Models, Statistical;Pattern Recognition, Automated;Reproducibility of Results;Sensitivity and Specificity;Signal Processing, Computer-Assisted;Subtraction Technique},
+  Publisher                = {IEEE}
+}
+
 @InCollection{hariharan2014simultaneous,
   Title                    = {Simultaneous detection and segmentation},
   Author                   = {Hariharan, Bharath and Arbel{\'a}ez, Pablo and Girshick, Ross and Malik, Jitendra},
@@ -106,6 +150,13 @@ They apply data augmentation (rotating, flipping).},
   File                     = {:/home/moose/segmentation-paper/simultaneous-detection-and-segmentation-BharathECCV2014.pdf:PDF},
   Review                   = {CNN},
   Url                      = {http://www.cs.berkeley.edu/~rbg/papers/BharathECCV2014.pdf}
+}
+
+@Book{hartigan1975clustering,
+  Title                    = {Clustering algorithms},
+  Author                   = {Hartigan, John A},
+  Publisher                = {John Wiley \& Sons, Inc.},
+  Year                     = {1975}
 }
 
 @InProceedings{Huang-CVPR-2015,
@@ -282,6 +333,18 @@ They apply data augmentation (rotating, flipping).},
   Url                      = {http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=868688}
 }
 
+@InProceedings{shotton2008semantic,
+  Title                    = {Semantic texton forests for image categorization and segmentation},
+  Author                   = {Shotton, Jamie and Johnson, Matthew and Cipolla, Roberto},
+  Booktitle                = {Computer vision and pattern recognition, 2008. CVPR 2008. IEEE Conference on},
+  Year                     = {2008},
+  Organization             = {IEEE},
+  Pages                    = {1--8},
+
+  File                     = {:/home/moose/segmentation-paper/semantic-texton-forests-04587503.pdf:PDF},
+  Url                      = {http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4587503}
+}
+
 @InCollection{shotton2006textonboost,
   Title                    = {Textonboost: Joint appearance, shape and context modeling for multi-class object recognition and segmentation},
   Author                   = {Shotton, Jamie and Winn, John and Rother, Carsten and Criminisi, Antonio},
@@ -352,10 +415,13 @@ non-semantic segmentation},
   Author                   = {Yang, Yi and Hallman, Sam and Ramanan, Deva and Fowlkes, Charless C},
   Journal                  = {Pattern Analysis and Machine Intelligence, IEEE Transactions on},
   Year                     = {2012},
+
+  Month                    = sep,
   Number                   = {9},
   Pages                    = {1731--1743},
   Volume                   = {34},
 
+  Comment                  = {- per-pixel},
   File                     = {:/home/moose/segmentation-paper/layered-object-models-06042883.pdf:PDF},
   Publisher                = {IEEE},
   Url                      = {http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6042883}

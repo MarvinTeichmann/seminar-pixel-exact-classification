@@ -4,6 +4,12 @@
   images and its application to evaluating segmentation algorithms and
   measuring ecological statistics.
 
+### PASCAL
+* 2009 and 2010 segmentation challenge data sets
+* M. Everingham, L. Van Gool, C.K.I. Williams, J. Winn, and A. Zisserman, “The
+  PASCAL Visual Object Classes Challenge 2010 (VOC ’10) Results,” 2010.
+
+
 ### Berkeley
 > Our dataset for this evaluation is the Berkeley Segmentation Database [5],
 > whichcontains 300 natural images with multiple ground truth hand
@@ -123,11 +129,18 @@ CVPR, 2010. 5
 * He et al [1]: "He, X., Zemel, R.S., Carreira-Perpiñán, M.A.: Multiscale
   conditional random fields for image labeling. Proc. of IEEE CVPR (2004)"
 
+
+### Weitere
+
+* http://rodrigob.github.io/are_we_there_yet/build/
+
+
 ## Papers for Classification
 
 * [From Image-level to Pixel-level Labeling with Convolutional Networks](http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Pinheiro_From_Image-Level_to_2015_CVPR_paper.pdf)
 * Object detection via a multi-region & semantic segmentation-aware CNN model
-
+* http://arxiv.org/abs/1511.02680 - Bayesian SegNet: Model Uncertainty in Deep
+  Convolutional Encoder-Decoder Architectures for Scene Understanding
 
 ## Techniques for speedups
 

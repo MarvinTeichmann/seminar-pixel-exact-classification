@@ -1,40 +1,22 @@
 %!TEX root = vorlage.tex
 % Martin Thoma
 \section{Traditional Approaches}\label{sec:traditional-approaches}
-
 Image segmentation algorithms which use traditional approaches, hence don't
 apply neural networks and make heavy use of domain knowledge, are wide-spread
 in the computer vision community. This section discribes the most popular ones
 and discusses their respective advantages in
 \cref{subsec:traditional-approaches-discussion}.
 
-\subsection{$k$-Means}\label{subsec:k-means}
+This will not cover non-semantic segmentation algorithms. In particular, it
+will not cover any algorithm which does not make use of labeled data such as
+the Watershed segmentation~\cite{beucher1992morphological} and clustering
+algorithms such as $k$-means~\cite{hartigan1975clustering} or mean shift
+clustering~\cite{comaniciu2002mean}. However, it should be noted that such
+non-semantic segmentation algorithms can be used to build semantic segmentation
+algorithms.
 
-\begin{itemize}
-    \item Represent every pixel of the image as a vector (x, y, r, g, b, h, s,
-          v, ...).
-    \item Define distance function which weights the components
-\end{itemize}
-
-
-\subsection{Watershed Algorithm}\label{subsec:watershed}
-
-\begin{itemize}
-    \item Apply to image intensity gives some long superpixels
-    \item apply to image gradient magnitude gives rounder superpixels
-\end{itemize}
-
-% http://docs.opencv.org/master/d3/db4/tutorial_py_watershed.html#gsc.tab=0
-% http://docs.opencv.org/master/d2/dbd/tutorial_distance_transform.html#gsc.tab=0
-
-
-\subsection{Mean Shift Algorithm}\label{subsec:mean-shift}
-The mean shift algorithm was introduced by~\cite{comaniciu2002mean} for
-segmentation tasks. The algorithm first applies mean shift filtering on the
-original image data and then clusters the remaining points.
-
-TODO: Understand this algorithm. Use \cite{comaniciu2002mean} and
-\cite{pantofaru2005comparison} for it.
+Semantic segmentation algorithms store information about the classes they were
+trained to segment.
 
 
 \subsection{Graph Based Image Segmentation}\label{subsec:graph-based-image-segmentation}
@@ -65,8 +47,28 @@ Notes from \cite{meilpa2001learning}:
 \end{itemize}
 
 
-\subsection{Conditional Random Fields}
-\Glspl{CRF} were applied in \cite{shotton2006textonboost}.
+\subsection{Markov Random Fields}
+From \cite{yang2012layered}:
+
+> In contrast, semantic segmentation models have largely been built on top of
+Markov Random Field (MRF) models which enforce smoothness across pixel labels
+
+\begin{itemize}
+    \item X. He, R. Zemel, and M. Carreira-Perpinan, “Multiscale Condi-
+          tional Random Fields for Image Labeling,” Proc. IEEE CS Conf.
+          Computer Vision and Pattern Recognition, vol. 2, 2004.
+    \item A. Torralba, K. Murphy, and W. Freeman, “Contextual Models for
+          Object Detection Using Boosted Random Fields,” Proc. Advances in
+          Neural Information Processing Systems, 2004.
+    \item S. Kumar and M. Hebert, “A Hierarchical Field Framework for
+          Unified Context-Based Classification,” Proc. 10th IEEE Int’l Conf.
+          Computer Vision, vol. 2, 2005.
+    \item \Glspl{CRF} were applied in \cite{shotton2006textonboost}.
+    \item Z. Tu, “Auto-Context and Its Application to High-Level Vision
+          Tasks,” Proc. IEEE Conf. Computer Vision and Pattern Recognition,
+          2008.
+\end{itemize}
+
 
 \subsection{Pre-processing}\label{subsec:preprocessing}
 A typical image is opened in RGB color space, but depending on the classifier

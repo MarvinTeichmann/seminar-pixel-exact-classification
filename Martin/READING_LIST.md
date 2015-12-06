@@ -8,11 +8,28 @@
 6. 03.12.2015: Simultaneous detection and segmentation - Cited by 108
 7. 04.12.2015: Scene parsing with object instances and occlusion ordering - Cited by 20
 8. 05.12.2015: Textonboost: Joint appearance, shape and context modeling for multi-class object recognition and segmentation - Cited by 854
+9. 06.12.2015:
+    * Efficient object detection and segmentation for fine-grained recognition - Cited by 56 (FAIL: single object detection)
+    * Layered object models for image segmentation - Cited by 43
+    * Semantic texton forests for image categorization and segmentation - Cited by 698
+
 
 ## TODO
-* Layered object models for image segmentation
+* Rich feature hierarchies for accurate object detection and semantic
+  segmentation - Cited by 822
+* Describing the Scene as a Whole: Joint Object Detection, Scene Classification
+  and Semantic Segmentation
+* J. Shotton, M. Johnson, and R. Cipolla. Semantic texton forests for image
+  categorization and segmentation. In Computer vision and pattern recognition,
+  2008. CVPR 2008. IEEE Conference on, pages 1–8. IEEE, 2008.
+* J. Shotton, T. Sharp, A. Kipman, A. Fitzgibbon, M. Finocchio,
+  A. Blake, M. Cook, and R. Moore. Real-time human pose recognition in parts
+  from single depth images. Communications of the ACM, 56(1):116–124, 2013.
+* J. Shotton, J. Winn, C. Rother, and A. Criminisi. Textonboost for image
+  understanding: Multi-class object recognition and segmentation by jointly
+  modeling texture, layout, and context. International Journal of Computer
+  Vision, 81(1):2–23, 2009. 1, 2
 * Fast approximate energy minimization via graph cuts
-* Efficient object detection and segmentation for fine-grained recognition
 * Hypercolumns for Object Segmentation and Fine-grained Localization
 * [A comparison of spectral clustering algorithms](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.57.6424). D. Verma, M. Meila.
 
