@@ -1,7 +1,7 @@
 %!TEX root = vorlage.tex
 % Martin Thoma
-\subsection{Quality measures for evaluation}\label{subsec:quality-measures}
-
+\subsection{Quality measures for evaluation}%
+\label{subsec:quality-measures}%
 A performance measure is a crucial part of any machine learning system, but
 there are other measures of quality which matter when segmentation algorithms
 are compared. This section gives an overview of those quality measures.
@@ -89,8 +89,10 @@ less common classes.}
 
 TODO: How is per-class rate defined?
 
+TODO: Mention images with semantic segmentation overlay as used in \cite{gould2009decomposing}.
 
-\subsubsection{Speed}\label{subsubsec:speed-quality-measure}
+\subsubsection{Speed}%
+\label{subsubsec:speed-quality-measure}%
 One obvious quality measure is speed. For many applications, this is a hard
 requirement. For example, in the case of self-driving cars an algorithm which
 classifies pixel as street or no-street and thus makes a semantic segmentation,
@@ -106,7 +108,8 @@ approximately three minutes to segment per image on a \SI{2.1}{\giga\hertz}
 machine with \SI{2}{\giga\byte} memory.
 
 
-\subsubsection{Stability}\label{subsubsec:stability-quality-measure}
+\subsubsection{Stability}%
+\label{subsubsec:stability-quality-measure}%
 The stability of segmentation is a desirable quality measure. One the one hand,
 there are some variants of images like slight bluring, gaussian noise and
 similar which should not change the segmentation at all. Also, two images which
@@ -119,7 +122,6 @@ also only result in minor differences of the resulting segmentations~\cite{panto
 
 
 \subsubsection{Memory and Power usage}
-
 Memory usage is important when segmentation algorithms get used in devices like
 smartphones or cameras, or when the algorithms have to finish in a given
 timeframe, run on the \gls{GPU} and consume so much memory for single image

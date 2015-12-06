@@ -1,6 +1,7 @@
 %!TEX root = vorlage.tex
 % Martin Thoma
-\section{Traditional Approaches}\label{sec:traditional-approaches}
+\section{Traditional Approaches}%
+\label{sec:traditional-approaches}%
 Image segmentation algorithms which use traditional approaches, hence don't
 apply neural networks and make heavy use of domain knowledge, are wide-spread
 in the computer vision community. This section discribes the most popular ones
@@ -18,19 +19,38 @@ algorithms.
 Semantic segmentation algorithms store information about the classes they were
 trained to segment.
 
+Non-semantic segmentation algorithms try to detect consistant regions and
+region boundaries, while semantic segmentation algorithms detect classes.
 
-\subsection{Graph Based Image Segmentation}\label{subsec:graph-based-image-segmentation}
+\subsection{Unsupervised Segmentation}%
+\label{subsec:unsupervised-traditional-segmentation}%
+
+\subsubsection{Clustering Algorithms}
+% The mean shift algorithm was introduced by~\cite{comaniciu2002mean} for
+% segmentation tasks. The algorithm first applies mean shift filtering on the
+% original image data and then clusters the remaining points.
+%
+% TODO: Understand this algorithm. Use \cite{comaniciu2002mean} and
+% \cite{pantofaru2005comparison} for it.
+
+% \subsubsubsection{Watershed Algorithm}\label{subsec:watershed}
+% \begin{itemize}
+%     \item Apply to image intensity gives some long superpixels
+%     \item apply to image gradient magnitude gives rounder superpixels
+% \end{itemize}
+
+% \subsubsubsection{$k$-Means}\label{subsec:k-means}
+
+
+\subsubsection{Graph Based Image Segmentation}%
+\label{subsec:graph-based-image-segmentation}%
 \href{http://cs.brown.edu/~pff/segment/}{cs.brown.edu}
 See \cite{felzenszwalb2004efficient}.
 
 TODO: See also \cite{pantofaru2005comparison} for another description.
 
-EDISON is a publicly available software for mean shift segmentation.\cite{christoudias2002synergism}
 
-
-\subsection{Random Walks}
-NOT supervised hence not semantic?!?
-
+\subsubsection{Random Walks}
 Notes from \cite{meilpa2001learning}:
 
 \begin{itemize}
@@ -70,7 +90,18 @@ Markov Random Field (MRF) models which enforce smoothness across pixel labels
 \end{itemize}
 
 
-\subsection{Pre-processing}\label{subsec:preprocessing}
+\subsection{SVMs}
+
+\Glspl{SVM} are used by \cite{yang2012layered}.
+
+
+\subsection{Random Forests}
+
+TODO
+
+
+\subsection{Pre-processing}%
+\label{subsec:preprocessing}%
 A typical image is opened in RGB color space, but depending on the classifier
 and the problem another color space might result in better segmentations. RGB,
 YcBcr, HSL, Lab and YIQ are some examples used by \cite{cohen2015memory}.
@@ -78,13 +109,15 @@ YcBcr, HSL, Lab and YIQ are some examples used by \cite{cohen2015memory}.
 \Gls{PCA} is applied by~\cite{chen2011pixel} to reduce the dimensionality of
 the feature space.
 
-\subsection{Post-processing methods}\label{subsec:post-processing-methods}
+\subsection{Post-processing methods}%
+\label{subsec:post-processing-methods}%
 Post-processing methods are an important part of traditional pixel-level
 segmentation approaches. Active contour models are one example of a
 post-processing method~\cite{kass1988snakes}.
 
 
-\subsection{Discussion}\label{subsec:traditional-approaches-discussion}
+\subsection{Discussion}%
+\label{subsec:traditional-approaches-discussion}%
 According to \cite{pantofaru2005comparison}, the mean shift algorithm produces
 segmentations that correspond well to human perception, but it is sensitive to
 its parameters. Depending on them, different granularities of the segmentation

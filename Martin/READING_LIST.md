@@ -11,10 +11,13 @@
 9. 06.12.2015:
     * Efficient object detection and segmentation for fine-grained recognition - Cited by 56 (FAIL: single object detection)
     * Layered object models for image segmentation - Cited by 43
-    * Semantic texton forests for image categorization and segmentation - Cited by 698
 
 
 ## TODO
+
+* https://en.wikipedia.org/wiki/Image_segmentation
+* Object Segmentation by Alignment of Poselet Activations to Image Contours
+  http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5995659
 * Rich feature hierarchies for accurate object detection and semantic
   segmentation - Cited by 822
 * Describing the Scene as a Whole: Joint Object Detection, Scene Classification
@@ -104,11 +107,29 @@ Source: A Comparison of Image Segmentation Algorithms
   segmentation, detection, and recognition. In: CVPR. (2003)
 * Konishi, S., Yuille, A.L.: Statistical cues for domain specific image
   segmentation with performance analysis. In: CVPR. (2000)
+* Boykov, Y., Jolly, M.P.: Interactive graph cuts for optimal boundary and
+  region segmentation of objects in n-d images. Proc. of IEEE ICCV. (2001)
+* What, Where and How Many? Combining Object Detectors and Crf - cited by 198
+
+### Random Field
+
 * Lafferty, J., McCallum, A., Pereira, F.: Conditional random fields:
   Probabilistic models for segmenting and labeling sequence data. In: ICML.
   (2001)
-* Boykov, Y., Jolly, M.P.: Interactive graph cuts for optimal boundary and
-  region segmentation of objects in n-d images. Proc. of IEEE ICCV. (2001)
+* X. He, R. Zemel, and M. Carreira-Perpinan, “Multiscale Condi- tional Random
+  Fields for Image Labeling,” Proc. IEEE CS Conf. Computer Vision and Pattern
+  Recognition, vol. 2, 2004.
+* A. Torralba, K. Murphy, and W. Freeman, “Contextual Models for Object
+  Detection Using Boosted Random Fields,” Proc. Advances in Neural Information
+  Processing Systems, 2004.
+* S. Kumar and M. Hebert, “A Hierarchical Field Framework for Unified
+  Context-Based Classification,” Proc. 10th IEEE Int’l Conf. Computer Vision,
+  vol. 2, 2005.
+* Shotton, J. Winn, C. Rother, and A. Criminisi, “Textonboost: Joint
+  Appearance, Shape and Context Modeling for Multi-Class Object Recognition and
+  Segmentation,” Proc. European Conf. Computer Vision, vol. 3951, p. 1, 2006.
+* Z. Tu, “Auto-Context and Its Application to High-Level Vision Tasks,” Proc.
+  IEEE Conf. Computer Vision and Pattern Recognition, 2008.
 
 ## KIT
 
@@ -116,6 +137,7 @@ Source: A Comparison of Image Segmentation Algorithms
 
 
 ## Begun
+* Semantic texton forests for image categorization and segmentation - Cited by 698
 * http://riweb-backend.ri.cmu.edu/pub_files/pub4/pantofaru_caroline_2005_1/pantofaru_caroline_2005_1.pdf
 
 

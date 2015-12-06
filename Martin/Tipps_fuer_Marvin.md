@@ -4,10 +4,20 @@
   images and its application to evaluating segmentation algorithms and
   measuring ecological statistics.
 
-### PASCAL
+### PASCAL Visual Object Recognition Challenge (VOC)
 * 2009 and 2010 segmentation challenge data sets
 * M. Everingham, L. Van Gool, C.K.I. Williams, J. Winn, and A. Zisserman, “The
   PASCAL Visual Object Classes Challenge 2010 (VOC ’10) Results,” 2010.
+* M. Everingham, L. Van Gool, C.K.I. Williams, J. Winn, and A. Zisserman, “The
+  Pascal Visual Object Classes Challenge 2009 (VOC ’09) Results,” 2009.
+
+> The competition contains 2,000 training and validation images along with
+> ground-truth labelings which give per-pixel labelings for 4,200 instances of
+> 20 object categories. Test annotations for the data set are not released.
+> Instead, benchmarking algorithm performance is done on a held-back test set
+> through a web interface.
+
+Source: Layered Object Models for Image Segmentation
 
 
 ### Berkeley
@@ -141,6 +151,12 @@ CVPR, 2010. 5
 * Object detection via a multi-region & semantic segmentation-aware CNN model
 * http://arxiv.org/abs/1511.02680 - Bayesian SegNet: Model Uncertainty in Deep
   Convolutional Encoder-Decoder Architectures for Scene Understanding
+* Dan Ciresan, Alessandro Giusti, Luca M Gambardella, and Jurgen Schmidhuber.
+  Deep Neural Networks ¨ Segment Neuronal Membranes in Electron Microscopy
+  Images. In NIPS, 2012.
+* Liang-Chieh Chen, George Papandreou, Iasonas Kokkinos, Kevin Murphy, and Alan
+  L Yuille. Semantic Image Segmentation with Deep Convolutional Nets and Fully
+  Connected CRFs. In ICLR, 2015.
 
 ## Techniques for speedups
 
@@ -154,3 +170,15 @@ CVPR, 2010. 5
 * Region refinement as in "Textonboost: Joint appearance, shape and context
   modeling for multi-class object recognition and segmentation"
 * "Object Detection Combining Recognition and Segmentation"
+
+### Papers
+
+* An Efficient Approach to Semantic Segmentation
+
+
+## Both of us
+
+* [Relating Cascaded Random Forests to Deep Convolutional Neural Networks for Semantic Segmentation](http://arxiv.org/pdf/1507.07583v1.pdf)
+* Shuai Zheng, Sadeep Jayasumana, Bernardino Romera-Paredes, Vibhav Vineet,
+  Zhizhong Su, Dalong Du, Chang Huang, and Philip H S Torr. Conditional Random
+  Fields as Recurrent Neural Networks. arXiv.org, 2015.
