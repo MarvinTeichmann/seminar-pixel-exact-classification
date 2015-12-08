@@ -17,6 +17,21 @@
   Url                      = {http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6618954}
 }
 
+@InProceedings{arbelaez2009contours,
+  Title                    = {From contours to regions: An empirical evaluation},
+  Author                   = {Arbelaez, Pablo and Maire, Michael and Fowlkes, Charless and Malik, Jagannath},
+  Booktitle                = {Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE Conference on},
+  Year                     = {2009},
+  Month                    = jun,
+  Organization             = {IEEE},
+  Pages                    = {2294--2301},
+
+  Abstract                 = {We propose a generic grouping algorithm that constructs a hierarchy of regions from the output of any contour detector. Our method consists of two steps, an oriented watershed transform (OWT) to form initial regions from contours, followed by construction of an ultra-metric contour map (UCM) defining a hierarchical segmentation. We provide extensive experimental evaluation to demonstrate that, when coupled to a high-performance contour detector, the OWT-UCM algorithm produces state-of-the-art image segmentations. These hierarchical segmentations can optionally be further refined by user-specified annotations.},
+  Doi                      = {10.1109/CVPR.2009.5206707},
+  Keywords                 = {feature extraction;image segmentation;transforms;OWT-UCM algorithm;generic grouping algorithm;hierarchical segmentation;high-performance contour detector;oriented watershed transform;state-of-the-art image segmentation;ultrametric contour map;user-specified annotation;Brightness;Detectors;Image edge detection;Image segmentation;Inference algorithms;Leak detection;Level set;Machinery;Object recognition;Pixel},
+  Url                      = {http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5206707}
+}
+
 @Article{beucher1992morphological,
   Title                    = {The morphological approach to segmentation: the watershed transformation},
   Author                   = {Beucher, Serge and Meyer, Fernand},
@@ -36,6 +51,42 @@
 
   File                     = {:/home/moose/segmentation-paper/pixel-wise-segmentation-of-street-1511.00513v1.pdf:PDF},
   Url                      = {http://arxiv.org/abs/1511.00513}
+}
+
+@InCollection{bourdev2010detecting,
+  Title                    = {Detecting people using mutually consistent poselet activations},
+  Author                   = {Bourdev, Lubomir and Maji, Subhransu and Brox, Thomas and Malik, Jitendra},
+  Booktitle                = {Computer Vision--ECCV 2010},
+  Publisher                = {Springer},
+  Year                     = {2010},
+  Pages                    = {168--181},
+
+  File                     = {:/home/moose/segmentation-paper/detecting-people-using-mutuallychp%3A10.1007%2F978-3-642-15567-3_13.pdf:PDF},
+  Review                   = {use 2 layer feed forward neural network},
+  Url                      = {http://link.springer.com/chapter/10.1007/978-3-642-15567-3_13#page-1}
+}
+
+@InProceedings{brox2011object,
+  Title                    = {Object segmentation by alignment of poselet activations to image contours},
+  Author                   = {Brox, Thomas and Bourdev, Lubomir and Maji, Subhransu and Malik, Jitendra},
+  Booktitle                = {Computer Vision and Pattern Recognition (CVPR), 2011 IEEE Conference on},
+  Year                     = {2011},
+  Month                    = jun,
+  Organization             = {IEEE},
+  Pages                    = {2225--2232},
+
+  Abstract                 = {In this paper, we propose techniques to make use of two complementary bottom-up features, image edges and texture patches, to guide top-down object segmentation towards higher precision. We build upon the part-based pose-let detector, which can predict masks for numerous parts of an object. For this purpose we extend poselets to 19 other categories apart from person. We non-rigidly align these part detections to potential object contours in the image, both to increase the precision of the predicted object mask and to sort out false positives. We spatially aggregate object information via a variational smoothing technique while ensuring that object regions do not overlap. Finally, we propose to refine the segmentation based on self-similarity defined on small image patches. We obtain competitive results on the challenging Pascal VOC benchmark. On four classes we achieve the best numbers to-date.},
+  Doi                      = {10.1109/CVPR.2011.5995659},
+  File                     = {:/home/moose/segmentation-paper/object-segmentation-by-alignment-05995659.pdf:PDF},
+  Keywords                 = {image segmentation;image texture;object detection;pose estimation;image contours;image edges;object information;object mask;object segmentation;part based poselet detector;poselet activation alignment;texture patches;Detectors;Image edge detection;Image segmentation;Object segmentation;Shape;Smoothing methods;Training},
+  Review                   = {* What are image edges?
+* What are texture patches?
+* What are poselets?
+* What is variational smoothing?
+
+
+* Benchmarked with Pascal VOC},
+  Url                      = {http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5995659}
 }
 
 @Article{celebi2009improved,

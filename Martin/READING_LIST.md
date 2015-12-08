@@ -11,12 +11,12 @@
 9. 06.12.2015:
     * Efficient object detection and segmentation for fine-grained recognition - Cited by 56 (FAIL: single object detection)
     * Layered object models for image segmentation - Cited by 43
+10. 07.12.2015: Object Segmentation by Alignment of Poselet Activations to Image Contours - Cited by 76
 
 
 ## TODO
 
 * https://en.wikipedia.org/wiki/Image_segmentation
-* Object Segmentation by Alignment of Poselet Activations to Image Contours
   http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5995659
 * Rich feature hierarchies for accurate object detection and semantic
   segmentation - Cited by 822
@@ -110,6 +110,8 @@ Source: A Comparison of Image Segmentation Algorithms
 * Boykov, Y., Jolly, M.P.: Interactive graph cuts for optimal boundary and
   region segmentation of objects in n-d images. Proc. of IEEE ICCV. (2001)
 * What, Where and How Many? Combining Object Detectors and Crf - cited by 198
+* Y. Yang, S. Hallman, D. Ramanan, and C. Fowlkes. Layered object detection for
+  multi-class segmentation. CVPR, 2010.
 
 ### Random Field
 
@@ -130,6 +132,11 @@ Source: A Comparison of Image Segmentation Algorithms
   Segmentation,” Proc. European Conf. Computer Vision, vol. 3951, p. 1, 2006.
 * Z. Tu, “Auto-Context and Its Application to High-Level Vision Tasks,” Proc.
   IEEE Conf. Computer Vision and Pattern Recognition, 2008.
+
+### Poselets
+
+* TODO: L. Bourdev, S. Maji, T. Brox, and J. Malik. Detecting people using mutually
+  consistent poselet activations. ECCV, 2010. -- Cited by 247
 
 ## KIT
 

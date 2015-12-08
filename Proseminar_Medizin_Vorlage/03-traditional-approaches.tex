@@ -1,7 +1,6 @@
 %!TEX root = vorlage.tex
 % Martin Thoma
-\section{Traditional Approaches}%
-\label{sec:traditional-approaches}%
+\section{Traditional Approaches}\label{sec:traditional-approaches}%
 Image segmentation algorithms which use traditional approaches, hence don't
 apply neural networks and make heavy use of domain knowledge, are wide-spread
 in the computer vision community. This section discribes the most popular ones
@@ -21,6 +20,21 @@ trained to segment.
 
 Non-semantic segmentation algorithms try to detect consistant regions and
 region boundaries, while semantic segmentation algorithms detect classes.
+
+
+\subsection{Features}\label{subsec:features}%
+The choice of features is very important in traditional approaches and a lot
+of effort was done to find good features.
+
+Poselets were used successfully in \cite{bourdev2010detecting,brox2011object}.
+Those features rely on manually added extra keypoints. This is easily possible
+for well-known image classes like humans. However, it is difficult for classes
+like airplanes or ships where the human annotators do not know the keypoints.
+Additionally, the keypoints have to be chosen for every single class. There are
+strategies to deal with those problems like viewpoint-dependand keypoints.
+
+Image edges and texture patches were proposed in~\cite{brox2011object}.
+
 
 \subsection{Unsupervised Segmentation}%
 \label{subsec:unsupervised-traditional-segmentation}%
@@ -90,7 +104,7 @@ Markov Random Field (MRF) models which enforce smoothness across pixel labels
 \end{itemize}
 
 
-\subsection{SVMs}
+\subsection{SVMs}\label{subsec:trad-SVM}%
 
 \Glspl{SVM} are used by \cite{yang2012layered}.
 
@@ -100,8 +114,7 @@ Markov Random Field (MRF) models which enforce smoothness across pixel labels
 TODO
 
 
-\subsection{Pre-processing}%
-\label{subsec:preprocessing}%
+\subsection{Pre-processing}\label{subsec:preprocessing}%
 A typical image is opened in RGB color space, but depending on the classifier
 and the problem another color space might result in better segmentations. RGB,
 YcBcr, HSL, Lab and YIQ are some examples used by \cite{cohen2015memory}.
@@ -114,6 +127,11 @@ the feature space.
 Post-processing methods are an important part of traditional pixel-level
 segmentation approaches. Active contour models are one example of a
 post-processing method~\cite{kass1988snakes}.
+
+A refinement of the found segmentation can be obtained by adjusting a found
+semantic segmentation to match close edges. This was used
+in~\cite{brox2011object} with an ultra-metric contour map
+Map~\cite{arbelaez2009contours}
 
 
 \subsection{Discussion}%
