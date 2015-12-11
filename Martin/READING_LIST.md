@@ -12,6 +12,9 @@
     * Efficient object detection and segmentation for fine-grained recognition - Cited by 56 (FAIL: single object detection)
     * Layered object models for image segmentation - Cited by 43
 10. 07.12.2015: Object Segmentation by Alignment of Poselet Activations to Image Contours - Cited by 76
+11. 11.12.2015:
+    - Interactive organ segmentation using graph cuts - Cited by 235
+    - Fast approximate energy minimization via graph cuts - Cited by 5752
 
 
 ## TODO
@@ -32,7 +35,6 @@
   understanding: Multi-class object recognition and segmentation by jointly
   modeling texture, layout, and context. International Journal of Computer
   Vision, 81(1):2–23, 2009. 1, 2
-* Fast approximate energy minimization via graph cuts
 * Hypercolumns for Object Segmentation and Fine-grained Localization
 * [A comparison of spectral clustering algorithms](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.57.6424). D. Verma, M. Meila.
 
@@ -112,6 +114,11 @@ Source: A Comparison of Image Segmentation Algorithms
 * What, Where and How Many? Combining Object Detectors and Crf - cited by 198
 * Y. Yang, S. Hallman, D. Ramanan, and C. Fowlkes. Layered object detection for
   multi-class segmentation. CVPR, 2010.
+
+### Conditional Random Fields
+
+* Wallach, Hanna M. "Conditional random fields: An introduction." Technical
+  Reports (CIS) (2004): 22. -- Cited by 330
 
 ### Random Field
 

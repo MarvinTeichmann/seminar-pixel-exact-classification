@@ -31,7 +31,8 @@ models~\cite{yang2012layered}.
 \textbf{By input data}:
 \begin{itemize}
     \item greyscale / colored / with depth (RGB-D)
-    \item single image / time series
+    \item single image / stereo images as in \cite{boykov2001fast} /
+          time~series
     \item pixels / voxels \cite{wolz2012multi}
 \end{itemize}
 
@@ -43,8 +44,8 @@ be divided further by separating segmentation algorithms working in a
 completely automatic fashing versus algorithms working in an interactive mode.
 One example would a system where the user clicks on the background or marks a
 coarse segmentation and the algorithm finds a fine-grained segmentation.
-\cite{rother2004grabcut,protiere2007interactive}~describe systems which work
-in an interactive mode.
+\cite{boykov2000interactive,rother2004grabcut,protiere2007interactive}~describe
+systems which work in an interactive mode.
 
 This survey describes fixed-class, single-class affiliation algorithms which
 work on greyscale or colored single pixel images in a completely automated,
