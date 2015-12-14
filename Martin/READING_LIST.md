@@ -15,7 +15,7 @@
 11. 11.12.2015:
     - Interactive organ segmentation using graph cuts - Cited by 235
     - Fast approximate energy minimization via graph cuts - Cited by 5752
-
+12. 14.12.2015: Semantic texton forests for image categorization and segmentation - Cited by 700
 
 ## TODO
 
@@ -25,9 +25,6 @@
   segmentation - Cited by 822
 * Describing the Scene as a Whole: Joint Object Detection, Scene Classification
   and Semantic Segmentation
-* J. Shotton, M. Johnson, and R. Cipolla. Semantic texton forests for image
-  categorization and segmentation. In Computer vision and pattern recognition,
-  2008. CVPR 2008. IEEE Conference on, pages 1–8. IEEE, 2008.
 * J. Shotton, T. Sharp, A. Kipman, A. Fitzgibbon, M. Finocchio,
   A. Blake, M. Cook, and R. Moore. Real-time human pose recognition in parts
   from single depth images. Communications of the ACM, 56(1):116–124, 2013.
