@@ -20,7 +20,7 @@
 Source: Layered Object Models for Image Segmentation
 
 
-### Berkeley
+### Berkeley Segmentation Dataset and Benchmark
 > Our dataset for this evaluation is the Berkeley Segmentation Database [5],
 > whichcontains 300 natural images with multiple ground truth hand
 > segmentations of each image.
@@ -28,6 +28,20 @@ Source: Layered Object Models for Image Segmentation
 > [5] D. Martin, C. Fowlkes, D. Tal, J. Malik, “A Database of Human Segmented
 > Natural Images and its Application to Evaluating Segmentation Algorithms and
 > Measuring Ecological Statistics”, Intl Conf on Computer Vision, 2001.
+
+* http://www.eecs.berkeley.edu/Research/Projects/CS/vision/bsds/
+
+@InProceedings{MartinFTM01,
+  author = {D. Martin and C. Fowlkes and D. Tal and J. Malik},
+  title = {A Database of Human Segmented Natural Images and its
+           Application to Evaluating Segmentation Algorithms and
+           Measuring Ecological Statistics},
+  booktitle = {Proc. 8th Int'l Conf. Computer Vision},
+  year = {2001},
+  month = {July},
+  volume = {2},
+  pages = {416--423}
+}
 
 
 ### Medicine
@@ -124,6 +138,9 @@ CVPR, 2010. 5
   - Source: "Textonboost: Joint appearance, shape and context modeling for
     multi-class object recognition and segmentation"
 
+#### MSRC 21-Class Database
+* http://research.microsoft.com/en-us/projects/objectclassrecognition/
+
 
 ### Corel database
 * For comparison with previous work we have also used the 7-class Corel data-
@@ -147,6 +164,7 @@ CVPR, 2010. 5
 
 ## Papers for Classification
 
+* Kohonen map? Pulse-coupled networks?
 * [From Image-level to Pixel-level Labeling with Convolutional Networks](http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Pinheiro_From_Image-Level_to_2015_CVPR_paper.pdf)
 * Object detection via a multi-region & semantic segmentation-aware CNN model
 * http://arxiv.org/abs/1511.02680 - Bayesian SegNet: Model Uncertainty in Deep
@@ -157,6 +175,9 @@ CVPR, 2010. 5
 * Liang-Chieh Chen, George Papandreou, Iasonas Kokkinos, Kevin Murphy, and Alan
   L Yuille. Semantic Image Segmentation with Deep Convolutional Nets and Fully
   Connected CRFs. In ICLR, 2015.
+* Mahinda Pathegama & Ö Göl (2004): "Edge-end pixel extraction for edge-based
+  image segmentation", Transactions on Engineering, Computing and Technology,
+  vol. 2, pp 213–216, ISSN 1305-5313
 
 ## Techniques for speedups
 
@@ -174,6 +195,7 @@ CVPR, 2010. 5
 ### Papers
 
 * An Efficient Approach to Semantic Segmentation
+* [Instance-aware Semantic Segmentation via Multi-task Network Cascades](http://arxiv.org/pdf/1512.04412.pdf)
 
 
 ## Both of us

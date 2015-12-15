@@ -1,4 +1,5 @@
-1. 27.11.2015: A Measure for Objective Evaluation of Image Segmentation Algorithms - Cited by 164
+1. 27.11.2015: A Measure for Objective Evaluation of Image Segmentation
+   Algorithms - Cited by 164
 2. 28.11.2015: A Comparison of Image Segmentation Algorithms - Cited by 97
 3. 29.11.2015: Memory Based Active Contour Algorithm using Pixel-level
                Classified Images for Colon Crypt Segmentation - Cited by 2
@@ -9,30 +10,138 @@
 7. 04.12.2015: Scene parsing with object instances and occlusion ordering - Cited by 20
 8. 05.12.2015: Textonboost: Joint appearance, shape and context modeling for multi-class object recognition and segmentation - Cited by 854
 9. 06.12.2015:
-    * Efficient object detection and segmentation for fine-grained recognition - Cited by 56 (FAIL: single object detection)
+    * Efficient object detection and segmentation for fine-grained recognition
+      - Cited by 56 (FAIL: single object detection)
     * Layered object models for image segmentation - Cited by 43
-10. 07.12.2015: Object Segmentation by Alignment of Poselet Activations to Image Contours - Cited by 76
+10. 07.12.2015: Object Segmentation by Alignment of Poselet Activations to
+    Image Contours - Cited by 76
 11. 11.12.2015:
     - Interactive organ segmentation using graph cuts - Cited by 235
     - Fast approximate energy minimization via graph cuts - Cited by 5752
-12. 14.12.2015: Semantic texton forests for image categorization and segmentation - Cited by 700
+12. 14.12.2015: Semantic texton forests for image categorization and
+    segmentation - Cited by 700
+13. 15.12.2015: Snakes: Active contour models - Cited by 18251
+
 
 ## TODO
 
-* https://en.wikipedia.org/wiki/Image_segmentation
-  http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5995659
+* Normalized cuts and image segmentation - Cited by 10801
+* Contour and texture analysis for image segmentation - Cited by 993
 * Rich feature hierarchies for accurate object detection and semantic
   segmentation - Cited by 822
+* Borenstein, E., Sharon, E., Ullman, S.: Combining top-down and bottom-up
+  segmentation. In: Proceedings IEEE workshop on Perceptual Organization in
+  Computer Vision, CVPR 2004. (2004) - Cited by 452
+* Leibe, B., Schiele, B.: Interleaved object categorization and segmentation.
+  In: BMVC’03. Volume II. (2003) 264–271 - Cited by 306
+* https://en.wikipedia.org/wiki/Image_segmentation
+  http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5995659
 * Describing the Scene as a Whole: Joint Object Detection, Scene Classification
-  and Semantic Segmentation
+  and Semantic Segmentation - Cited by 110
 * J. Shotton, T. Sharp, A. Kipman, A. Fitzgibbon, M. Finocchio,
   A. Blake, M. Cook, and R. Moore. Real-time human pose recognition in parts
   from single depth images. Communications of the ACM, 56(1):116–124, 2013.
+   Cited by 2467
 * J. Shotton, J. Winn, C. Rother, and A. Criminisi. Textonboost for image
   understanding: Multi-class object recognition and segmentation by jointly
   modeling texture, layout, and context. International Journal of Computer
-  Vision, 81(1):2–23, 2009. 1, 2
-* Hypercolumns for Object Segmentation and Fine-grained Localization
+  Vision, 81(1):2–23, 2009. 1, 2 - Cited by 629
+* Winn, J., Jojic, N.: LOCUS: Learning Object Classes with Unsupervised
+  Segmentation. Proc. of IEEE ICCV. (2005) - Cited by 314
+* C. Liu, J. Yuen, and A. Torralba. Nonparametric scene parsing via label
+  transfer. PAMI, 33(12):2368–2382, 2011. - Cited by 164
+* C. Farabet, C. Couprie, L. Najman, and Y. LeCun. Scene parsing with
+  multiscale feature learning, purity trees, and optimal covers. In ICML, 2012.
+  - Cited by 80
+* Robust Object Detection with Interleaved Categorization and Segmentation. -
+  Cited by 306
+* Hypercolumns for Object Segmentation and Fine-grained Localization - Cited by
+  45
+* [Class Segmentation and Object Localization with Superpixel Neighborhoods](http://www.vision.cs.ucla.edu/papers/fulkersonVS09.pdf)
+* "Studies in Using Image Segmentation to Improve Object Recognition" by
+  "Caroline Rebecca Pantofaru" - Cited by 1
+* Automated choroid segmentation based on gradual intensity distance in HD-OCT
+  images - Cited by 3
+* A Partition-Based Active Contour Model Incorporating Local Information for
+  Image Segmentation - Cited by 2
+* Multiscale Combinatorial Grouping for Image Segmentation and Object Proposal
+  Generation - Cited by 7
+* Learning to Segment Moving Objects in Videos - Cited by 4
+* Hypercolumns for object segmentation and fine-grained localization - Cited by 45
+* Large scale region-merging segmentation using the local mutual best fitting
+  concept - Cited by 1
+* Segmentation of moving objects by long term video analysis - Cited by 42
+* [Loss Functions for Top-k Error: Analysis and Insights](http://arxiv.org/abs/1512.00486)
+* D. Eigen and R. Fergus. Nonparametric image parsing using adaptive neighbor
+  sets. In CVPR, 2012. - Cited by 37
+* R. Guo and D. Hoiem. Beyond the line of sight: labeling the underlying
+  surfaces. In ECCV, 2012. - Cited by 24
+* J. Tighe and S. Lazebnik. Finding things: Image parsing with regions and
+  per-exemplar detectors. In CVPR, Jun 2013. - Cited by 78
+* P. Isola and C. Liu. Scene collaging: Analysis and synthesis of natural
+  images with semantic layers. In ICCV, Dec 2013 - Cited by 12
+* Finding Things: Image Parsing with Regions and Per-Exemplar Detector - Cited
+  by 78
+* Kumar, P., Torr, P., Zisserman, A.: Obj cut. Proc. of IEEE CVPR. (2005)
+* Tu, Z., Chen, X., Yuille, A.L., Zhu, S.: Image parsing: Unifying
+  segmentation, detection, and recognition. In: CVPR. (2003)
+* Konishi, S., Yuille, A.L.: Statistical cues for domain specific image
+  segmentation with performance analysis. In: CVPR. (2000) - Cited by 88
+* Y. Yang, S. Hallman, D. Ramanan, and C. Fowlkes. Layered object detection for
+  multi-class segmentation. CVPR, 2010. - Cited by 68
+
+### Random Forests
+
+* Structured Class-Labels in Random Forests for Semantic Image Labelling
+* Context-Sensitive Decision Forests for Object Detection
+
+### Conditional Random Fields
+
+* Lafferty, J., McCallum, A., Pereira, F.: Conditional random fields:
+  Probabilistic models for segmenting and labeling sequence data. In: ICML.
+  (2001) - Cited by 8363
+* Wallach, Hanna M. "Conditional random fields: An introduction." Technical
+  Reports (CIS) (2004): 22. -- Cited by 330
+* L. Ladický, P. Sturgess, K. Alahari, C. Russell, and P. H. Torr. What, where
+  & how many? Combining object detectors and CRFs. In ECCV, 2010. - Cited by
+  198
+* X. He, R. Zemel, and M. Carreira-Perpinan, “Multiscale Conditional Random
+  Fields for Image Labeling,” Proc. IEEE CS Conf. Computer Vision and Pattern
+  Recognition, vol. 2, 2004.
+* A. Torralba, K. Murphy, and W. Freeman, “Contextual Models for Object
+  Detection Using Boosted Random Fields,” Proc. Advances in Neural Information
+  Processing Systems, 2004.
+* S. Kumar and M. Hebert, “A Hierarchical Field Framework for Unified
+  Context-Based Classification,” Proc. 10th IEEE Int’l Conf. Computer Vision,
+  vol. 2, 2005.
+* Z. Tu, “Auto-Context and Its Application to High-Level Vision Tasks,” Proc.
+  IEEE Conf. Computer Vision and Pattern Recognition, 2008. - Cited by 157
+
+### Poselets
+
+* TODO: L. Bourdev, S. Maji, T. Brox, and J. Malik. Detecting people using mutually
+  consistent poselet activations. ECCV, 2010. -- Cited by 247
+
+### Medicine
+
+* "machine learning in medical imaging"
+* Prostate cancer grading: Gland segmentation and structural features - Cited
+  by 27
+
+## Only partially related
+
+* Boykov, Y., Jolly, M.P.: Interactive graph cuts for optimal boundary and
+  region segmentation of objects in n-d images. Proc. of IEEE ICCV. (2001)
+
+### Clustering
+
+* Machine learning of hierarchical clustering to segment 2D and 3D images
+
+### Spectral Segmentation
+
+* A random walks view of spectral segmentation
+* Spectral segmentation with multiscale graph decomposition
+* Multiclass spectral clustering
 * [A comparison of spectral clustering algorithms](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.57.6424). D. Verma, M. Meila.
 
 > The authors attempted to compare variants of four popular spectral clustering
@@ -48,99 +157,6 @@
 > ‘hard’ data.
 
 Source: A Comparison of Image Segmentation Algorithms
-
-* [Class Segmentation and Object Localization with Superpixel Neighborhoods](http://www.vision.cs.ucla.edu/papers/fulkersonVS09.pdf)
-* "Studies in Using Image Segmentation to Improve Object Recognition" by "Caroline Rebecca Pantofaru"
-* "machine learning in medical imaging"
-* Prostate cancer grading: Gland segmentation and structural features
-* Snakes: Active contour models
-* Normalized cuts and image segmentation
-* Contour and texture analysis for image segmentation
-* Multiclass spectral clustering
-* A random walks view of spectral segmentation
-* Spectral segmentation with multiscale graph decomposition
-* Automated choroid segmentation based on gradual intensity distance in HD-OCT
-  images
-* A Partition-Based Active Contour Model Incorporating Local Information for
-  Image Segmentation
-* Machine learning of hierarchical clustering to segment 2D and 3D images
-* Multiscale Combinatorial Grouping for Image Segmentation and Object Proposal
-  Generation
-* Learning to Segment Moving Objects in Videos
-* Hypercolumns for object segmentation and fine-grained localization
-* Large scale region-merging segmentation using the local mutual best fitting
-  concept
-* Rich feature hierarchies for accurate object detection and semantic
-  segmentation
-* Segmentation of moving objects by long term video analysis
-* [Loss Functions for Top-k Error: Analysis and Insights](http://arxiv.org/abs/1512.00486)
-* Rich feature hierarchies for accurate object detection and semantic
-  segmentation
-* D. Eigen and R. Fergus. Nonparametric image parsing using adaptive neighbor
-  sets. In CVPR, 2012.
-* C. Farabet, C. Couprie, L. Najman, and Y. LeCun. Scene parsing with
-  multiscale feature learning, purity trees, and optimal covers. In ICML, 2012.
-* R. Guo and D. Hoiem. Beyond the line of sight: labeling the under- lying
-  surfaces. In ECCV, 2012.
-* L. Ladický, P. Sturgess, K. Alahari, C. Russell, and P. H. Torr. What, where
-  & how many? Combining object detectors and CRFs. In ECCV, 2010.
-* C. Liu, J. Yuen, and A. Torralba. Nonparametric scene parsing via label
-  transfer. PAMI, 33(12):2368–2382, 2011.
-* J. Shotton, J. M. Winn, C. Rother, and A. Criminisi. TextonBoost for image
-  understanding: Multi-class object recognition and segmenta- tion by jointly
-  modeling texture, layout, and context. IJCV, 81(1):2– 23, 2009.
-* J. Tighe and S. Lazebnik. Finding things: Image parsing with regions and
-  per-exemplar detectors. In CVPR, Jun 2013.
-* P. Isola and C. Liu. Scene collaging: Analysis and synthesis of natural
-  images with semantic layers. In ICCV, Dec 2013
-* Finding Things: Image Parsing with Regions and Per-Exemplar Detector
-* Borenstein, E., Sharon, E., Ullman, S.: Combining top-down and bottom-up seg-
-  mentation. In: Proceedings IEEE workshop on Perceptual Organization in Com-
-  puter Vision, CVPR 2004. (2004)
-* Winn, J., Jojic, N.: LOCUS: Learning Object Classes with Unsupervised Segmen-
-  tation. Proc. of IEEE ICCV. (2005)
-* Kumar, P., Torr, P., Zisserman, A.: Obj cut. Proc. of IEEE CVPR. (2005)
-* Leibe, B., Schiele, B.: Interleaved object categorization and segmentation.
-  In: BMVC’03. Volume II. (2003) 264–271
-* Tu, Z., Chen, X., Yuille, A.L., Zhu, S.: Image parsing: Unifying
-  segmentation, detection, and recognition. In: CVPR. (2003)
-* Konishi, S., Yuille, A.L.: Statistical cues for domain specific image
-  segmentation with performance analysis. In: CVPR. (2000)
-* Boykov, Y., Jolly, M.P.: Interactive graph cuts for optimal boundary and
-  region segmentation of objects in n-d images. Proc. of IEEE ICCV. (2001)
-* What, Where and How Many? Combining Object Detectors and Crf - cited by 198
-* Y. Yang, S. Hallman, D. Ramanan, and C. Fowlkes. Layered object detection for
-  multi-class segmentation. CVPR, 2010.
-
-### Conditional Random Fields
-
-* Wallach, Hanna M. "Conditional random fields: An introduction." Technical
-  Reports (CIS) (2004): 22. -- Cited by 330
-
-### Random Field
-
-* Lafferty, J., McCallum, A., Pereira, F.: Conditional random fields:
-  Probabilistic models for segmenting and labeling sequence data. In: ICML.
-  (2001)
-* X. He, R. Zemel, and M. Carreira-Perpinan, “Multiscale Condi- tional Random
-  Fields for Image Labeling,” Proc. IEEE CS Conf. Computer Vision and Pattern
-  Recognition, vol. 2, 2004.
-* A. Torralba, K. Murphy, and W. Freeman, “Contextual Models for Object
-  Detection Using Boosted Random Fields,” Proc. Advances in Neural Information
-  Processing Systems, 2004.
-* S. Kumar and M. Hebert, “A Hierarchical Field Framework for Unified
-  Context-Based Classification,” Proc. 10th IEEE Int’l Conf. Computer Vision,
-  vol. 2, 2005.
-* Shotton, J. Winn, C. Rother, and A. Criminisi, “Textonboost: Joint
-  Appearance, Shape and Context Modeling for Multi-Class Object Recognition and
-  Segmentation,” Proc. European Conf. Computer Vision, vol. 3951, p. 1, 2006.
-* Z. Tu, “Auto-Context and Its Application to High-Level Vision Tasks,” Proc.
-  IEEE Conf. Computer Vision and Pattern Recognition, 2008.
-
-### Poselets
-
-* TODO: L. Bourdev, S. Maji, T. Brox, and J. Malik. Detecting people using mutually
-  consistent poselet activations. ECCV, 2010. -- Cited by 247
 
 ## KIT
 
@@ -165,3 +181,18 @@ Source: A Comparison of Image Segmentation Algorithms
 * Learning rich features from RGB-D images for object detection and
   segmentation
 * Volumetric semantic segmentation using pyramid context features
+
+## Keywords
+
+* scene parsing
+* clustering
+* (semantic/pixel-level/per-pixel/pixel-wise) (segmentation/classification)
+* superpixels (= non-semantic segments?)
+* contours (!!!!!!!!!!!!!!!!!!!! mention them in the paper!!!!!!!)
+* Machine vision
+* Trainable segmentation
+
+## Authors
+
+* LeCun
+* Shotton
