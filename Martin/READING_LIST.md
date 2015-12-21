@@ -94,6 +94,8 @@
 
 * Structured Class-Labels in Random Forests for Semantic Image Labelling
 * Context-Sensitive Decision Forests for Object Detection
+* Entangled Decision Forests and their Application for Semantic Segmentation of
+  CT Images - medicine
 
 ### Conditional Random Fields
 
@@ -191,6 +193,7 @@ Source: A Comparison of Image Segmentation Algorithms
 * contours (!!!!!!!!!!!!!!!!!!!! mention them in the paper!!!!!!!)
 * Machine vision
 * Trainable segmentation
+* CT
 
 ## Authors
 
