@@ -1,0 +1,89 @@
+%!TEX root = vorlage.tex
+% Martin Thoma
+
+\subsection{Markov Random Fields}\label{subsec:markov-random-fields}
+% TODO: Probability space?
+A \Gls{MRF} is a tupel $(G, X)$, where $G=(V,E)$ is an undirected graph and
+$X=(X_V)_{v \in V}$ is a set of random variables which satisfy the pairwise
+Markov property, the local Markov property and the global Markov property:
+
+% https://en.wikipedia.org/wiki/Markov_random_field#Definition
+% \begin{itemize}
+%     \item \textbf{Pairwise Markov property}: $X_u \independent X_v | X_{V \setminus \Set{u, v}}$ if $\Set{u,v} \notin E$
+%     \item \textbf{Local Markov property}: $X_u \independent X_{V \setminus \Set{v | v \text{is } u \text{ or a neighbor of } u}} | X_{\text{neighbors of } v}$
+%     \item \textbf{Global Markov property}: $X_A \independent X_B | X_S$ where
+%           every path from a node in $A$ to a node in $B$ passes through $S$
+% \end{itemize}
+
+% is a probabilisitic model. They have the Markov property which is
+% typically displayed in an undirected graph which shows dependencies between the
+% random variables.
+
+\Glspl{CRF} and Boltzmann Machines are a variations of Markov random fields.
+
+% http://www.mathunion.org/ICM/ICM1986.2/Main/icm1986.2.1496.1517.ocr.pdf
+%
+% Segmentation of brain MR images through a hidden Markov random field model
+% and the expectation-maximization algorithm \cite{zhang2001segmentation}
+
+% In short: specify locally and model globally.
+
+% define only local properties. allows by transitivity to get a model
+% for global properties.
+
+% definition:
+
+% A \gls{MRF} is a countable set of random variables. In the task of segmentation,
+% they are often index-based spacial positions.
+
+% \begin{itemize}
+%     \item What is your set of random models? (e.g. Ising model: one for each pixel)
+%           \begin{itemize}
+%               \item Irving-Model: \cite{boykov2000interactive}
+%               \item Potts-Model: \cite{boykov2001fast}
+%           \end{itemize}
+% \end{itemize}
+
+% On those, define an undirected hypergraph $G(V, E)$. $V$ are pixels, $E$ is
+% typically defined by neighboring pixels.
+
+% good: 
+
+% \begin{itemize}
+%     \item Convenient modeling:Just write down energie function (in some cases)
+%           do define entire model
+%     \item fast inference (only 1 or 2 variants)
+%     \item sometimes good performance
+% \end{itemize}
+
+% bad:
+
+% \begin{itemize}
+%     \item learning is difficult
+% \end{itemize}
+
+
+
+% ---
+
+
+From \cite{yang2012layered}:
+
+> In contrast, semantic segmentation models have largely been built on top of
+Markov Random Field (MRF) models which enforce smoothness across pixel labels
+
+\begin{itemize}
+    \item X. He, R. Zemel, and M. Carreira-Perpinan, “Multiscale Conditional
+          Random Fields for Image Labeling,” Proc. IEEE CS Conf. Computer
+          Vision and Pattern Recognition, vol. 2, 2004.
+    \item A. Torralba, K. Murphy, and W. Freeman, “Contextual Models for
+          Object Detection Using Boosted Random Fields,” Proc. Advances in
+          Neural Information Processing Systems, 2004.
+    \item S. Kumar and M. Hebert, “A Hierarchical Field Framework for
+          Unified Context-Based Classification,” Proc. 10th IEEE Int’l Conf.
+          Computer Vision, vol. 2, 2005.
+    \item \Glspl{CRF} were applied in \cite{shotton2006textonboost}.
+    \item Z. Tu, “Auto-Context and Its Application to High-Level Vision
+          Tasks,” Proc. IEEE Conf. Computer Vision and Pattern Recognition,
+          2008.
+\end{itemize}

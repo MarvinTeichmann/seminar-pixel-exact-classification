@@ -1,0 +1,35 @@
+%!TEX root = vorlage.tex
+% Martin Thoma
+\subsection{Random Decision Forests}\label{subsec:random-forests}
+% http://jiwonkim.org/awesome-random-forest/
+Random Decision Forests were first proposed in~\cite{ho1995random}. This type
+of classifier applies a technique called \textit{ensemble learning}, where
+multiple classifiers get trained simultaneously on random subspaces of the
+feature~space or random subsets of the training~set. In the case of Random
+Decision Forests, the classifiers are decision trees. A decision tree is a tree
+where each inner node uses one or more features to decide in which branch to
+descend. Each leaf is a class.
+
+A strength of Random Decision Forests compared to many other classifiers is
+that the scale of measure of the features (nominal, ordinal, interval, ratio)
+can be arbitrary.
+
+Random decision trees were extensively studied in the past 20~years and a
+multitude of training algorithms has been proposed (e.g. ID3
+in~\cite{quinlan1986induction}, C4.5 in~\cite{quinlan2014c4}). Possible
+training hyperparameters are the type of decision tree (TODO: cite two types),
+the number of decision trees being used, and if the depth of the trees is
+restricted. Typically, random decision trees are trained by adding new nodes
+until each leaf contains only nodes of a single class or until it is not
+possible to split further (TODO: mention that this only explains Random
+Decision Forests for classification). This is called a
+\textit{stopping criterion}.
+
+There are two typical training modes: \textit{Central axis projection} and
+\textit{perceptron training} In training, for each node a hyperplane is
+searched which is optimal according to an error function.
+
+TODO: Begging
+
+Random Decision Forests are applied in~\cite{shotton2008semantic} for
+segmentation. Textons are used as features there.
