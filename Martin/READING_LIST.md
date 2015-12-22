@@ -130,6 +130,11 @@
 * Prostate cancer grading: Gland segmentation and structural features - Cited
   by 27
 
+### Evaluation Methods for Image Segmentation
+
+* A REVIEW OF RECENT EVALUATION METHODS FOR IMAGE SEGMENTATION
+
+
 ## Only partially related
 
 * Boykov, Y., Jolly, M.P.: Interactive graph cuts for optimal boundary and
@@ -194,6 +199,7 @@ Source: A Comparison of Image Segmentation Algorithms
 * Machine vision
 * Trainable segmentation
 * CT
+* Feature Extractor
 
 ## Authors
 

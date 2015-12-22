@@ -178,6 +178,7 @@ CVPR, 2010. 5
 * Mahinda Pathegama & Ö Göl (2004): "Edge-end pixel extraction for edge-based
   image segmentation", Transactions on Engineering, Computing and Technology,
   vol. 2, pp 213–216, ISSN 1305-5313
+* [Can Pretrained Neural Networks Detect Anatomy?](http://arxiv.org/pdf/1512.05986.pdf)
 
 ## Techniques for speedups
 
