@@ -164,6 +164,7 @@ CVPR, 2010. 5
 
 ## Papers for Classification
 
+* [Instance-aware Semantic Segmentation via Multi-task Network Cascades](http://arxiv.org/pdf/1512.04412.pdf) !!!!!!!!!!!!!
 * Kohonen map? Pulse-coupled networks?
 * [From Image-level to Pixel-level Labeling with Convolutional Networks](http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Pinheiro_From_Image-Level_to_2015_CVPR_paper.pdf)
 * Object detection via a multi-region & semantic segmentation-aware CNN model

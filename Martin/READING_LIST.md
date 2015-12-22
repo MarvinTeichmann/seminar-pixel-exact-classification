@@ -90,12 +90,26 @@
 * Y. Yang, S. Hallman, D. Ramanan, and C. Fowlkes. Layered object detection for
   multi-class segmentation. CVPR, 2010. - Cited by 68
 
+
+### Review Papers
+
+* A review on image segmentation techniques - Cited by 3430
+
+
 ### Random Forests
 
 * Structured Class-Labels in Random Forests for Semantic Image Labelling
 * Context-Sensitive Decision Forests for Object Detection
 * Entangled Decision Forests and their Application for Semantic Segmentation of
   CT Images - medicine
+
+
+### Markov Fields
+
+* Image segmentation using simple Markov field models - Cited by 121
+* Segmentation of brain MR images through a hidden Markov random field model
+  and the expectation-maximization algorithm - Cited by 2886
+
 
 ### Conditional Random Fields
 
