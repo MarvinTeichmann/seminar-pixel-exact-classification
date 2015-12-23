@@ -25,6 +25,8 @@
 
 ## TODO
 
+http://arxiv.org/pdf/1512.06735.pdf - Instance-Level Segmentation with Deep Densely Connected MRFs
+
 * Normalized cuts and image segmentation - Cited by 10801
 * Contour and texture analysis for image segmentation - Cited by 993
 * Rich feature hierarchies for accurate object detection and semantic
