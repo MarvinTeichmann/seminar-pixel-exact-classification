@@ -6,6 +6,59 @@
 % An Introduction to Support Vector Machines and Other Kernel-based Learning Methods
 % Support-Vector Networks by Vapnik
 % Learning with kernels: Support vector machines, regularization, optimization, and beyond
-\Glspl{SVM} are well-studied classifiers.
+\Glspl{SVM} are well-studied binary classifiers which can be described by five
+central ideas. For those ideas, the training data is represented as
+$(\textbf{x}_i, y_i)$ where $\textbf{x}_i$ is the feature vector and $y_i \in
+\Set{-1, 1}$ the binary label for training example $i \in \Set{1, \dots, m}$.
 
-They are used by \cite{yang2012layered}.
+
+\begin{enumerate}
+    \item If data is linearly seperable, it can be seperated by a hyperplane.
+          There is one hyperplane which maximizes the distance to the
+          datapoints. This hyperplane should be taken:\\
+          \begin{equation*}
+          \begin{aligned}
+              \min_{\textbf{w}, b}\,&\frac{1}{2} \|\textbf{w}\|^2\\
+              \text{subject to }& \forall_{i=1}^m y_i \cdot \underbrace{(\langle \textbf{w}, \textbf{x}_i\rangle + b)}_{\mathclap{\sgn \text{ applied to this gives the classification}}} \geq 0
+          \end{aligned}
+          \end{equation*}
+
+          When the space gets normalized one can also demand a margin by re-formulating
+          the constraint to
+          $\forall_{i=1}^m y_i \cdot (\langle \textbf{w}, \textbf{x}_i\rangle + b) \geq 1$.
+    \item The primal problem is to find the normal vector $\textbf{w}$ and the
+          bias $b$. The dual problem is to express $\textbf{w}$ as a linear
+          combination of the training data $\textbf{x}_i$:
+          \[\textbf{w} = \sum_{i=1}^m \alpha_i y_i \textbf{x}_i\]
+          where $y_i \in \Set{-1, 1}$ represents the class of the training
+          example.
+    \item Not every dataset is linearly seperable. This problem is approached
+          by transforming the dataset with a non-linear mapping into a higher
+          dimensional space $\Phi$.
+    \item Implicitly using a high-dimensional (probably $\infty$-dimensional)
+          space. % TODO: http://www.jstor.org/stable/pdf/25464664.pdf?acceptTC=true
+          % Schölkopf: Learning with kernels
+          % Kernel-Trick
+    \item Introduction of slack variables to relax the requirement of linear
+          seperability. The trade-off between accepting some errors and a more
+          complex model is weighted by a parameter $C \in \mathbb{R}_0^+$. The
+          bigger $C$, the more errors are accepted. The new optimization
+          problem is:
+          \begin{equation*}
+          \begin{aligned}
+              \min_{\textbf{w}}\,&\frac{1}{2} \|\textbf{w}\|^2 + C \cdot \sum_{i} \xi_i\\
+              \text{subject to }& \forall_{i=1}^m y_i \cdot (\langle \textbf{w}, \textbf{x}_i\rangle + b) \geq 1 - \xi_i
+          \end{aligned}
+          \end{equation*}
+\end{enumerate}
+
+The described \glspl{SVM} can only distinguish between two classes. Common
+strategies to expand those binary classifiers to multi-class classification is
+the \textit{one-vs-all} and the \textit{one-vs-one} strategy. In the one-vs-all
+strategy $n$ classifiers have to be trained which can distingish one of the $n$
+classes against all other classes. In the one-vs-one strategy $\frac{n^2 - n}{2}$
+classifiers are trained; one classifier for each pair of classes.
+
+A detailed description of \glspl{SVM} can be found in \cite{burges1998tutorial}.
+
+\Glspl{SVM} are used by \cite{yang2012layered}.

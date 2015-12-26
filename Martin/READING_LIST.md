@@ -21,6 +21,7 @@
 12. 14.12.2015: Semantic texton forests for image categorization and
     segmentation - Cited by 700
 13. 15.12.2015: Snakes: Active contour models - Cited by 18251
+14. 26.12.2015: A tutorial on support vector machines for pattern recognition - Cited by 15378
 
 
 ## TODO
