@@ -34,8 +34,8 @@ YcBcr, HSL, Lab and YIQ are some examples used by \cite{cohen2015memory}.
 \Gls{PCA} is applied by~\cite{chen2011pixel} to reduce the dimensionality of
 the feature space.
 
-\subsection{Post-processing methods}%
-\label{subsec:post-processing-methods}%
+
+\subsection{Post-processing methods}\label{subsec:post-processing-methods}%
 Post-processing methods are an important part of traditional pixel-level
 segmentation approaches. Active contour models are one example of a
 post-processing method~\cite{kass1988snakes}.
@@ -43,11 +43,16 @@ post-processing method~\cite{kass1988snakes}.
 A refinement of the found segmentation can be obtained by adjusting a found
 semantic segmentation to match close edges. This was used
 in~\cite{brox2011object} with an ultra-metric contour map
-Map~\cite{arbelaez2009contours}
+Map~\cite{arbelaez2009contours}.
+
+Morphological operations, namely opening and closing, are methods for noise
+removal. The opening operation is a dilation followed by a erosion. This
+removes tiny segments. The closing operation is a erosion followed by a
+dilation. This removes tiny gaps in otherwise filled regions. They were used
+in~\cite{chen1998image} for biomedical image segmentation.
 
 
-\subsection{Discussion}%
-\label{subsec:traditional-approaches-discussion}%
+\subsection{Discussion}\label{subsec:traditional-approaches-discussion}%
 According to \cite{pantofaru2005comparison}, the mean shift algorithm produces
 segmentations that correspond well to human perception, but it is sensitive to
 its parameters. Depending on them, different granularities of the segmentation

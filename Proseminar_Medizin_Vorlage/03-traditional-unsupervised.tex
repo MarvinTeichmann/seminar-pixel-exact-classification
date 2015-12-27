@@ -13,18 +13,24 @@ Semantic segmentation algorithms store information about the classes they were
 trained to segment while non-semantic segmentation algorithms try to detect
 consistent regions and region boundaries.
 
-\subsubsection{General-Purpose Clustering Algorithms}
-% The mean shift algorithm was introduced by~\cite{comaniciu2002mean} for
-% segmentation tasks. The algorithm first applies mean shift filtering on the
-% original image data and then clusters the remaining points.
-%
+\subsubsection{Clustering Algorithms}
+The $k$-means algorithm is a general-purpose clustering algorithm which
+requires the number of clusters to be given beforehand. Initially, it places
+the $k$ centroids randomly in the feature space. Then it assignes each
+data point to the nearest centroid, moves the centroid to the center of the
+cluster and continues the process until a stopping criterion is reached. A
+faster variant is described in \cite{hartigan1975clustering}.
+
+$k$-means was applied by~\cite{chen1998image} for medical image segmentation.
+
+Another clustering algorithm is the mean-shift algorithm which was introduced
+by~\cite{comaniciu2002mean} for segmentation tasks. The algorithm first applies
+mean shift filtering on the original image data and then clusters the remaining
+points.
+
 % TODO: Understand this algorithm. Use \cite{comaniciu2002mean} and
 % \cite{pantofaru2005comparison} for it.
 
-% \subsubsubsection{$k$-Means}\label{subsec:k-means}
-
-$k$-means~\cite{hartigan1975clustering},
-mean shift clustering~\cite{comaniciu2002mean}
 
 \subsubsection{Graph Based Image Segmentation}%
 \label{subsec:graph-based-image-segmentation}%
@@ -33,7 +39,15 @@ See \cite{felzenszwalb2004efficient}.
 
 TODO: See also \cite{pantofaru2005comparison} for another description.
 
+A graph-based method which got the 2nd rank in the Pascal VOC 2010
+challenge~\cite{everingham2010pascal} is described
+in~\cite{carreira2010constrained}.
+
+
 \subsubsection{Random Walks}
+
+TODO
+
 Notes from \cite{meilpa2001learning}:
 
 \begin{itemize}
@@ -52,7 +66,7 @@ Notes from \cite{meilpa2001learning}:
 
 \subsubsection{Edge Detection}
 
-See \cite{kass1988snakes}.
+See \cite{kass1988snakes}. (TODO)
 
 
 \subsubsection{Watershed Segmentation}\label{subsec:watershed}
@@ -68,12 +82,6 @@ A detailed description of the watershed segmentation algorithm is given
 in~\cite{roerdink2000watershed}.
 
 The watershed segmentation was used in~\cite{1260033} to segment white blood
-cells.
-
-
-
-% \subsubsubsection{Watershed Algorithm}
-% \begin{itemize}
-%     \item Apply to image intensity gives some long superpixels
-%     \item apply to image gradient magnitude gives rounder superpixels
-% \end{itemize}
+cells. As the authors describe, the segmentation by watershed transform has
+two flaws: Over-segmentation due to local minima and thick watersheds due to
+plateaus.
