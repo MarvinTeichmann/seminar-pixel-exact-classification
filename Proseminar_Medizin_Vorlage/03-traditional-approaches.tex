@@ -8,102 +8,19 @@
 \section{Traditional Approaches}\label{sec:traditional-approaches}%
 Image segmentation algorithms which use traditional approaches, hence don't
 apply neural networks and make heavy use of domain knowledge, are wide-spread
-in the computer vision community. This section describes features which can be
-used for segmentation in \cref{subsec:features}, gives a very brief overview of
-unsupervised, non-semantic segmentation in
-\cref{subsec:unsupervised-traditional-segmentation}, describes Markov Random
-Fields in \cref{subsec:markov-random-fields}, \glspl{SVM} in
-\cref{subsec:trad-SVM} and Random Forests in \cref{subsec:random-forests}.
+in the computer vision community. Features which can be used for segmentation
+are described in \cref{subsec:features}, a very brief overview of unsupervised,
+non-semantic segmentation is given in
+\cref{subsec:unsupervised-traditional-segmentation}, Random Decision
+Forests are described in \cref{subsec:random-forests}, Markov Random Fields in
+\cref{subsec:markov-random-fields} and \glspl{SVM} in
+\cref{subsec:trad-SVM}.
 Pre- and Postprocessing are covered in \cref{subsec:preprocessing-methods} and
 \cref{subsec:post-processing-methods}. The respective advantages of the
 classifiers are discussed in \cref{subsec:traditional-approaches-discussion}.
 
-This will not cover non-semantic segmentation algorithms. In particular, it
-will not cover any algorithm which does not make use of labeled data such as
-the Watershed segmentation~\cite{beucher1992morphological} and clustering
-algorithms such as $k$-means~\cite{hartigan1975clustering} or mean shift
-clustering~\cite{comaniciu2002mean}. However, it should be noted that such
-non-semantic segmentation algorithms can be used to build semantic segmentation
-algorithms.
-
-Semantic segmentation algorithms store information about the classes they were
-trained to segment.
-
-Non-semantic segmentation algorithms try to detect consistent regions and
-region boundaries, while semantic segmentation algorithms detect classes.
-
-
-\subsection{Features}\label{subsec:features}%
-The choice of features is very important in traditional approaches and a lot
-of effort was done to find good features.
-
-Poselets were used successfully in \cite{bourdev2010detecting,brox2011object}.
-Those features rely on manually added extra keypoints. This is easily possible
-for well-known image classes like humans. However, it is difficult for classes
-like airplanes or ships where the human annotators do not know the keypoints.
-Additionally, the keypoints have to be chosen for every single class. There are
-strategies to deal with those problems like viewpoint-dependent keypoints.
-
-Image edges and texture patches were proposed in~\cite{brox2011object}.
-
-Other features include:
-
-\begin{itemize}
-    \item Pixel color (e.g. 3 features for RGB, 3 features for HSV, 1 feature
-          for the gray-value)
-\end{itemize}
-
-
-\subsection{Unsupervised Segmentation}%
-\label{subsec:unsupervised-traditional-segmentation}%
-
-\subsubsection{Clustering Algorithms}
-% The mean shift algorithm was introduced by~\cite{comaniciu2002mean} for
-% segmentation tasks. The algorithm first applies mean shift filtering on the
-% original image data and then clusters the remaining points.
-%
-% TODO: Understand this algorithm. Use \cite{comaniciu2002mean} and
-% \cite{pantofaru2005comparison} for it.
-
-% \subsubsubsection{Watershed Algorithm}\label{subsec:watershed}
-% \begin{itemize}
-%     \item Apply to image intensity gives some long superpixels
-%     \item apply to image gradient magnitude gives rounder superpixels
-% \end{itemize}
-
-% \subsubsubsection{$k$-Means}\label{subsec:k-means}
-
-
-\subsubsection{Graph Based Image Segmentation}%
-\label{subsec:graph-based-image-segmentation}%
-\href{http://cs.brown.edu/~pff/segment/}{cs.brown.edu}
-See \cite{felzenszwalb2004efficient}.
-
-TODO: See also \cite{pantofaru2005comparison} for another description.
-
-
-\subsubsection{Random Walks}
-Notes from \cite{meilpa2001learning}:
-
-\begin{itemize}
-    \item Normalized Cut (see \cite{shi2000normalized}) seems to be a special
-          case of this
-    \item Seems to be a \enquote{spectral method}
-    \item This is pairwise clustering. Clusters points which are similar and
-          optimize e.g. for maximum total intracluster similarity. In contrast,
-          to statistical clustering which assumes a probabilistic model which
-          generates the data, this only defines a similarity function.
-    \item Spectral clustering is a similarity based method. Spectral clustering
-          methods use eingenvalues / eigenvectors of the matrix obtained by the
-          similarity function.
-\end{itemize}
-
-
-\subsubsection{Edge Detection}
-
-See \cite{kass1988snakes}.
-
-
+\input{03-traditional-features}
+\input{03-traditional-unsupervised}
 \input{03-traditional-approaches-random-forests}
 \input{03-tranditional-approaches-markov-random-fields}
 \input{03-traditional-approaches-svm}

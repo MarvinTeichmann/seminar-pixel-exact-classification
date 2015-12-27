@@ -22,7 +22,7 @@
     segmentation - Cited by 700
 13. 15.12.2015: Snakes: Active contour models - Cited by 18251
 14. 26.12.2015: A tutorial on support vector machines for pattern recognition - Cited by 15378
-
+15. 27.12.2015: A novel white blood cell segmentation scheme using scale-space filtering and watershed clustering - Cited by 105
 
 ## TODO
 

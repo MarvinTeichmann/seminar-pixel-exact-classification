@@ -1,0 +1,26 @@
+%!TEX root = vorlage.tex
+% Martin Thoma
+
+\subsection{Features}\label{subsec:features}%
+The choice of features is very important in traditional approaches and a lot
+of effort was done to find good features.
+
+Poselets were used successfully in \cite{bourdev2010detecting,brox2011object}.
+Those features rely on manually added extra keypoints such as \enquote{right
+shoulder}, \enquote{left shoulder}, \enquote{right knee} and \enquote{left
+knee}. They were originally used for human pose estimation. Finding those extra
+keypoints is easily possible for well-known image classes like humans. However,
+it is difficult for classes like airplanes, ships, organs or cells where the
+human annotators do not know the keypoints. Additionally, the keypoints have to
+be chosen for every single class. There are strategies to deal with those
+problems like viewpoint-dependent keypoints.
+
+Image edges and texture patches were proposed in~\cite{brox2011object}.
+
+Other features include:
+
+\begin{itemize}
+    \item Pixel color in different image spaces (e.g. 3~features for RGB,
+          3~features for HSV, 1~feature for the gray-value).
+    \item TODO!
+\end{itemize}

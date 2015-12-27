@@ -1,0 +1,79 @@
+%!TEX root = vorlage.tex
+% Martin Thoma
+
+\subsection{Unsupervised Segmentation}%
+\label{subsec:unsupervised-traditional-segmentation}%
+
+Unsupervised segmentation algorithms can be used in supervised segmentation as
+another source of information. While unsupervised segmentation algorithms can
+never be semantic, they are well-studied and deserve at least a very brief
+overview.
+
+Semantic segmentation algorithms store information about the classes they were
+trained to segment while non-semantic segmentation algorithms try to detect
+consistent regions and region boundaries.
+
+\subsubsection{General-Purpose Clustering Algorithms}
+% The mean shift algorithm was introduced by~\cite{comaniciu2002mean} for
+% segmentation tasks. The algorithm first applies mean shift filtering on the
+% original image data and then clusters the remaining points.
+%
+% TODO: Understand this algorithm. Use \cite{comaniciu2002mean} and
+% \cite{pantofaru2005comparison} for it.
+
+% \subsubsubsection{$k$-Means}\label{subsec:k-means}
+
+$k$-means~\cite{hartigan1975clustering},
+mean shift clustering~\cite{comaniciu2002mean}
+
+\subsubsection{Graph Based Image Segmentation}%
+\label{subsec:graph-based-image-segmentation}%
+\href{http://cs.brown.edu/~pff/segment/}{cs.brown.edu}
+See \cite{felzenszwalb2004efficient}.
+
+TODO: See also \cite{pantofaru2005comparison} for another description.
+
+\subsubsection{Random Walks}
+Notes from \cite{meilpa2001learning}:
+
+\begin{itemize}
+    \item Normalized Cut (see \cite{shi2000normalized}) seems to be a special
+          case of this
+    \item Seems to be a \enquote{spectral method}
+    \item This is pairwise clustering. Clusters points which are similar and
+          optimize e.g. for maximum total intracluster similarity. In contrast,
+          to statistical clustering which assumes a probabilistic model which
+          generates the data, this only defines a similarity function.
+    \item Spectral clustering is a similarity based method. Spectral clustering
+          methods use eingenvalues / eigenvectors of the matrix obtained by the
+          similarity function.
+\end{itemize}
+
+
+\subsubsection{Edge Detection}
+
+See \cite{kass1988snakes}.
+
+
+\subsubsection{Watershed Segmentation}\label{subsec:watershed}
+The watershed algorithm takes a grayscale image and interprets it as a height
+map. Low values are catchment basins and the higher values between two
+neighboring catchment basins is the watershed. The catchment basins should
+contain what the developer wants to capture. This implies that those areas
+must be dark on grayscale images. The algorithm starts to fill the basins from
+the lowest point. When two basins get connected, a watershed is found. The
+algorithm stops when the highest point is reached.
+
+A detailed description of the watershed segmentation algorithm is given
+in~\cite{roerdink2000watershed}.
+
+The watershed segmentation was used in~\cite{1260033} to segment white blood
+cells.
+
+
+
+% \subsubsubsection{Watershed Algorithm}
+% \begin{itemize}
+%     \item Apply to image intensity gives some long superpixels
+%     \item apply to image gradient magnitude gives rounder superpixels
+% \end{itemize}
