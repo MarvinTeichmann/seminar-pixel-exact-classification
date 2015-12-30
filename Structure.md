@@ -4,6 +4,11 @@
 
 ### 2. Segmentation Quality Evaluation and Datasets (Marvin + Martin)
 
+#### different Image Tasks in Relation (Marvin)
+  * Classification
+  * Localization and Detection
+  * Segmentation
+
 #### Quality measures (Martin)
 
 #### Datasets (Marvin)
@@ -40,13 +45,22 @@
 
 
 ### 4. Neural Networks for Segmentation (Marvin) ------------------------ most work
-* Convolutional Networks
-    * Sliding-Window based approaches
-    * FCNNs
+* CNNs for Image Recognition
+  * Explanation CNNs;
+  * AlexNET, VGG16, GoogleLeNET;
+* Convolutionize MLP
+  * Äquivalenz: MLP <-> Conv Net
+  * Äquivalenz: Sliding Window <-> FCNN
+  * Application: OverFeat; FCNN; et.al
+* Subsambling
+  * Downsampling through stride
+  * Shift and stitch
+  * Deconvolute
 
 ### 5. Typical problems (Martin)
 
 ### 6. Speed-ups for segmentation (Marvin)
+[Comment from Marvin: *Do we really need that?  Have not seen any of this in my review so far. For the Seminar I think would prefer to use space differently*]
 (Only an overview, not detailed)
 * Downsampling (reducing the resolution of the image)
 * Superpixels

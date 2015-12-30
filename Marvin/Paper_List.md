@@ -1,3 +1,16 @@
+## General CNN
+
+* ImageNet Classification with Deep Convolutional Neural Networks
+* Going Deeper with Convolutions
+* LeNET [28]
+
+## Spartial Recognition
+
+* Overfeat
+* Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition
+* RCNN
+
+
 ## Deconvolution Approach
 
 * SegNet: A Deep Convolutional Encoder-Decoder Architecture; 
@@ -22,14 +35,19 @@
 
 * Deep Neural Networks Segment Neuronal Membranes in Electron Microscopy Images
 
-## General CNN
 
-* ImageNet Classification with Deep Convolutional Neural Networks
-* Going Deeper with Convolutions
+## Typical Preprocessing
+
+FCNN: super-pixel [9,17]; proposals [17,15]; rf/lk [9,17]
+
 
 
 
 # Reading List
 
 * 11.12. : OverFeat
-* 12.12. : 
+* 28.12. : FCNN
+* 29.12. : VGG16
+* 30.12. : 
+
+
