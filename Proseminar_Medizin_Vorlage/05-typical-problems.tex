@@ -38,6 +38,14 @@ corners.
   \label{fig:camouflage}
   \includegraphics[width=0.45\linewidth, keepaspectratio]{figures/great-male-leopard.JPG}
 }
+\subfigure[Transparency]{
+  \label{fig:transparency-glass}
+  \includegraphics[width=0.45\linewidth, keepaspectratio]{figures/glass-smartphone-table-2.jpg}
+}%
+\subfigure[Viewpoint]{
+  \label{fig:viewpoint}
+  \includegraphics[width=0.45\linewidth, keepaspectratio]{figures/unusual-viewpoint-glass-computer.jpg}
+}
 \caption{Image quality problems}
 \label{fig:test}
 \end{figure}
@@ -68,17 +76,24 @@ the same problems as humans do. On the other hand, the segmenting system might
 be better than humans are, but it is forced to learn from images labeled by
 humans. If the labels are wrong, the system is forced to learn something wrong.
 
+\subsubsection{Semi-transparent Occlusion}
+Some objects like drinking glasses can be visible and still leave the object
+behind them visible as shown in \cref{fig:transparency-glass}. This is mainly a
+definition problem: Is the seen pixel the glass label or the smartphone label?
+
+\subsubsection{Viewpoints}
+Changes in viewpoints can be a problem, if they don't occur in the training
+data. For example, an image captioning system which was trained on photographs
+of professional photographers might not have photos from the point of view of
+a child. This is visualized in \cref{fig:viewpoint}.
 
 % \subsubsection{Strong Contrast}
 % Strong contrast on the same object, e.g. butterflies or printed pieces of paper
 % https://commons.wikimedia.org/wiki/File:Nymphalis_io_Luc_Viatour.jpg
 
-\subsection{TODO}
 
-\begin{itemize}
-%    \item reflections - https://commons.wikimedia.org/wiki/Category:Reflections
-    \item Viewpoints (e.g. adult, child)
-    \item Semi-Transparent objects: Put glass in light, TODO%
-    % https://commons.wikimedia.org/wiki/File:Light_through_glass.jpg
-    % https://commons.wikimedia.org/wiki/Glass
-\end{itemize}
+% \begin{itemize}
+% %    \item reflections - https://commons.wikimedia.org/wiki/Category:Reflections
+%     % https://commons.wikimedia.org/wiki/File:Light_through_glass.jpg
+%     % https://commons.wikimedia.org/wiki/Glass
+% \end{itemize}
