@@ -21,7 +21,13 @@ Other features include:
 \begin{itemize}
     \item Pixel color in different image spaces (e.g. 3~features for RGB,
           3~features for HSV, 1~feature for the gray-value).
-    \item \Gls{HOG} features are used in~\cite{bourdev2010detecting,felzenszwalb2010object}.
+    \item \Gls{HOG} features interpret the image as a discrete function
+          $I: \mathbb{N}^2 \rightarrow \Set{0, \dots, 255}$ which maps the
+          position to a color. For each pixel, there are two gradients: The
+          partial derivative of $x$ and $y$. Now the original image got
+          transformed to two feature maps of equal size which represents the
+          gradient. These feature maps are splitted into patches and a
+          histogram of the directions is calcualted for each patch. \gls{HOG}
+          features are used in~\cite{bourdev2010detecting,felzenszwalb2010object}.
     \item SIFT: TODO
-    \item TODO!
 \end{itemize}
