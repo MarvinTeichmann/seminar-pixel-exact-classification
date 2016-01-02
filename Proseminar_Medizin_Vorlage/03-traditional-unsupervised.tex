@@ -49,27 +49,27 @@ in~\cite{carreira2010constrained}.
 
 \subsubsection{Random Walks}
 
-TODO
+Random walks belong to the graph-based image segmentation algorithms. Random
+walk image segmentation usually works as follows: Some seed points are placed
+on the image for the different objects in the image. From every single pixel,
+the probability to reach the different seed points by a random walk is
+calculated. This is done by taking image gradients as described in
+\cref{subsec:features} for \gls{HOG} features. The class of the pixel is the
+class of which a seed point will be reached with highest probability. At first,
+this is an interactive segmentation method, but it can be extended to be
+non-interactive by using another segmentation methods output as seed points.
 
-Notes from \cite{meilpa2001learning}:
-
-\begin{itemize}
-    \item Normalized Cut (see \cite{shi2000normalized}) seems to be a special
-          case of this
-    \item Seems to be a \enquote{spectral method}
-    \item This is pairwise clustering. Clusters points which are similar and
-          optimize e.g. for maximum total intracluster similarity. In contrast,
-          to statistical clustering which assumes a probabilistic model which
-          generates the data, this only defines a similarity function.
-    \item Spectral clustering is a similarity based method. Spectral clustering
-          methods use eingenvalues / eigenvectors of the matrix obtained by the
-          similarity function.
-\end{itemize}
+It was shown in~\cite{meilpa2001learning} that normalized cuts
+(NCuts)~\cite{shi2000normalized} can be expressed with random walks.
 
 
-\subsubsection{Edge Detection}
+\subsubsection{Active Contour Models}
 
-See \cite{kass1988snakes}. (TODO)
+\Glspl{ACM} are segmentation models segment images roughly along edges, but
+try also to minimize a so called \textit{energy function}. They were initially
+described in~\cite{kass1988snakes}. \Glspl{ACM} be used to segment an image or
+to refine segmentation as it was done in~\cite{atkins1998fully} for brain
+\gls{MR} images.
 
 
 \subsubsection{Watershed Segmentation}\label{subsec:watershed}
