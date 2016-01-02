@@ -8,88 +8,71 @@ are compared. This section gives an overview of those quality measures.
 
 
 \subsubsection{Accuracy}
-One way to compare segmentation algorithms is by the pixel-wise accuracy of the
-segmentation they find (per-pixel rate) as done in many publications
-\cite{shotton2006textonboost} (TODO: Name more). Taking the pixel-wise
-classification accuracy only has two major drawbacks:
+Showing the correctness of the classification result is done in most
+publications about semantic segmentation. However, there are a couple of
+different ways how this accuracy can be displayed.
 
-\begin{itemize}
-    \item Tasks like segmenting images for self-driving cars have large regions
+For this section, let $k \in \mathbb{N}$ be the number of classes, $n_{ij} \in
+\mathbb{N}_0$ with $i,j \in 1, \dots, k$ be the number of pixels which belong to
+class~$i$ and were labeled as class~$j$. Let $t_i = \sum_{j=1}^k n_{ij}$ be the
+total number of pixels of class~$i$.
+
+One way to compare segmentation algorithms is by the pixel-wise accuracy of the
+predicted segmentation as done in many publications
+\cite{shotton2006textonboost,csurka2008simple,long2014fully}. This is also
+called per-pixel rate and defined as $\frac{\sum_{i=1}^k n_{ii}}{\sum_{i=1}^k
+t_i}$. Taking the pixel-wise classification accuracy has two major drawbacks:
+
+\begin{problemnr}
+    \item \label{item:problem-large-regions} Tasks like segmenting images for self-driving cars have large regions
           which have one class. This makes achieving classification accuracies
-          of more than \SI{30}{\percent} only with a priori knowledge possible.
+          of more than \SI{30}{\percent} with a priori knowledge only possible.
     \item The manually labeled images could have a more coarse labeling. For
           example, a human classifier could have labeled a region as
           \enquote{car} and the algortihm could have split that region into
           the general \enquote{car} and the more specific \enquote{wheel of a
           car}
+\end{problemnr}
+\goodbreak
+Three accuracy metrics which do not suffer from
+\cref{item:problem-large-regions} are used in~\cite{long2014fully}:\nobreak%
+\begin{itemize}
+    \item \textit{mean accuracy}: $\frac{1}{k} \cdot \sum_{i=1}^n \frac{n_{ii}}{t_i}$
+    \item \textit{mean intersection over union}: \hfill\\$\frac{1}{k} \cdot \sum_{i=1}^k \frac{n_{ii}}{t_i + \sum_{j=1}^k n_{ji}-n_{ii}}$
+    \item \textit{frequency weighted intersection over union}:
+          ${({\sum_{p=1}^k t_p})}^{-1} \sum_i \frac{t_i n_{ii}}{t_i + \sum_{j=1}^k n_{ji} - n_{ii}}$
 \end{itemize}
 
 Another problem might be pixels which cannot be assigend one of the known
 classes. For this reason, \cite{shotton2006textonboost} makes use of a void
 class. This class gets completely ignored for all quality measures. Hence the
-total number of pixels is assumed to be $\text{width} \cdot \text{height} - \text{nr of void pixels}$.
+total number of pixels is assumed to be $\text{width} \cdot \text{height} - \text{number of void pixels}$.
 
 One way to deal with this problem is giving a confuscation matrix as done in
 \cite{shotton2006textonboost}. However, this approach is not feasible if many
 classes are given.
 
-Let $k \in \mathbb{N}$ be the number of classes, $n_{ij} \in \mathbb{N}_0$ with
-$i,j \in 1, \dot, k$ be the number of pixels which belong to class~$i$ and were
-labeled as class~$j$. Let $t_i = \sum_{j=1}^k n_{ij}$ be the total number of
-pixels of class $k$.
 
-One accuracy measure is \textit{Normalized Probabilistic Rand} (NPR) index
-which was introduced in \cite{unnikrishnan2005measure}.
-
-Another measure was introduced by~\cite{celebi2009improved}. TODO: Explain it
-
-Another framework is introduced by~\cite{jaber2010probabilistic}. TODO: Explain
-it
-
-\cite{long2014fully} makes use of three metrics:
-
-\begin{itemize}
-    \item pixel accuracy: $\sum_{i=1}^k \frac{n_{ii}}{\sum_{i=1}^k t_i}$
-    \item mean accuracy: $\frac{1}{k} \cdot \sum_{i=1}^n \frac{n_{ii}}{t_i}$
-    \item mean intersection over union: $\frac{1}{k} \cdot \sum_{i=1}^k \frac{n_{ii}}{t_i + \sum_{j=1}^k n_{ji}-n_{ii}}$
-    \item frequency weighted intersection over union:
-          ${({\sum_{p=1}^k t_p})}^{-1} \sum_i \frac{t_i n_{ii}}{t_i + \sum_{j=1}^k n_{ji} - n_{ii}}$
-\end{itemize}
-
-Several accuracy measures were suggested for non-semantic
-segmentation,\cite{martin2001database} but the reason for creating them seems
+A lot of other measures for the accuracy of segmentations were proposed for
+non-semantic segmentation. One of those accuracy measures is \textit{Normalized
+Probabilistic Rand} (NPR) index which was introduced in
+\cite{unnikrishnan2005measure} and evaluated in~\cite{celebi2009improved}
+on dermoscopy images. Other non-semantic segmentation measures were introduced
+in~\cite{martin2001database}, but the reason for creating them seems
 to be to deal with the under-defined task description of non-semantic
 segmentation. These accuracy measures try to deal with different levels of
 coarsity of the segmentation. This is much less of a problem in semantic
-segmentation.
+segmentation and thus those measures are not explained here.
 
-$F$-measure is used by~\cite{cohen2015memory}.
+The $F$-measure is useful for binary classification task such as the KITTI road
+segmentation benchmark~\cite{Fritsch2013ITSC} or crypt segmentation as done
+by~\cite{cohen2015memory}. It is calculated as \enquote{the harmonic mean of
+the precision and recall}~\cite{pantofaru2005comparison}:
+\[F_\beta = (1+\beta)^2 \frac{\text{tp}}{(1+\beta^2)\cdot \text{tp}+ \beta^2 \cdot \text{fn} + \text{fp}}\]
+where $\beta=1$ is chosen in most cases and \texttt{tp} means \textit{true
+positive}, \texttt{fn} means \textit{false negative} and  \texttt{fp} means
+\textit{false positive}.
 
-\enquote{The reported statistic is the F-measure, the harmonic mean of the precision
-and recall. This measure has the downside of considering only region boundaries
-in- stead of the regions themselves. Since region difference is a quadratic
-measure whereas boundary difference is a linear measure, small boundary
-imperfections will affect the measure more than they necessarily should.} in
-A Comparison of Image Segmentation Algorithms
-
-See also: \cite{yang2012layered,tighe2014scene} correct if hypothesis and
-ground trouth overlap by more than \SI{50}{\percent}.
-Mention Precision, Recall, $F$-Score?
-
-----
-
-\cite{tighe2014scene} makes use of per-pixel rate and per-class rate.
-
-\enquote{For our pixel labeling, consistent with [20], we report the
-number of pixels correctly classified (per-pixel rate) and the
-average of per-class rates. The per-pixel rate indicates how
-well the system is doing on the large common classes, while
-the average per-class rate is more affected by the smaller,
-less common classes.}
-
-TODO: How is per-class rate defined?
-
-TODO: Mention images with semantic segmentation overlay as used in \cite{gould2009decomposing}.
 
 \subsubsection{Speed}%
 \label{subsubsec:speed-quality-measure}%
@@ -99,13 +82,26 @@ classifies pixel as street or no-street and thus makes a semantic segmentation,
 every image needs to be processed within
 \SI{20}{\milli\second}~\cite{bittel2015pixel}.
 
-TODO: Which categories are there?
+Most papers do not give exact values for the time their application needs. One
+reason might be that this is very hardware, implementation and in some cases
+even data specific. For example, \cite{hoover1996experimental} notes that
+their algorithm needs 10~seconds on a Sun SparcStation~20. The fastest CPU
+ever produced for this system had~\SI{200}{\mega\hertz}. Comparing this with
+an Intel~i7-4820K with \SI{3.9}{\giga\hertz} would not be meaningful.
 
-TODO: Health informatics: Which times?
+However, it does still make sense to mention the execution time as well as the
+hardware in individual papers. This gives the interested reader the possibility
+to estimate how difficult it might be to adjust the algorithm to work in the
+required time-constraints. Also, it should be noted if the algorithm can be
+executed in parallel as standard \glspl{GPU} on the consumer market can execute
+up to 256~kernels in parallel.
 
-The \gls{CRF} approach presented in \cite{shotton2006textonboost} takes
-approximately three minutes to segment per image on a \SI{2.1}{\giga\hertz}
-machine with \SI{2}{\giga\byte} memory.
+% TODO: Which categories are there?
+% TODO: Health informatics: Which times?
+
+% The \gls{CRF} approach presented in \cite{shotton2006textonboost} takes
+% approximately three minutes to segment per image on a \SI{2.1}{\giga\hertz}
+% machine with \SI{2}{\giga\byte} memory.
 
 
 \subsubsection{Stability}%

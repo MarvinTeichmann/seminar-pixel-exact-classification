@@ -190,7 +190,7 @@ Source: A Comparison of Image Segmentation Algorithms
 ## Begun
 * Semantic texton forests for image categorization and segmentation - Cited by 698
 * http://riweb-backend.ri.cmu.edu/pub_files/pub4/pantofaru_caroline_2005_1/pantofaru_caroline_2005_1.pdf
-
+* Decomposing a scene into geometric and semantically consistent regions - Cited by 358
 
 ## Too old
 

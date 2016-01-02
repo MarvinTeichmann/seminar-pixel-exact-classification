@@ -35,6 +35,16 @@
 % Packages like in our pixel-wise-street-segmentation
 % nameinlink, noabbrev: not supported by arxiv :-(
 \usepackage[nameinlink, noabbrev,capitalise]{cleveref} % has to be after hyperref, nthe l.137 ...eam attr{/N 4}  file{sRGBIEC1966-2.1.icmorem, amsthm
+
+
+% List stuff
+\usepackage{enumitem}
+\crefname{problemnr}{\textup{problem}}{\textup{problems}}
+\newlist{problemnr}{enumerate}{1}
+\setlist[problemnr]{label={P\arabic*}, ref=P\arabic*}
+\crefalias{problemnri}{problemnr}
+
+
 \usepackage[binary-units,group-separator={,}]{siunitx}
 \sisetup{per-mode=fraction,binary-units=true}
 \DeclareSIUnit\pixel{px}
