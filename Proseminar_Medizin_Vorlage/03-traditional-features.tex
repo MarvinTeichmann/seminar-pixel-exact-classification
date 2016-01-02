@@ -4,7 +4,7 @@
 \subsection{Features}\label{subsec:features}%
 The choice of features is very important in traditional approaches.
 
-Poselets were used successfully in \cite{bourdev2010detecting,brox2011object}.
+\textit{Poselets} were used successfully in \cite{bourdev2010detecting,brox2011object}.
 Those features rely on manually added extra keypoints such as \enquote{right
 shoulder}, \enquote{left shoulder}, \enquote{right knee} and \enquote{left
 knee}. They were originally used for human pose estimation. Finding those extra
@@ -28,6 +28,26 @@ Other features include:
           transformed to two feature maps of equal size which represents the
           gradient. These feature maps are splitted into patches and a
           histogram of the directions is calcualted for each patch. \gls{HOG}
-          features are used in~\cite{bourdev2010detecting,felzenszwalb2010object}.
-    \item SIFT: TODO
+          were proposed in~\cite{1467360} and
+          are used in~\cite{bourdev2010detecting,felzenszwalb2010object}.
+    \item \Gls{SIFT} feature descriptors find keypoints in an image. The image patch
+          of the size $16 \times 16$ around the keypoint is taken. This patch
+          is divided in $16$ distinct parts of the size $4 \times 4$. For each
+          of those parts a histogram of 8~orientations is calculated similar as
+          for \gls{HOG} features. This results in a 128-dimensional feature
+          vector for each keypoint.
+
+          \Gls{SIFT} is described in detail in~\cite{raey}.
+
+          % SIFT descriptors are multi-image representations of an image
+          % neighborhood. They are Gaussian derivatives computed at 8
+          % orientation planes over a 4x4 grid of spatial locations, giving a
+          % 128-dimension vector. Fig. 1 shows an example of the maps of
+          % gradient magnitude corresponding to the 8 orientations.
+    \item \Gls{BOV}, also called \textit{bag of keypoints}, is based on vector
+          quantization. Similar to \gls{HOG} features, \gls{BOV} features are
+          histograms which count the number of occurences of certain patterns
+          within a patch of the image. \Gls{BOV} are described
+          in~\cite{csurka2004visual} and used in combination with \gls{SIFT}
+          feature descriptors in~\cite{csurka2008simple}.
 \end{itemize}
