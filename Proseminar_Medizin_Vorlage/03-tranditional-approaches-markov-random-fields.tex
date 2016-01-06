@@ -1,45 +1,77 @@
 %!TEX root = vorlage.tex
 % Martin Thoma
 
+\subsection{Markov Random Fields}\label{subsec:markov-random-fields}
+\Glspl{MRF} are undirected probabilistic graphical models. In the associated
+graph $G=(\mathcal{V}, \mathcal{E})$, nodes represent random variables and
+edges represent conditional dependencies. Inference is done with the \gls{MAP}
+estimation and training with a maximum likelihood approach or \gls{ICM}.
+
+Typically, a random variable represents a class relationship of a single pixel
+and edges represent pixel neighborhood in computer vision problems segmentation problems
+where \glspl{MRF} are used. The pixel neighborhood might either be a
+4-neighborhood (north, east, south west) or an 8-neighborhood (north,
+north-east, east, south-east, south, south-west, west, north-west).
+
+For example, say $\mathbf{x}$ is the feature vector from an image, $\mathbf{y}$
+is the vector of random variables. Then the conditional probability of $\mathbf{y}$
+given $\mathbf{x}$ can be expressed as
+\[P(\mathbf{y}|\mathbf{x}) = \frac{1}{Z(\mathbf{x})} \exp(-E(\mathbf{y};\mathbf{x}))\]
+where $Z(\mathbf{x}) = \sum_{\mathbf{y}} \exp(-E(\mathbf{y};\mathbf{x}))$ is
+a normalization term called the \textit{partition function}.
+
+Typically, the energy function $E$ is of the structure
+
+\[E(\mathbf{y}, \mathbf{x}) = \sum_{i \in \mathcal{V}} \psi_i^U (y_i; \mathbf{x}) + \sum_{ij \in \mathcal{E}} \psi_{ij}^P(y_i, y_j, \mathbf{x}) + \sum_{c \in \mathcal{C}} \psi_c^H(\mathbf{y}_c; \mathbf{x})\]
+
+where $\psi_i^U$ represents unary terms, $\psi_{ij}^P$ represents pairwise
+terms and $\psi_c^H$ represents higher-order terms. $\mathcal{C}$ is the set
+of all cliques in $G$.
+
+
+\Glspl{MRF} are a very wide-spread model in computer vision. Excellent
+introductions to \glspl{MRF} are given by
+\cite{blake2011markov,murphy2012machine}.
+
+
+% Where / how it was used.
+Grid-like / pairwise \gls{MRF} is used in~\cite{rother2004grabcut}.
+
+Other \glspl{MRF}: \cite{zhang2001segmentation} and \cite{moser2012markov}.
+
+\cite{shotton2006textonboost} uses a 4-connected grid.
+
+% Characterizations of MRF:
+% Label space: binary vs multi-label; homogeneous vs heterogeneous
+% Order: unary vs pairwise vs higher-order
+% Structure: chain vs tree vs grid vs general graph; neighborhood size
+% Potentials: submodular, convex, compressible
+
+
+
+% Markov Random Fields (A Rough Guide)
+% http://www.mee.tcd.ie/~sigmedia/pmwiki/uploads/Main.Tutorials/mrf_tutorial.pdf
+
+% Markov Random Fields and Stochastic Image Models
+% http://cis-linux1.temple.edu/~latecki/Courses/RobotFall08/Papers/MRFBauman.pdf
+
+% Markov Random Fields
+% http://signal.ee.psu.edu/mrf.pdf
+
+% Markov Random Fields for Computer Vision (Part 1)
+% http://users.cecs.anu.edu.au/~sgould/papers/part1-MLSS-2011.pdf  --- very nice!
+
+
+% Markov Random Fields and Stochastic Image Models
+% https://engineering.purdue.edu/~bouman/publications/tutorials/mrf_tutorial/view.pdf
+
+
 % Markov Random Fields in Image Segmentation
 % http://web.inf.u-szeged.hu/~ssip/2011/PDF/ssip2011_Kato.pdf
 
 % Book about markov random fields in computer vision:
 % https://mitpress.mit.edu/sites/default/files/titles/content/9780262015776_sch_0001.pdf
 
-% An Introduction to Conditional Random Fields
-% http://homepages.inf.ed.ac.uk/csutton/publications/crftutv2.pdf
-
-% Tutorial on Markov Random Fields for Pixel Labeling
-% https://sml.forge.nicta.com.au/niml11/Tutorial_Vision.pdf
-
-% Markov Random Fields and Stochastic Image Models
-% https://engineering.purdue.edu/~bouman/publications/tutorials/mrf_tutorial/view.pdf
-
-% http://users.cecs.anu.edu.au/~sgould/papers/part1-MLSS-2011.pdf
-% http://signal.ee.psu.edu/mrf.pdf
-% http://www.mee.tcd.ie/~sigmedia/pmwiki/uploads/Main.Tutorials/mrf_tutorial.pdf
-
-\subsection{Markov Random Fields}\label{subsec:markov-random-fields}
-% Conditional Random Fields are undirected graphical models.
-% HMM is directed graphical model.
-
-% TODO: Probability space?
-A \Gls{MRF} is a tupel $(G, X)$, where $G=(V,E)$ is an undirected graph and
-$X=(X_V)_{v \in V}$ is a set of random variables which satisfy the pairwise
-Markov property, the local Markov property and the global Markov property:
-
-% https://en.wikipedia.org/wiki/Markov_random_field#Definition
-% \begin{itemize}
-%     \item \textbf{Pairwise Markov property}: $X_u \independent X_v | X_{V \setminus \Set{u, v}}$ if $\Set{u,v} \notin E$
-%     \item \textbf{Local Markov property}: $X_u \independent X_{V \setminus \Set{v | v \text{is } u \text{ or a neighbor of } u}} | X_{\text{neighbors of } v}$
-%     \item \textbf{Global Markov property}: $X_A \independent X_B | X_S$ where
-%           every path from a node in $A$ to a node in $B$ passes through $S$
-% \end{itemize}
-
-% is a probabilisitic model. They have the Markov property which is
-% typically displayed in an undirected graph which shows dependencies between the
-% random variables.
 
 \Glspl{CRF} and Boltzmann Machines are a variations of Markov random fields.
 
@@ -89,34 +121,45 @@ Markov property, the local Markov property and the global Markov property:
 % ---
 
 
-From \cite{yang2012layered}:
+% From \cite{yang2012layered}:
 
-> In contrast, semantic segmentation models have largely been built on top of
-Markov Random Field (MRF) models which enforce smoothness across pixel labels
+% > In contrast, semantic segmentation models have largely been built on top of
+% Markov Random Field (MRF) models which enforce smoothness across pixel labels
 
-\begin{itemize}
-    \item X. He, R. Zemel, and M. Carreira-Perpinan, “Multiscale Conditional
-          Random Fields for Image Labeling,” Proc. IEEE CS Conf. Computer
-          Vision and Pattern Recognition, vol. 2, 2004.
-    \item A. Torralba, K. Murphy, and W. Freeman, “Contextual Models for
-          Object Detection Using Boosted Random Fields,” Proc. Advances in
-          Neural Information Processing Systems, 2004.
-    \item S. Kumar and M. Hebert, “A Hierarchical Field Framework for
-          Unified Context-Based Classification,” Proc. 10th IEEE Int’l Conf.
-          Computer Vision, vol. 2, 2005.
-    \item \Glspl{CRF} were applied in \cite{shotton2006textonboost}.
-    \item Z. Tu, “Auto-Context and Its Application to High-Level Vision
-          Tasks,” Proc. IEEE Conf. Computer Vision and Pattern Recognition,
-          2008.
-\end{itemize}
+% \begin{itemize}
+%     \item X. He, R. Zemel, and M. Carreira-Perpinan, “Multiscale Conditional
+%           Random Fields for Image Labeling,” Proc. IEEE CS Conf. Computer
+%           Vision and Pattern Recognition, vol. 2, 2004.
+%     \item A. Torralba, K. Murphy, and W. Freeman, “Contextual Models for
+%           Object Detection Using Boosted Random Fields,” Proc. Advances in
+%           Neural Information Processing Systems, 2004.
+%     \item S. Kumar and M. Hebert, “A Hierarchical Field Framework for
+%           Unified Context-Based Classification,” Proc. 10th IEEE Int’l Conf.
+%           Computer Vision, vol. 2, 2005.
+%     \item \Glspl{CRF} were applied in \cite{shotton2006textonboost}.
+%     \item Z. Tu, “Auto-Context and Its Application to High-Level Vision
+%           Tasks,” Proc. IEEE Conf. Computer Vision and Pattern Recognition,
+%           2008.
+% \end{itemize}
 
 
-A method similar to \glspl{CRF} was proposed in~\cite{gonfaus2010harmony}.
-The system of Gonfaus~et.al. ranked~1st by mean accuracy in the segmentation
-task of the PASCAL VOC 2010 challenge~\cite{everingham2010pascal}.
 
-TODO:
 
-\begin{itemize}
-    \item "Associative hierarchical CRF" by "Oxford Brookes University", "Lubor Ladicky Christopher Russell Philip Torr", see \href{http://host.robots.ox.ac.uk/pascal/VOC/voc2010/results/index.html}{pascal voc 2010}
-\end{itemize}
+
+
+
+\subsection{Conditional Random Fields}\label{subsec:conditional-random-fields}
+
+
+% An Introduction to Conditional Random Fields
+% http://homepages.inf.ed.ac.uk/csutton/publications/crftutv2.pdf
+
+% TODO:
+
+% \begin{itemize}
+%     \item "Associative hierarchical CRF" by "Oxford Brookes University", "Lubor Ladicky Christopher Russell Philip Torr", see \href{http://host.robots.ox.ac.uk/pascal/VOC/voc2010/results/index.html}{pascal voc 2010}
+% \end{itemize}
+
+% A method similar to \glspl{CRF} was proposed in~\cite{gonfaus2010harmony}.
+% The system of Gonfaus~et.al. ranked~1st by mean accuracy in the segmentation
+% task of the PASCAL VOC 2010 challenge~\cite{everingham2010pascal}.
