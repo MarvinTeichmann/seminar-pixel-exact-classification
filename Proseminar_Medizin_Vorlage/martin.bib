@@ -48,6 +48,22 @@
   Url                      = {http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=668699}
 }
 
+@Article{10.2307/2345426,
+  Title                    = {On the Statistical Analysis of Dirty Pictures},
+  Author                   = {Julian Besag},
+  Journal                  = {Journal of the Royal Statistical Society. Series B (Methodological)},
+  Year                     = {1986},
+  Number                   = {3},
+  Pages                    = {259-302},
+  Volume                   = {48},
+
+  Abstract                 = {A continuous two-dimensional region is partitioned into a fine rectangular array of sites or "pixels", each pixel having a particular "colour" belonging to a prescribed finite set. The true colouring of the region is unknown but, associated with each pixel, there is a possibly multivariate record which conveys imperfect information about its colour according to a known statistical model. The aim is to reconstruct the true scene, with the additional knowledge that pixels close together tend to have the same or similar colours. In this paper, it is assumed that the local characteristics of the true scene can be represented by a non-degenerate Markov random field. Such information can be combined with the records by Bayes' theorem and the true scene can be estimated according to standard criteria. However, the computational burden is enormous and the reconstruction may reflect undesirable large-scale properties of the random field. Thus, a simple, iterative method of reconstruction is proposed, which does not depend on these large-scale characteristics. The method is illustrated by computer simulations in which the original scene is not directly related to the assumed random field. Some complications, including parameter estimation, are discussed. Potential applications are mentioned briefly.},
+  File                     = {:/home/moose/segmentation-paper/on-the-statistical-analysis-of-dirty-pictures.pdf:PDF},
+  ISSN                     = {00359246},
+  Publisher                = {[Royal Statistical Society, Wiley]},
+  Url                      = {http://www.jstor.org/stable/2345426}
+}
+
 @Article{beucher1992morphological,
   Title                    = {The morphological approach to segmentation: the watershed transformation},
   Author                   = {Beucher, Serge and Meyer, Fernand},
@@ -212,6 +228,19 @@ They apply data augmentation (rotating, flipping).},
   File                     = {:/home/moose/segmentation-paper/adaptive-k-mean-clustering-00730379.pdf:PDF},
   Publisher                = {IEEE},
   Url                      = {http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=730379}
+}
+
+@Article{cheng2001color,
+  Title                    = {Color image segmentation: advances and prospects},
+  Author                   = {Cheng, Heng-Da and Jiang, XH and Sun, Ying and Wang, Jingli},
+  Journal                  = {Pattern recognition},
+  Year                     = {2001},
+  Number                   = {12},
+  Pages                    = {2259--2281},
+  Volume                   = {34},
+
+  File                     = {:/home/moose/segmentation-paper/color-image-segmentation-advances-and-prospects.pdf:PDF},
+  Publisher                = {Elsevier}
 }
 
 @InProceedings{christoudias2002synergism,
@@ -455,6 +484,23 @@ They apply data augmentation (rotating, flipping).},
   Year                     = {1975}
 }
 
+@InProceedings{multiscale04,
+  Title                    = {Multiscale conditional random fields for image labeling},
+  Author                   = {Xuming He and Zemel, R.S. and Carreira-Perpindn, M.A.},
+  Booktitle                = {Computer Vision and Pattern Recognition, 2004. CVPR 2004. Proceedings of the 2004 IEEE Computer Society Conference on},
+  Year                     = {2004},
+  Month                    = jun,
+  Pages                    = {II-695-II-702 Vol.2},
+  Volume                   = {2},
+
+  Abstract                 = {We propose an approach to include contextual features for labeling images, in which each pixel is assigned to one of a finite set of labels. The features are incorporated into a probabilistic framework, which combines the outputs of several components. Components differ in the information they encode. Some focus on the image-label mapping, while others focus solely on patterns within the label field. Components also differ in their scale, as some focus on fine-resolution patterns while others on coarser, more global structure. A supervised version of the contrastive divergence algorithm is applied to learn these features from labeled image data. We demonstrate performance on two real-world image databases and compare it to a classifier and a Markov random field.},
+  Doi                      = {10.1109/CVPR.2004.1315232},
+  File                     = {:/home/moose/segmentation-paper/multiscale-conditional-random-fields-for-image-labeling.pdf:PDF},
+  ISSN                     = {1063-6919},
+  Keywords                 = {Markov processes;image classification;image resolution;random processes;visual databases;Markov random field;contextual features;fine-resolution patterns;image classification;image databases;image labeling;image-label mapping;multiscale conditional random fields;Animals;Computer science;Helium;Image databases;Image segmentation;Labeling;Markov random fields;Parameter estimation;Pixel;Wildlife},
+  Url                      = {http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=1315232}
+}
+
 @InProceedings{ho1995random,
   Title                    = {Random decision forests},
   Author                   = {Ho, Tin Kam},
@@ -579,6 +625,35 @@ cover classications from satellite images. The SVM was compared to three other p
   File                     = {:/home/moose/segmentation-paper/snakes-active-contour-models.pdf:PDF},
   Publisher                = {Springer},
   Url                      = {http://link.springer.com/article/10.1007/BF00133570}
+}
+
+@Article{kasson1992analysis,
+  Title                    = {An analysis of selected computer interchange color spaces},
+  Author                   = {Kasson, James M and Plouffe, Wil},
+  Journal                  = {ACM Transactions on Graphics (TOG)},
+  Year                     = {1992},
+  Number                   = {4},
+  Pages                    = {373--405},
+  Volume                   = {11},
+
+  File                     = {:/home/moose/segmentation-paper/an-analysis-of-selected-computer-interchange-color-spaces.pdf:PDF},
+  Publisher                = {ACM}
+}
+
+@InProceedings{associative09,
+  Title                    = {Associative hierarchical CRFs for object class image segmentation},
+  Author                   = {Ladick\'{y}, L. and Russell, C. and Kohli, P. and Torr, P.H.S.},
+  Booktitle                = {Computer Vision, 2009 IEEE 12th International Conference on},
+  Year                     = {2009},
+  Month                    = sept,
+  Pages                    = {739-746},
+
+  Abstract                 = {Most methods for object class segmentation are formulated as a labelling problem over a single choice of quantisation of an image space - pixels, segments or group of segments. It is well known that each quantisation has its fair share of pros and cons; and the existence of a common optimal quantisation level suitable for all object categories is highly unlikely. Motivated by this observation, we propose a hierarchical random field model, that allows integration of features computed at different levels of the quantisation hierarchy. MAP inference in this model can be performed efficiently using powerful graph cut based move making algorithms. Our framework generalises much of the previous work based on pixels or segments. We evaluate its efficiency on some of the most challenging data-sets for object class segmentation, and show it obtains state-of-the-art results.},
+  Doi                      = {10.1109/ICCV.2009.5459248},
+  File                     = {:/home/moose/segmentation-paper/associative-hierarchical-crfs-for-object-class-image-segmentation.pdf:PDF},
+  ISSN                     = {1550-5499},
+  Keywords                 = {image segmentation;quantisation (signal);MAP inference;associative hierarchical conditional random field;data sets;hierarchical random field model;image space;labelling problem;object class image segmentation;optimal quantisation level;pixels;powerful graph cut;quantisation hierarchy;Color;Computer vision;Image segmentation;Inference algorithms;Labeling;Object recognition;Object segmentation;Optimization methods;Pixel;Quantization},
+  Url                      = {http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=5459248}
 }
 
 @Article{387576,
@@ -1095,5 +1170,14 @@ non-semantic segmentation},
   File                     = {:/home/moose/segmentation-paper/segmentation-of-brain-mr-images-00906424.pdf:PDF},
   Publisher                = {IEEE},
   Url                      = {http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=906424}
+}
+
+@Misc{VOC2010Results,
+  Title                    = {VOC2010 PRELIMINARY RESULTS},
+  Year                     = {2010},
+
+  Owner                    = {moose},
+  Timestamp                = {2016.01.06},
+  Url                      = {http://host.robots.ox.ac.uk/pascal/VOC/voc2010/results/index.html}
 }
 

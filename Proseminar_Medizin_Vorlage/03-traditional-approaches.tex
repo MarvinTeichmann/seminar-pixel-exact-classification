@@ -16,8 +16,9 @@ Forests are described in \cref{subsec:random-forests}, Markov Random Fields in
 \cref{subsec:markov-random-fields} and \glspl{SVM} in
 \cref{subsec:trad-SVM}.
 Pre- and Postprocessing are covered in \cref{subsec:preprocessing-methods} and
-\cref{subsec:post-processing-methods}. The respective advantages of the
-classifiers are discussed in \cref{subsec:traditional-approaches-discussion}.
+\cref{subsec:post-processing-methods}.
+% The respective advantages of the classifiers are discussed in
+% \cref{subsec:traditional-approaches-discussion}.
 
 \input{03-traditional-features}
 \input{03-traditional-unsupervised}
@@ -27,37 +28,50 @@ classifiers are discussed in \cref{subsec:traditional-approaches-discussion}.
 
 
 \subsection{Pre-processing methods}\label{subsec:preprocessing-methods}%
-A typical image is in the RGB color space, but depending on the classifier
-and the problem another color space might result in better segmentations. RGB,
-YcBcr, HSL, Lab and YIQ are some examples used by \cite{cohen2015memory}.
+Pre-processing methods make the classification task easier by applying domain
+knowledge. This can be by enhancing the strength of the correlation between
+classes and features or by removing unnecessary information through
+dimensionality reduction.
 
-\Gls{PCA} is applied by~\cite{chen2011pixel} to reduce the dimensionality of
-the feature space, histogram equalization is applied to improve
+A typical image is in the RGB color space, but depending on the classifier and
+the problem another color space might result in better segmentations. RGB,
+YcBcr, HSL, Lab and YIQ are some examples used by \cite{cohen2015memory}. No
+single color space has been proven to be superior to all others in all
+contexts~\cite{cheng2001color}. However, the most common choices seem to be RGB
+and HSI. The reason for chosing RGB might be simplicity in the support by
+programming languages, whereas the choice of HSI might make it simpler for the
+classifier to get invariant to illumination. One reason for choosing CIE-L*a*b*
+color space is that it approximates human perception of
+brightnes~\cite{kasson1992analysis}. Another way of improving the structure
+within an image is histogram equalization, which can be applied to improve
 contrast~\cite{pizer1987adaptive,4228537}.
+
+One way of doing dimensionality reduction is \gls{PCA}, which is applied
+by~\cite{chen2011pixel}.
 
 
 \subsection{Post-processing methods}\label{subsec:post-processing-methods}%
 Post-processing methods are an important part of traditional pixel-level
-segmentation approaches. Active contour models are one example of a
-post-processing method~\cite{kass1988snakes}.
+segmentation approaches. They refine a found segmentation and remove obvious
+errors. For example, the morphological operations \textit{opening} and
+\textit{closing} can remove noise. The opening operation is a dilation followed
+by a erosion. This removes tiny segments. The closing operation is a erosion
+followed by a dilation. This removes tiny gaps in otherwise filled regions.
+They were used in~\cite{chen1998image} for biomedical image segmentation.
 
-A refinement of the found segmentation can be obtained by adjusting a found
-semantic segmentation to match close edges. This was used
-in~\cite{brox2011object} with an ultra-metric contour map
-Map~\cite{arbelaez2009contours}.
+Another way of refinement of the found segmentation is by adjusting the
+segmentation to match close edges. This was used in~\cite{brox2011object} with
+an ultra-metric contour map~\cite{arbelaez2009contours}.
 
-Morphological operations, namely opening and closing, are methods for noise
-removal. The opening operation is a dilation followed by a erosion. This
-removes tiny segments. The closing operation is a erosion followed by a
-dilation. This removes tiny gaps in otherwise filled regions. They were used
-in~\cite{chen1998image} for biomedical image segmentation.
+Active contour models are another example of a post-processing
+method~\cite{kass1988snakes}.
 
 
-\subsection{Discussion}\label{subsec:traditional-approaches-discussion}%
-According to \cite{pantofaru2005comparison}, the mean shift algorithm produces
-segmentations that correspond well to human perception, but it is sensitive to
-its parameters. Depending on them, different granularities of the segmentation
-can be achieved. \cite{pantofaru2005comparison} draws the conclusion, that
-the segmentations found by the graph based image segmentation approach
-in \cite{felzenszwalb2004efficient} are inferior to the segmentations found
-by the mean shift algorithm described in \cite{comaniciu2002mean}.
+% \subsection{Discussion}\label{subsec:traditional-approaches-discussion}%
+% According to \cite{pantofaru2005comparison}, the mean shift algorithm produces
+% segmentations that correspond well to human perception, but it is sensitive to
+% its parameters. Depending on them, different granularities of the segmentation
+% can be achieved. \cite{pantofaru2005comparison} draws the conclusion, that
+% the segmentations found by the graph based image segmentation approach
+% in \cite{felzenszwalb2004efficient} are inferior to the segmentations found
+% by the mean shift algorithm described in \cite{comaniciu2002mean}.
