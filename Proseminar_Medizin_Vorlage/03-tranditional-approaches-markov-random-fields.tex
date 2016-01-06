@@ -5,7 +5,8 @@
 \Glspl{MRF} are undirected probabilistic graphical models. In the associated
 graph $G=(\mathcal{V}, \mathcal{E})$, nodes represent random variables and
 edges represent conditional dependencies. Inference is done with the \gls{MAP}
-estimation and training with a maximum likelihood approach or \gls{ICM}.
+estimation and training with a maximum likelihood approach or
+\gls{ICM}~\cite{10.2307/2345426}.
 
 Typically, a random variable represents a class relationship of a single pixel
 and edges represent pixel neighborhood in computer vision problems segmentation problems
@@ -75,6 +76,7 @@ Other \glspl{MRF}: \cite{zhang2001segmentation} and \cite{moser2012markov}.
 
 \Glspl{CRF} and Boltzmann Machines are a variations of Markov random fields.
 
+% Markov Random Field Image Models and Their Applications to Computer Vision
 % http://www.mathunion.org/ICM/ICM1986.2/Main/icm1986.2.1496.1517.ocr.pdf
 %
 % Segmentation of brain MR images through a hidden Markov random field model
@@ -85,10 +87,6 @@ Other \glspl{MRF}: \cite{zhang2001segmentation} and \cite{moser2012markov}.
 % define only local properties. allows by transitivity to get a model
 % for global properties.
 
-% definition:
-
-% A \gls{MRF} is a countable set of random variables. In the task of segmentation,
-% they are often index-based spacial positions.
 
 % \begin{itemize}
 %     \item What is your set of random models? (e.g. Ising model: one for each pixel)
@@ -101,10 +99,10 @@ Other \glspl{MRF}: \cite{zhang2001segmentation} and \cite{moser2012markov}.
 % On those, define an undirected hypergraph $G(V, E)$. $V$ are pixels, $E$ is
 % typically defined by neighboring pixels.
 
-% good: 
+% good:
 
 % \begin{itemize}
-%     \item Convenient modeling:Just write down energie function (in some cases)
+%     \item Convenient modeling:Just write down energy function (in some cases)
 %           do define entire model
 %     \item fast inference (only 1 or 2 variants)
 %     \item sometimes good performance
@@ -117,49 +115,37 @@ Other \glspl{MRF}: \cite{zhang2001segmentation} and \cite{moser2012markov}.
 % \end{itemize}
 
 
-
-% ---
-
-
 % From \cite{yang2012layered}:
 
 % > In contrast, semantic segmentation models have largely been built on top of
 % Markov Random Field (MRF) models which enforce smoothness across pixel labels
 
 % \begin{itemize}
-%     \item X. He, R. Zemel, and M. Carreira-Perpinan, “Multiscale Conditional
-%           Random Fields for Image Labeling,” Proc. IEEE CS Conf. Computer
-%           Vision and Pattern Recognition, vol. 2, 2004.
 %     \item A. Torralba, K. Murphy, and W. Freeman, “Contextual Models for
 %           Object Detection Using Boosted Random Fields,” Proc. Advances in
 %           Neural Information Processing Systems, 2004.
 %     \item S. Kumar and M. Hebert, “A Hierarchical Field Framework for
 %           Unified Context-Based Classification,” Proc. 10th IEEE Int’l Conf.
 %           Computer Vision, vol. 2, 2005.
-%     \item \Glspl{CRF} were applied in \cite{shotton2006textonboost}.
 %     \item Z. Tu, “Auto-Context and Its Application to High-Level Vision
 %           Tasks,” Proc. IEEE Conf. Computer Vision and Pattern Recognition,
 %           2008.
 % \end{itemize}
 
 
-
-
-
-
-
 \subsection{Conditional Random Fields}\label{subsec:conditional-random-fields}
 
+\Glspl{CRF} are \glspl{MRF} where all clique potentials are conditioned on
+input features~\cite{murphy2012machine}. % TODO: What exactly does that mean? Which implications does it have?
+
+\Glspl{CRF} are used in \cite{multiscale04,shotton2006textonboost}.
+
+\Glspl{CRF} as described in~\cite{associative09} have reached top performance
+in PASCAL VOC 2010~\cite{VOC2010Results}.
 
 % An Introduction to Conditional Random Fields
 % http://homepages.inf.ed.ac.uk/csutton/publications/crftutv2.pdf
 
-% TODO:
-
-% \begin{itemize}
-%     \item "Associative hierarchical CRF" by "Oxford Brookes University", "Lubor Ladicky Christopher Russell Philip Torr", see \href{http://host.robots.ox.ac.uk/pascal/VOC/voc2010/results/index.html}{pascal voc 2010}
-% \end{itemize}
-
-% A method similar to \glspl{CRF} was proposed in~\cite{gonfaus2010harmony}.
-% The system of Gonfaus~et.al. ranked~1st by mean accuracy in the segmentation
-% task of the PASCAL VOC 2010 challenge~\cite{everingham2010pascal}.
+A method similar to \glspl{CRF} was proposed in~\cite{gonfaus2010harmony}.
+The system of Gonfaus~et.al. ranked~1st by mean accuracy in the segmentation
+task of the PASCAL VOC 2010 challenge~\cite{everingham2010pascal}.
