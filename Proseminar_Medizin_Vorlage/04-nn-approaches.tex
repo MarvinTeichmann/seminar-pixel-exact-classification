@@ -1,3 +1,63 @@
 %!TEX root = vorlage.tex
 % Marvin Teichmann
+\clearpage
+
+\section{Convolution Neuronal Networks for Computer Vision Tasks}
+
+In order to reasonable train deep models on the high dimensional image data we need models which contains strong prior knowledge. Having prior knowledge about image data allows us to dramatically reduce the capacity (i.e. amount of parameters) without sacrificing much accuracy. CNNs rely on the following two strong assumptions.
+
+\begin{enumerate}
+    \item translation invariance and stationarity of statistics
+	\item locality of pixel dependencies
+\end{enumerate}
+
+Stationarity of statistics is archived by applying a translation invariance functions on each layer. Locality of pixel dependencies is accomplish by making the kernel of this function only depend on a relative small and dense reception field. 
+
+\subsection{Definitions and Notation}
+
+Multi-Layer perceptrons operate in Layer, each of shape $h \times w \times d$, where $h$ and $w$ are spatial coordinates and $d$ is the channel size. Let $x_{ij} \in R^d$ be the data of Layer $l$, than Layer $l+1$, given by $y_{ij} \in R^{d'}$ is given by computing a layer function 
+\begin{equation*}
+y_{nm} := F_{nm} (\{ x_{ij} \}_{0 \leq i \leq h, 0 \leq j \leq w}   )
+\end{equation*}
+
+In CNNs $F_{ij}$ is chosen to be translation invariant. $F_{ij}$ can therefore be described by a kernel  operation $f: R^k \rightarrow R$. The meta-parameter $k$ is called \emph{kernel size}, it usually has shape $k = n \times n$ with $n << h,w$.  The function $f$ is than applied to every location in a sliding-window fashion. Sometimes $s$ pixel are skipped in each dimension resulting in a down-sampling of factor $s$. The meta-parameter $s$ is called \emph{stride}. Hence we obtain
+
+\begin{align*}
+y_{ij} &:= F_{nm} (\{ x_{ij} \}_{0 \leq i \leq h, 0 \leq j \leq w}   ) \\&\; = f_{ks} (\{x_{s \cdot n + i, s \cdot m + j}  \}_{0 \leq i,j \leq k} ).
+\end{align*}
+
+Layer $l+1$ has hence shape $(h - k)/s \times (w-k)/s \times d'$, where $d'$ correspond to the number of filter applied. \emph{Padding} can be applied in order to avoid the loss of information at the border of the feature map in each layer. The output shape than is $h/s \times w/s \times d'$.
+
+\subsection{Layer Types}
+
+CNNs usually contain two types of local stationary layers. Namely they are \emph{convolutional} layers and \emph{pooling} layers.
+
+\subsubsection{Convolutional Layer}
+
+Convolutional layer implement a learnable convolution operation inside the neural network model. To archive that $f_{ks}$ is chosen to be linear function (i.e. a matrix). Observe that this can be viewed as a special case of an MLP, where curtained weights are enforced to be equal or fixed to be zero. The parameters can therefore be learned using a back-propagation approach. In computer graphics convolutions are a very powerful tool. They can be used for a verity of tasks including edge and area detection, contrast sharpening and image blurring. 
+
+Using Convolutional operations 
+
+
+ For convolutional layers the stride $s$ is usually choose to be one, unless $k$ is bigger than $5$ (cite: AlexNet, VGG, GoogLeNET (LeNet?)).
+ 
+ \subsubsection{Pooling Layer}
+
+The pooling layer applies non-learnable summary function. Typical choices are max- or averagepooling, computing the corresponding function on its input region. For the pooling layer typically $s$ is choose to be $k$ (VGG, GoogLeNET),  although overlapping pooling has been successfully applied (Alexnet). Applying pooling has two  advantages: Firstly it naturally reduces the spatial dimension enabling the network to learn more compact representation if the data and decreasing the amount of parameters in the succeeding layers. Secondly it introduces robust translation invariant. Minor shifts in the input data will not result in the same activation after pooling. The drawback of pooling however is, that fine-grained spatial information are lost in the process. This is a negligible disadvantage for non-spatial tasks such as classification but comes severe in segmentation. 
+
+ \subsubsection{Activation Function}
+
+\subsection{Relevant Network Architectures}
+
+
+
+
+% Explain CNN
+% Assumption
+
 \section{Neural Networks for Segmentation}
+
+
+\subsection{Convolutionize MLP}
+
+\clearpage
