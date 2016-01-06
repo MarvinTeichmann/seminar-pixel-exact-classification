@@ -2,6 +2,8 @@
 % Marvin Teichmann
 \clearpage
 
+%TODO: Type of MLP
+
 \section{Convolution Neuronal Networks for Computer Vision Tasks}
 
 In order to reasonable train deep models on the high dimensional image data we need models which contains strong prior knowledge. Having prior knowledge about image data allows us to dramatically reduce the capacity (i.e. amount of parameters) without sacrificing much accuracy. CNNs rely on the following two strong assumptions.
@@ -15,7 +17,7 @@ Stationarity of statistics is archived by applying a translation invariance func
 
 \subsection{Definitions and Notation}
 
-Multi-Layer perceptrons operate in Layer, each of shape $h \times w \times d$, where $h$ and $w$ are spatial coordinates and $d$ is the channel size. Let $x_{ij} \in R^d$ be the data of Layer $l$, than Layer $l+1$, given by $y_{ij} \in R^{d'}$ is given by computing a layer function 
+Multi-Layer perceptrons operate in layer, each of shape $h \times w \times d$, where $h$ and $w$ are spatial coordinates and $d$ is the channel size. Let $x_{ij} \in R^d$ be the data of Layer $l$, than Layer $l+1$, given by $y_{ij} \in R^{d'}$ is given by computing a layer function 
 \begin{equation*}
 y_{nm} := F_{nm} (\{ x_{ij} \}_{0 \leq i \leq h, 0 \leq j \leq w}   )
 \end{equation*}
@@ -30,22 +32,28 @@ Layer $l+1$ has hence shape $(h - k)/s \times (w-k)/s \times d'$, where $d'$ cor
 
 \subsection{Layer Types}
 
-CNNs usually contain two types of local stationary layers. Namely they are \emph{convolutional} layers and \emph{pooling} layers.
+CNNs are build using three different layer types. Namely these are \emph{convolutional}, \emph{pooling} and \emph{activation} layers.
 
 \subsubsection{Convolutional Layer}
 
-Convolutional layer implement a learnable convolution operation inside the neural network model. To archive that $f_{ks}$ is chosen to be linear function (i.e. a matrix). Observe that this can be viewed as a special case of an MLP, where curtained weights are enforced to be equal or fixed to be zero. The parameters can therefore be learned using a back-propagation approach. In computer graphics convolutions are a very powerful tool. They can be used for a verity of tasks including edge and area detection, contrast sharpening and image blurring. 
+Convolutional layer implement a learnable convolution operation inside the neural network model. To archive that $f_{ks}$ is chosen to be linear function (i.e. a matrix). Observe that this can be viewed as a special case of an MLP, where curtained weights are enforced to be equal or fixed to be zero. The parameters can therefore be learned using a back-propagation approach. In computer graphics convolutions are a very important tool. They can be used for a variety of tasks including edge and area detection, contrast sharpening and image blurring. Having learnable convolution kernels is therefore a very powerful tool. In convolutional layers stride is usually choose to be $s=1$ , unless the kernel-size is relatively big ($k \geq 7$).  (cite: AlexNet, VGG, GoogLeNET (LeNet?)).
 
-Using Convolutional operations 
-
-
- For convolutional layers the stride $s$ is usually choose to be one, unless $k$ is bigger than $5$ (cite: AlexNet, VGG, GoogLeNET (LeNet?)).
+%Recent networks.
  
  \subsubsection{Pooling Layer}
 
-The pooling layer applies non-learnable summary function. Typical choices are max- or averagepooling, computing the corresponding function on its input region. For the pooling layer typically $s$ is choose to be $k$ (VGG, GoogLeNET),  although overlapping pooling has been successfully applied (Alexnet). Applying pooling has two  advantages: Firstly it naturally reduces the spatial dimension enabling the network to learn more compact representation if the data and decreasing the amount of parameters in the succeeding layers. Secondly it introduces robust translation invariant. Minor shifts in the input data will not result in the same activation after pooling. The drawback of pooling however is, that fine-grained spatial information are lost in the process. This is a negligible disadvantage for non-spatial tasks such as classification but comes severe in segmentation. 
+The pooling layer applies non-learnable function, which collects a summary statistic about a region of the feature map. Typical choices are max- or mean-pooling, computing the corresponding function on its input region. 
 
- \subsubsection{Activation Function}
+For the pooling layer typically $s$ is choose to be $k$ (VGG, GoogLeNet, OverFeat),  although overlapping pooling has been successfully applied (Alexnet). Typical choices for the kernes size include $2 \times 2$ or $3 \times 3$. (cite).
+
+Applying pooling has two  advantages: Firstly it naturally reduces the spatial dimension enabling the network to learn more compact representation if the data and decreasing the amount of parameters in the succeeding layers. Secondly it introduces robust translation invariant. Minor shifts in the input data will not result in the same activation after pooling. The drawback of pooling however is, that fine-grained spatial information are lost in the process. This is a negligible disadvantage for non-spatial tasks such as classification but comes severe in segmentation. 
+
+ \subsubsection{Activation Layers}
+ 
+ To enable the CNN to learn non-linear function it is crucial, that some kind of non-linearity is applied between layers. Otherwise the Network is equivalent to the concatenation of linear functions, hence a linear function itself which can be equally represented using a single layer. Non-linearities are usually one-dimensional functions $f: R \rightarrow R$, applied to each coordinate individually, hence they can be viewed as an kernel operation with size $k=1$ and stride $s=1$ in the above notation. 
+ 
+Classical choices for nonlinearities are the hyperbolic tangent \emph{tanh} and the sigmoid function $f(x) = (1- exp(-x))^{-1}$. Recently ReLU Nonlinearities (AlexNet, Bolzmann) have gained a lot of popularity (cite). ReLU Nonlinearities have several advantages over traditional nonlinearities. Firstly they are very fast and efficient to compute on GPU. Secondly it does not suffer from the gradient vanishing problem and lastly empirical results show, that training converges several times faster than with other Nonlinearities.
+ 
 
 \subsection{Relevant Network Architectures}
 
