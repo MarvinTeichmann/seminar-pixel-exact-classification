@@ -8,9 +8,29 @@ are compared. This section gives an overview of those quality measures.
 
 
 \subsubsection{Accuracy}
-Showing the correctness of the classification result is done in most
+Showing the correctness of the segmentation hypotheses is done in most
 publications about semantic segmentation. However, there are a couple of
-different ways how this accuracy can be displayed.
+different ways how this accuracy can be displayed. One way to give readers a
+first impression of the obtained segmentations is by showing examples such
+as~\cref{fig:segmentation-example}.
+
+\begin{figure}
+\centering
+\subfigure[Example Scene]{
+  \label{fig:segmentation-example-scene}
+  \includegraphics[width=0.45\linewidth, keepaspectratio]{figures/image-segmentation-example.jpg}
+}%
+\subfigure[Visualization of a found segmentation]{
+  \label{fig:segmentation-example-seg}
+  \includegraphics[width=0.45\linewidth, keepaspectratio]{figures/image-segmentation-example-segmented.jpg}
+}
+\caption{An example of a scene and a possible visualization of a found segmentation.}
+\label{fig:segmentation-example}
+\end{figure}
+
+However, this can only support the explanation of particular problems or
+showcase special situation. For meaningful information about the overall
+accuracy, there are a couple of metrics.
 
 For this section, let $k \in \mathbb{N}$ be the number of classes, $n_{ij} \in
 \mathbb{N}_0$ with $i,j \in 1, \dots, k$ be the number of pixels which belong to
@@ -27,9 +47,10 @@ t_i}$. Taking the pixel-wise classification accuracy has two major drawbacks:
     \item \label{item:problem-large-regions} Tasks like segmenting images for self-driving cars have large regions
           which have one class. This makes achieving classification accuracies
           of more than \SI{30}{\percent} with a priori knowledge only possible.
-    \item The manually labeled images could have a more coarse labeling. For
-          example, a human classifier could have labeled a region as
-          \enquote{car} and the algortihm could have split that region into
+    \item \label{item:problem-labeling-granularity} The manually labeled images
+          could have a more coarse labeling. For example, a human classifier
+          could have labeled a region as
+          \enquote{car} and the algorithm could have split that region into
           the general \enquote{car} and the more specific \enquote{wheel of a
           car}
 \end{problemnr}
@@ -43,14 +64,15 @@ Three accuracy metrics which do not suffer from
           ${({\sum_{p=1}^k t_p})}^{-1} \sum_i \frac{t_i n_{ii}}{t_i + \sum_{j=1}^k n_{ji} - n_{ii}}$
 \end{itemize}
 
-Another problem might be pixels which cannot be assigend one of the known
+Another problem might be pixels which cannot be assigned one of the known
 classes. For this reason, \cite{shotton2006textonboost} makes use of a void
 class. This class gets completely ignored for all quality measures. Hence the
 total number of pixels is assumed to be $\text{width} \cdot \text{height} - \text{number of void pixels}$.
 
-One way to deal with this problem is giving a confuscation matrix as done in
-\cite{shotton2006textonboost}. However, this approach is not feasible if many
-classes are given.
+One way to deal with \cref{item:problem-large-regions} and
+\cref{item:problem-labeling-granularity} is giving a confusion matrix as
+done in \cite{shotton2006textonboost}. However, this approach is not feasible
+if many classes are given.
 
 
 A lot of other measures for the accuracy of segmentations were proposed for
@@ -76,18 +98,19 @@ positive}, \texttt{fn} means \textit{false negative} and  \texttt{fp} means
 
 \subsubsection{Speed}%
 \label{subsubsec:speed-quality-measure}%
-One obvious quality measure is speed. For many applications, this is a hard
-requirement. For example, in the case of self-driving cars an algorithm which
-classifies pixel as street or no-street and thus makes a semantic segmentation,
-every image needs to be processed within
-\SI{20}{\milli\second}~\cite{bittel2015pixel}.
+A maximum upper bound on the execution time for the inference on a single image
+is a hard requirement for some applications. For example, in the case of
+self-driving cars an algorithm which classifies pixel as street or no-street
+and thus makes a semantic segmentation, every image needs to be processed
+within \SI{20}{\milli\second}~\cite{bittel2015pixel}.
 
 Most papers do not give exact values for the time their application needs. One
 reason might be that this is very hardware, implementation and in some cases
-even data specific. For example, \cite{hoover1996experimental} notes that
-their algorithm needs 10~seconds on a Sun SparcStation~20. The fastest CPU
-ever produced for this system had~\SI{200}{\mega\hertz}. Comparing this with
-an Intel~i7-4820K with \SI{3.9}{\giga\hertz} would not be meaningful.
+even data specific. For example, \cite{hoover1996experimental} notes that their
+algorithm needs \SI{10}{\second} on a Sun SparcStation~20. The fastest CPU ever
+produced for this system had~\SI{200}{\mega\hertz}. Comparing this directly
+with results which were obtained using an Intel~i7-4820K with
+\SI{3.9}{\giga\hertz} would not be meaningful.
 
 However, it does still make sense to mention the execution time as well as the
 hardware in individual papers. This gives the interested reader the possibility
@@ -95,9 +118,6 @@ to estimate how difficult it might be to adjust the algorithm to work in the
 required time-constraints. Also, it should be noted if the algorithm can be
 executed in parallel as standard \glspl{GPU} on the consumer market can execute
 up to 256~kernels in parallel.
-
-% TODO: Which categories are there?
-% TODO: Health informatics: Which times?
 
 % The \gls{CRF} approach presented in \cite{shotton2006textonboost} takes
 % approximately three minutes to segment per image on a \SI{2.1}{\giga\hertz}
@@ -107,20 +127,21 @@ up to 256~kernels in parallel.
 \subsubsection{Stability}%
 \label{subsubsec:stability-quality-measure}%
 The stability of segmentation is a desirable quality measure. One the one hand,
-there are some variants of images like slight bluring, gaussian noise and
+there are some variants of images like slight blurring, Gaussian noise and
 similar which should not change the segmentation at all. Also, two images which
 show a slight change in perspective should also only result in slight changes
-in the segmentation.\cite{pantofaru2005comparison}
+in the segmentation~\cite{pantofaru2005comparison}.
 
-The other desirable stability criterium is parameter choice. If the
+Another desirable stability criterion is parameter choice. If the
 segmentation algorithm has hyperparameters, then slightly changing those should
-also only result in minor differences of the resulting segmentations~\cite{pantofaru2005comparison}.
+also only result in minor differences of the resulting
+segmentations~\cite{pantofaru2005comparison}.
 
 
 \subsubsection{Memory and Power usage}
 Peak memory usage is important when segmentation algorithms get used in devices
 like smartphones or cameras, or when the algorithms have to finish in a given
-timeframe, run on the \gls{GPU} and consume so much memory for single image
+time frame, run on the \gls{GPU} and consume so much memory for single image
 segmentation that only the latest graphic cards can be used. However, no
 publication we found mentioned the peak memory usage.
 
