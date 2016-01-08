@@ -1,53 +1,87 @@
 %!TEX root = vorlage.tex
-% Marvin Teichmann and Martin Thoma
+% Martin Thoma
+
 \section{Taxonomy of Segmentation Algorithms}\label{sec:taxonomy}
-As far as the authors of this paper know, a complete taxonomy of segmentation
-algorithms was never done. While reading publications about segmentation
-algorithms, the authors of this paper noticed the following ways to describe
-segmentation algorithms.
+The computer vision community has published a wide range of segmentation
+algorithms so far. Those algorithms can be grouped by the kind of data they
+operate on and the kind of segmentation they are able to produce.
 
-\textbf{By possible classes}: Are the classes which should be distinguised
-known at the time when the algorithm is developed / trained or might there
-occur several objects which were never seen before?
+The following subsections will give four different criteria by which
+segmentation algorithms can be classified.
+
+This survey describes fixed-class (see \cref{subsec:allowed-classes}),
+single-class affiliation (see \cref{subsec:class-affiliation}) algorithms which
+work on grayscale or colored single pixel images (see \cref{subsec:input-data})
+in a completely automated, passive fashion (see \cref{subsec:operation-state}).
+
+\subsection{Allowed classes}\label{subsec:allowed-classes}
+Are the classes which are to be distinguished known at the time when the
+algorithm is developed or trained, or might there occur several objects which
+were never seen before?
+
+Most algorithms work with a fixed set of classes; some even only work on binary
+classes like \textit{foreground vs background}~\cite{4228537} or \textit{street
+vs no street}~\cite{bittel2015pixel}.
+
+There are also unsupervised segmentation algorithms which do not distinguish
+classes at all (see \cref{subsec:unsupervised-traditional-segmentation}) as
+well as segmentation algorithms which are able to recognize when they don't
+know a class. For example, in~\cite{gould2008multi} a
+\textit{void class} was added for classes which were not in the training set.
+
+
+\subsection{Class affiliation of pixels}\label{subsec:class-affiliation}
+Humans do an incredible job when looking at the world. For example, when we
+see a glass of water standing on a table we can automatically say that there is
+the glass and behind it the table, even if we only had a single image and were
+not allowed to move. This means we assign the coordinates of the glass at the
+same time two labels: Glass and table. Although there is much more work being
+done on \textit{single class affiliation} segmentation algorithms, there is a
+publication about \textit{multiple class affiliation}
+segmentation~\cite{levin2008spectral}. Similarly, recent publications in
+pixel-level object segmentation used layered models~\cite{yang2012layered}.
+
+
+\subsection{Input Data}\label{subsec:input-data}
+The available data which can be used for the inference of a segmentation varies
+by application.
+
 \begin{itemize}
-    \item Fixed-class: All classes are known at training time.
-          \begin{itemize}
-              \item Binary: street/no street.
-          \end{itemize}
-    \item Open-class: There might be completely new classes
+    \item \textbf{Grayscale vs colored}: Grayscale images are commonly used in
+          medical imaging such as \gls{MR} imaging or ultrasonography whereas
+          colored photographs are obviously widespread.
+    \item \textbf{Excluding or including depth data}: RGB-D, sometimes also
+          called range~\cite{hoover1996experimental} is available in robotics,
+          autonomous cars and recently also in consumer electronics such as
+          Microsoft Kinect~\cite{6190806}.
+    \item \textbf{Single image vs stereo images vs co-segmentation}: Single
+          image segmentation is the most wide-spread kind of segmentation, but
+          using stereo images was already tried in~\cite{boykov2001fast}. It
+          can be seen as a more natural way of segmentation as most mammals
+          have two eyes.
+          Co-segmentation as in~\cite{1640859,collins2012random} is the problem
+          of finding a consistent segmentation for multiple images. This problem
+          can be seen in two ways: One the one hand, it can be seen as the problem
+          of finding common objects in at least two images. On the other hand,
+          every image after the first can be used as an additional source of
+          information to find a meaningful segmentation. This idea can be
+          extended to time series such as videos.
+    \item \textbf{2D vs 3D}: Segmenting images is a 2D~segmentation task where
+          the smallest unit is called a \textit{pixel}. In 3D data, such as
+          volumetric X-ray CT images as they were used in~\cite{929615}, the
+          smallest unit is called a voxel.
 \end{itemize}
 
-\textbf{By class affiliation of pixels}: Humans do an increadible job when
-looking at the world. For example, when we see a glass of water standing on a
-table we can automatically say that there is the glass and behind it the table,
-even if we only had a single image and were not allowed to move. This means we
-assign the coordinates of the glass at the same time two labels: Glass and
-table. Although there is much more work being done on \textit{single class
-affiliation} segmentation algorithms, there is a publication about multiple
-class affiliation segmentation~\cite{levin2008spectral}. Similarly, recent
-publications in pixel-level object segmentation used layered
-models~\cite{yang2012layered}.
 
-\textbf{By input data}:
-\begin{itemize}
-    \item greyscale / colored / with depth (RGB-D), sometimes also called
-          range~\cite{hoover1996experimental}
-    \item single image / stereo images as in \cite{boykov2001fast} /
-          time~series / co-segmentation as in~\cite{1640859,collins2012random}
-    \item pixels / voxels \cite{wolz2012multi}
-\end{itemize}
-
-\textbf{Operation state}: The operation state of the classifying machine can
-either be \textit{active} as in
-\cite{schiebener2011segmentation,schiebener2012discovery} or passive, where the
-received image cannot be influenced. However, being in a passive situation can
-be divided further by separating segmentation algorithms working in a
-completely automatic fashing versus algorithms working in an interactive mode.
-One example would a system where the user clicks on the background or marks a
-coarse segmentation and the algorithm finds a fine-grained segmentation.
+\subsection{Operation state}\label{subsec:operation-state}
+The operation state of the classifying machine can either be \textit{active} as
+in~\cite{schiebener2011segmentation,schiebener2012discovery} where robots can
+move objects to find a segmentation or \textit{passive}, where the received
+image cannot be influenced. However, being in a passive situation can be
+divided further by separating segmentation algorithms working in a completely
+\textit{automatic} fashion versus algorithms working in an \textit{interactive}
+mode. One example would a system where the user clicks on the background or
+marks a coarse segmentation and the algorithm finds a fine-grained
+segmentation.
 \cite{boykov2000interactive,rother2004grabcut,protiere2007interactive}~describe
 systems which work in an interactive mode.
-
-This survey describes fixed-class, single-class affiliation algorithms which
-work on greyscale or colored single pixel images in a completely automated,
-passive fashion.
