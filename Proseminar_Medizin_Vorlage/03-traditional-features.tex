@@ -1,53 +1,73 @@
 %!TEX root = vorlage.tex
 % Martin Thoma
 
-\subsection{Features}\label{subsec:features}%
+\subsection{Features and Preprocessing methods}\label{subsec:features}%
 The choice of features is very important in traditional approaches.
+The most commonly used features are explained in the following.
 
-\textit{Poselets} were used successfully in \cite{bourdev2010detecting,brox2011object}.
-Those features rely on manually added extra keypoints such as \enquote{right
-shoulder}, \enquote{left shoulder}, \enquote{right knee} and \enquote{left
-knee}. They were originally used for human pose estimation. Finding those extra
-keypoints is easily possible for well-known image classes like humans. However,
-it is difficult for classes like airplanes, ships, organs or cells where the
-human annotators do not know the keypoints. Additionally, the keypoints have to
-be chosen for every single class. There are strategies to deal with those
-problems like viewpoint-dependent keypoints.
+\subsubsection{Pixel Color}
+Pixel color in different image spaces (e.g. 3~features for RGB, 3~features for
+HSV, 1~feature for the gray-value). A typical image is in the RGB color space,
+but depending on the classifier and the problem another color space might
+result in better segmentations. RGB, YcBcr, HSL, Lab and YIQ are some examples
+used by \cite{cohen2015memory}. No single color space has been proven to be
+superior to all others in all contexts~\cite{cheng2001color}. However, the most
+common choices seem to be RGB and HSI. Reasons for choosing RGB is simplicity
+and the support by programming languages, whereas the choice of the HSI color
+space might make it simpler for the classifier to get invariant to
+illumination. One reason for choosing CIE-L*a*b* color space is that it
+approximates human perception of brightness~\cite{kasson1992analysis}. It
+follows that choosing the L*a*b color space helps algorithms to detect
+structures which are seen by humans. Another way of improving the structure
+within an image is histogram equalization, which can be applied to improve
+contrast~\cite{pizer1987adaptive,4228537}.
 
-Image edges and texture patches were proposed in~\cite{brox2011object}.
+\subsubsection{Histogram of oriented Gradients}
+\Gls{HOG} features interpret the image as a discrete function
+$I: \mathbb{N}^2 \rightarrow \Set{0, \dots, 255}$ which maps the position $(x,
+y)$ to a color. For each pixel, there are two gradients: The partial derivative
+of $x$ and $y$. Now the original image got transformed to two feature maps of
+equal size which represents the gradient. These feature maps are splitted into
+patches and a histogram of the directions is calculated for each patch.
+\gls{HOG} features were proposed in~\cite{1467360} and are used
+in~\cite{bourdev2010detecting,felzenszwalb2010object}.
 
-Other features include:
 
-\begin{itemize}
-    \item Pixel color in different image spaces (e.g. 3~features for RGB,
-          3~features for HSV, 1~feature for the gray-value).
-    \item \Gls{HOG} features interpret the image as a discrete function
-          $I: \mathbb{N}^2 \rightarrow \Set{0, \dots, 255}$ which maps the
-          position to a color. For each pixel, there are two gradients: The
-          partial derivative of $x$ and $y$. Now the original image got
-          transformed to two feature maps of equal size which represents the
-          gradient. These feature maps are splitted into patches and a
-          histogram of the directions is calcualted for each patch. \gls{HOG}
-          were proposed in~\cite{1467360} and
-          are used in~\cite{bourdev2010detecting,felzenszwalb2010object}.
-    \item \Gls{SIFT} feature descriptors find keypoints in an image. The image patch
-          of the size $16 \times 16$ around the keypoint is taken. This patch
-          is divided in $16$ distinct parts of the size $4 \times 4$. For each
-          of those parts a histogram of 8~orientations is calculated similar as
-          for \gls{HOG} features. This results in a 128-dimensional feature
-          vector for each keypoint.
+\subsubsection{SIFT}
+\Gls{SIFT} feature descriptors find keypoints in an image. The image patch of
+the size $16 \times 16$ around the keypoint is taken. This patch is divided in
+$16$ distinct parts of the size $4 \times 4$. For each of those parts a
+histogram of 8~orientations is calculated similar as for \gls{HOG} features.
+This results in a 128-dimensional feature vector for each keypoint.
 
-          \Gls{SIFT} is described in detail in~\cite{raey}.
+\Gls{SIFT} is described in detail in~\cite{raey}.
 
-          % SIFT descriptors are multi-image representations of an image
-          % neighborhood. They are Gaussian derivatives computed at 8
-          % orientation planes over a 4x4 grid of spatial locations, giving a
-          % 128-dimension vector. Fig. 1 shows an example of the maps of
-          % gradient magnitude corresponding to the 8 orientations.
-    \item \Gls{BOV}, also called \textit{bag of keypoints}, is based on vector
-          quantization. Similar to \gls{HOG} features, \gls{BOV} features are
-          histograms which count the number of occurences of certain patterns
-          within a patch of the image. \Gls{BOV} are described
-          in~\cite{csurka2004visual} and used in combination with \gls{SIFT}
-          feature descriptors in~\cite{csurka2008simple}.
-\end{itemize}
+
+\subsubsection{BOV}
+\Gls{BOV}, also called \textit{bag of keypoints}, is based on vector
+quantization. Similar to \gls{HOG} features, \gls{BOV} features are histograms
+which count the number of occurrences of certain patterns within a patch of the
+image. \Gls{BOV} are described in~\cite{csurka2004visual} and used in
+combination with \gls{SIFT} feature descriptors in~\cite{csurka2008simple}.
+
+
+\subsubsection{Poselets}
+\textit{Poselets} were used successfully
+in~\cite{bourdev2010detecting,brox2011object}. Those features rely on manually
+added extra keypoints such as \enquote{right shoulder}, \enquote{left
+shoulder}, \enquote{right knee} and \enquote{left knee}. They were originally
+used for human pose estimation. Finding those extra keypoints is easily
+possible for well-known image classes like humans. However, it is difficult for
+classes like airplanes, ships, organs or cells where the human annotators do
+not know the keypoints. Additionally, the keypoints have to be chosen for every
+single class. There are strategies to deal with those problems like
+viewpoint-dependent keypoints.
+
+
+\subsubsection{Dimensionality Reduction}
+High-resolution images have a lot of pixels. Having one or more feature per
+pixel results in many features. This makes training difficult while the higher
+resolution might not contain much more information. A simple approach to deal
+with this is downsampling the high-resolution image to a low-resolution
+variant. Another way of doing dimensionality reduction is \gls{PCA}, which is
+applied by~\cite{chen2011pixel}.

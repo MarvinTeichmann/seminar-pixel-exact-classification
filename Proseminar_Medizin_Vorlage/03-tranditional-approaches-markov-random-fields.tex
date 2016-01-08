@@ -5,10 +5,12 @@
 \Glspl{MRF} are undirected probabilistic graphical models. In the associated
 graph $G=(\mathcal{V}, \mathcal{E})$, nodes represent random variables and
 edges represent conditional dependencies. Inference is done with the \gls{MAP}
-estimation and training with a maximum likelihood approach or
-\gls{ICM}~\cite{10.2307/2345426}.
+estimation and training with a maximum likelihood approach (with gradient
+ascent, see L-BFGS~\cite{liu1989limited}) or \gls{ICM}~\cite{10.2307/2345426}.
+\Gls{MAP} is a substitute for \gls{MLE}.
 
-Typically, a random variable represents a class relationship of a single pixel
+Typically, random variables $\mathbf{y}$ represent the class of a single pixel,
+random variables $\mathbf{x}$ represent a pixel values
 and edges represent pixel neighborhood in computer vision problems segmentation problems
 where \glspl{MRF} are used. The pixel neighborhood might either be a
 4-neighborhood (north, east, south west) or an 8-neighborhood (north,
@@ -41,6 +43,15 @@ Grid-like / pairwise \gls{MRF} is used in~\cite{rother2004grabcut}.
 Other \glspl{MRF}: \cite{zhang2001segmentation} and \cite{moser2012markov}.
 
 \cite{shotton2006textonboost} uses a 4-connected grid.
+
+\Gls{PGM} have some problems:
+
+\begin{itemize}
+    \item Exact inference, that means computing \(P_\Phi(X=x)\), given a
+          \Gls{PGM} $P_\Phi$ and a variable \(X\) as well as a value \(x \in Val(X)\),
+          is NP-hard.
+    \item Approximate inference is NP-Hard
+\end{itemize}
 
 % Characterizations of MRF:
 % Label space: binary vs multi-label; homogeneous vs heterogeneous
@@ -138,7 +149,10 @@ Other \glspl{MRF}: \cite{zhang2001segmentation} and \cite{moser2012markov}.
 \Glspl{CRF} are \glspl{MRF} where all clique potentials are conditioned on
 input features~\cite{murphy2012machine}. This means, instead of learning the
 distribution $P(\mathbf{Y}, \mathbf{X})$, the task is reformulated to learn the
-distribution $P(\mathbf{Y}| \mathbf{X})$.
+distribution $P(\mathbf{Y}| \mathbf{X})$. One consequence of this reformulation
+is that \glspl{CRF} need much less parameters as the distribution of $X$ does
+not have to be estimated. Another advantage of \glspl{CRF} compared to
+\glspl{MRF} is that no distribution assumption about $X$ has to be made.
 
 Formally, a \gls{CRF} is a set of factors
 

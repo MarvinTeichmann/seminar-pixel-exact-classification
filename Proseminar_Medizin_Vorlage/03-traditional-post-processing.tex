@@ -1,0 +1,18 @@
+%!TEX root = vorlage.tex
+% Martin Thoma
+
+\subsection{Post-processing methods}\label{subsec:post-processing-methods}%
+Post-processing methods are an important part of traditional pixel-level
+segmentation approaches. They refine a found segmentation and remove obvious
+errors. For example, the morphological operations \textit{opening} and
+\textit{closing} can remove noise. The opening operation is a dilation followed
+by a erosion. This removes tiny segments. The closing operation is a erosion
+followed by a dilation. This removes tiny gaps in otherwise filled regions.
+They were used in~\cite{chen1998image} for biomedical image segmentation.
+
+Another way of refinement of the found segmentation is by adjusting the
+segmentation to match close edges. This was used in~\cite{brox2011object} with
+an ultra-metric contour map~\cite{arbelaez2009contours}.
+
+Active contour models are another example of a post-processing
+method~\cite{kass1988snakes}.

@@ -12,59 +12,20 @@ in the computer vision community. Features which can be used for segmentation
 are described in \cref{subsec:features}, a very brief overview of unsupervised,
 non-semantic segmentation is given in
 \cref{subsec:unsupervised-traditional-segmentation}, Random Decision
-Forests are described in \cref{subsec:random-forests}, Markov Random Fields in
-\cref{subsec:markov-random-fields} and \glspl{SVM} in
+Forests are described in \cref{subsec:random-forests}
+%, Markov Random Fields in \cref{subsec:markov-random-fields}
+ and \glspl{SVM} in
 \cref{subsec:trad-SVM}.
-Pre- and Postprocessing are covered in \cref{subsec:preprocessing-methods} and
-\cref{subsec:post-processing-methods}.
+Postprocessing is covered in \cref{subsec:post-processing-methods}.
 % The respective advantages of the classifiers are discussed in
 % \cref{subsec:traditional-approaches-discussion}.
 
 \input{03-traditional-features}
 \input{03-traditional-unsupervised}
 \input{03-traditional-approaches-random-forests}
-\input{03-tranditional-approaches-markov-random-fields}
+% \input{03-tranditional-approaches-markov-random-fields}
 \input{03-traditional-approaches-svm}
-
-
-\subsection{Pre-processing methods}\label{subsec:preprocessing-methods}%
-Pre-processing methods make the classification task easier by applying domain
-knowledge. This can be by enhancing the strength of the correlation between
-classes and features or by removing unnecessary information through
-dimensionality reduction.
-
-A typical image is in the RGB color space, but depending on the classifier and
-the problem another color space might result in better segmentations. RGB,
-YcBcr, HSL, Lab and YIQ are some examples used by \cite{cohen2015memory}. No
-single color space has been proven to be superior to all others in all
-contexts~\cite{cheng2001color}. However, the most common choices seem to be RGB
-and HSI. The reason for chosing RGB might be simplicity in the support by
-programming languages, whereas the choice of HSI might make it simpler for the
-classifier to get invariant to illumination. One reason for choosing CIE-L*a*b*
-color space is that it approximates human perception of
-brightnes~\cite{kasson1992analysis}. Another way of improving the structure
-within an image is histogram equalization, which can be applied to improve
-contrast~\cite{pizer1987adaptive,4228537}.
-
-One way of doing dimensionality reduction is \gls{PCA}, which is applied
-by~\cite{chen2011pixel}.
-
-
-\subsection{Post-processing methods}\label{subsec:post-processing-methods}%
-Post-processing methods are an important part of traditional pixel-level
-segmentation approaches. They refine a found segmentation and remove obvious
-errors. For example, the morphological operations \textit{opening} and
-\textit{closing} can remove noise. The opening operation is a dilation followed
-by a erosion. This removes tiny segments. The closing operation is a erosion
-followed by a dilation. This removes tiny gaps in otherwise filled regions.
-They were used in~\cite{chen1998image} for biomedical image segmentation.
-
-Another way of refinement of the found segmentation is by adjusting the
-segmentation to match close edges. This was used in~\cite{brox2011object} with
-an ultra-metric contour map~\cite{arbelaez2009contours}.
-
-Active contour models are another example of a post-processing
-method~\cite{kass1988snakes}.
+\input{03-traditional-post-processing}
 
 
 % \subsection{Discussion}\label{subsec:traditional-approaches-discussion}%
