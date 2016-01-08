@@ -136,7 +136,21 @@ Other \glspl{MRF}: \cite{zhang2001segmentation} and \cite{moser2012markov}.
 \subsection{Conditional Random Fields}\label{subsec:conditional-random-fields}
 
 \Glspl{CRF} are \glspl{MRF} where all clique potentials are conditioned on
-input features~\cite{murphy2012machine}. % TODO: What exactly does that mean? Which implications does it have?
+input features~\cite{murphy2012machine}. This means, instead of learning the
+distribution $P(\mathbf{Y}, \mathbf{X})$, the task is reformulated to learn the
+distribution $P(\mathbf{Y}| \mathbf{X})$.
+
+Formally, a \gls{CRF} is a set of factors
+
+\[\Phi = \Set{\phi_1(\mathbf{D}_1), \dots, \phi_k(\mathbf{D}_k)}\]
+
+together with a normalization function called \textit{partition function} $Z_\Phi$:
+\[Z_\Phi(\mathbf{X}) = \sum_{\mathbf{Y}} \tilde{P_\Phi} (\mathbf{X}, \mathbf{Y})\]
+
+which results in the joint probability distribution
+
+\[P_{\Phi}(\mathbf{Y} | \mathbf{X}) = \frac{1}{Z_\Phi(\mathbf{X})} \prod_{i=1}^k \phi_i(\mathbf{D}_i)\]
+
 
 \Glspl{CRF} are used in \cite{multiscale04,shotton2006textonboost}.
 
