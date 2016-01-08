@@ -163,6 +163,7 @@ CVPR, 2010. 5
 
 * http://rodrigob.github.io/are_we_there_yet/build/
 * http://homepages.inf.ed.ac.uk/rbf/CVonline/Imagedbase.htm
+* http://www2.warwick.ac.uk/fac/sci/dcs/research/combi/research/bic/glascontest/ - GlaS@MICCAI'2015: Gland Segmentation Challenge Contest
 
 
 ## Papers for Classification
