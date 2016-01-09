@@ -1,18 +1,21 @@
 %!TEX root = vorlage.tex
 % Martin Thoma
 \subsection{Random Decision Forests}\label{subsec:random-forests}
-% http://jiwonkim.org/awesome-random-forest/
-Random Decision Forests were first proposed in~\cite{ho1995random}. This type
-of classifier applies a technique called \textit{ensemble learning}, where
-multiple classifiers get trained simultaneously on random subspaces of the
-feature~space or random subsets of the training~set. In the case of Random
-Decision Forests, the classifiers are decision trees. A decision tree is a tree
-where each inner node uses one or more features to decide in which branch to
-descend. Each leaf is a class.
 
-A strength of Random Decision Forests compared to many other classifiers is
-that the scale of measure of the features (nominal, ordinal, interval, ratio)
-can be arbitrary.
+Random Decision Forests were first proposed in~\cite{ho1995random}. This type
+of classifier applies techniques called \textit{ensemble learning}, where
+multiple classifiers get trained and a combination of their hypotheses is
+used. One ensemble learning technique is the \textit{random subspaces} method
+where each classifier gets trained on a random subspace of the feature~space.
+Another ensemble learning technique is \textit{bagging}, which is training the
+trees on random subsets of the training~set. In the case of Random Decision
+Forests, the classifiers are decision trees. A decision tree is a tree where
+each inner node uses one or more features to decide in which branch to descend.
+Each leaf is a class.
+
+A strength of Random Decision Forests compared to many other classifiers like
+\glspl{SVM} and neural networks is that the scale of measure of the features
+(nominal, ordinal, interval, ratio) can be arbitrary.
 
 Random decision trees were extensively studied in the past 20~years and a
 multitude of training algorithms has been proposed (e.g. ID3
@@ -25,12 +28,14 @@ each leaf contains only nodes of a single class or until it is not possible to
 split further. This is called a \textit{stopping criterion}.
 
 There are two typical training modes: \textit{Central axis projection} and
-\textit{perceptron training} In training, for each node a hyperplane is
+\textit{perceptron training}. In training, for each node a hyperplane is
 searched which is optimal according to an error function.
 
-One comman way to train the different trees is an ensemble learning technique
-called \textit{begging}. In this techique, the different decisison trees get
-different parts training examples.
-
-Random Decision Forests are applied in~\cite{shotton2008semantic} for
-segmentation. Textons are used as features there.
+Random Decision Forests with texton features (see \cref{subsubsec:textons}) are
+applied in~\cite{shotton2008semantic} for segmentation. In the~\cite{MSCR-db}
+dataset, they report a per-pixel accuracy rate of \SI{66.9}{\percent} for their
+best system. This system needs \SI{415}{\milli\second} for the segmentation of
+$\SI{320}{\pixel} \times \SI{213}{\pixel}$ images on a single
+\SI{2.7}{\giga\hertz} core. On the Pascal VOC~2007 dataset, they report an
+average per-pixel accuracy for their best segmentation system
+of~\SI{42}{\percent}.

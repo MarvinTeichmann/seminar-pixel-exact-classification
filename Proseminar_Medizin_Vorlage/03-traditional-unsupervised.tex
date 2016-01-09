@@ -5,9 +5,9 @@
 \label{subsec:unsupervised-traditional-segmentation}%
 
 Unsupervised segmentation algorithms can be used in supervised segmentation as
-another source of information. While unsupervised segmentation algorithms can
-never be semantic, they are well-studied and deserve at least a very brief
-overview.
+another source of information or to refine a segmentation. While unsupervised
+segmentation algorithms can never be semantic, they are well-studied and
+deserve at least a very brief overview.
 
 Semantic segmentation algorithms store information about the classes they were
 trained to segment while non-semantic segmentation algorithms try to detect
@@ -16,7 +16,7 @@ consistent regions and region boundaries.
 \subsubsection{Clustering Algorithms}
 The $k$-means algorithm is a general-purpose clustering algorithm which
 requires the number of clusters to be given beforehand. Initially, it places
-the $k$ centroids randomly in the feature space. Then it assignes each
+the $k$ centroids randomly in the feature space. Then it assigns each
 data point to the nearest centroid, moves the centroid to the center of the
 cluster and continues the process until a stopping criterion is reached. A
 faster variant is described in \cite{hartigan1975clustering}.
@@ -24,12 +24,13 @@ faster variant is described in \cite{hartigan1975clustering}.
 $k$-means was applied by~\cite{chen1998image} for medical image segmentation.
 
 Another clustering algorithm is the mean-shift algorithm which was introduced
-by~\cite{comaniciu2002mean} for segmentation tasks. The algorithm first applies
-mean shift filtering on the original image data and then clusters the remaining
-points.
-
-% TODO: Understand this algorithm. Use \cite{comaniciu2002mean} and
-% \cite{pantofaru2005comparison} for it.
+by~\cite{comaniciu2002mean} for segmentation tasks. The algorithm finds the
+cluster centers by initializing centroids at random seed points and iteratively
+shifting them to the mean coordinate within a certain range. Instead of taking
+a hard range constraint, the mean can also be calculated by using any kernel.
+This effectively applies a weight to the coordinates of the points. The mean
+shift algorithm will give cluster centers at positions with a highest local
+density of points.
 
 
 \subsubsection{Graph Based Image Segmentation}%
@@ -37,11 +38,19 @@ points.
 Graph-based image segmentation algorithms typically interpret pixels as
 vertices and an edge weight is a measure of dissimilarity such as the
 difference in color~\cite{felzenszwalb2004efficient,FelzenszwalbGraphCode}.
-Connected components become clusters~\cite{pantofaru2005comparison}.
+There are several different candidates for edges. The 4-neighborhood (north,
+east, south west) or an 8-neighborhood (north, north-east, east, south-east,
+south, south-west, west, north-west) are plausible choices.
+One way to do the cuts is by building a minimum spanning tree and removing
+edges above a threshold. This threshold can either be constant, adapted to the
+graph or adjusted by the user. After the edge-cutting step, the connected
+components are the segments.
 
-A graph-based method which got the 2nd rank in the Pascal VOC 2010
+A graph-based method which got the \nth{2} rank in the Pascal VOC 2010
 challenge~\cite{everingham2010pascal} is described
-in~\cite{carreira2010constrained}.
+in~\cite{carreira2010constrained}. The system makes heavy use of the multi-cue
+contour detector globalPb~\cite{4587420} and needs about \SI{10}{\giga\byte}
+of main memory~\cite{Carreira2011}.
 
 
 \subsubsection{Random Walks}
@@ -62,10 +71,11 @@ It was shown in~\cite{meilpa2001learning} that normalized cuts
 
 \subsubsection{Active Contour Models}
 
-\Glspl{ACM} are segmentation models segment images roughly along edges, but
-try also to minimize a so called \textit{energy function}. They were initially
-described in~\cite{kass1988snakes}. \Glspl{ACM} be used to segment an image or
-to refine segmentation as it was done in~\cite{atkins1998fully} for brain
+\Glspl{ACM} are algorithms which segment images roughly along edges, but try
+also try to find a border which is smooth. This is done by defining a so called
+\textit{energy function} which will get minimized. They were initially
+described in~\cite{kass1988snakes}. \Glspl{ACM} can be used to segment an image
+or to refine segmentation as it was done in~\cite{atkins1998fully} for brain
 \gls{MR} images.
 
 

@@ -64,10 +64,29 @@ single class. There are strategies to deal with those problems like
 viewpoint-dependent keypoints.
 
 
+\subsubsection{Textons}\label{subsubsec:textons}
+A \textit{texton} is the minimal building block of vision. The computer vision
+literature does not give a strict definition for textons, but edge detectors
+could be one example. One might argue that deep learning techniques with
+\glspl{CNN} learn textons in the first filters.
+
+An excellent explanation of textons can be found in~\cite{zhu2005textons}.
+
+
 \subsubsection{Dimensionality Reduction}
 High-resolution images have a lot of pixels. Having one or more feature per
 pixel results in many features. This makes training difficult while the higher
 resolution might not contain much more information. A simple approach to deal
 with this is downsampling the high-resolution image to a low-resolution
 variant. Another way of doing dimensionality reduction is \gls{PCA}, which is
-applied by~\cite{chen2011pixel}.
+applied by~\cite{chen2011pixel}. The idea behind \gls{PCA} is to find a
+hyperplane on which all feature vectors can be projected with a minimal loss of
+information. A detailed description of \gls{PCA} is given
+by~\cite{smith2002tutorial}.
+
+One problem of \gls{PCA} is the fact that it does not distinguish different
+classes. This means it can happen that a perfectly linearly separable set of
+feature vectors gets not separable at all after applying \gls{PCA}.
+
+There are many other techniques for dimensionality reduction. An overview and
+a comparison over some of them is given by~\cite{van2009dimensionality}.
