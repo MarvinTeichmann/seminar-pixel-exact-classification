@@ -13,7 +13,7 @@ $(\textbf{x}_i, y_i)$ where $\textbf{x}_i$ is the feature vector and $y_i \in
 
 
 \begin{enumerate}
-    \item If data is linearly seperable, it can be seperated by a hyperplane.
+    \item If data is linearly separable, it can be separated by a hyperplane.
           There is one hyperplane which maximizes the distance to the
           datapoints. This hyperplane should be taken:\\
           \begin{equation*}
@@ -32,7 +32,7 @@ $(\textbf{x}_i, y_i)$ where $\textbf{x}_i$ is the feature vector and $y_i \in
           \[\textbf{w} = \sum_{i=1}^m \alpha_i y_i \textbf{x}_i\]
           where $y_i \in \Set{-1, 1}$ represents the class of the training
           example.
-    \item Not every dataset is linearly seperable. This problem is approached
+    \item Not every dataset is linearly separable. This problem is approached
           by transforming the dataset with a non-linear mapping into a higher
           dimensional space $\Phi$.
     \item Implicitly using a high-dimensional (probably $\infty$-dimensional)
@@ -40,7 +40,7 @@ $(\textbf{x}_i, y_i)$ where $\textbf{x}_i$ is the feature vector and $y_i \in
           % Schölkopf: Learning with kernels
           % Kernel-Trick
     \item Introduction of slack variables to relax the requirement of linear
-          seperability. The trade-off between accepting some errors and a more
+          separability. The trade-off between accepting some errors and a more
           complex model is weighted by a parameter $C \in \mathbb{R}_0^+$. The
           bigger $C$, the more errors are accepted. The new optimization
           problem is:
@@ -55,7 +55,7 @@ $(\textbf{x}_i, y_i)$ where $\textbf{x}_i$ is the feature vector and $y_i \in
 The described \glspl{SVM} can only distinguish between two classes. Common
 strategies to expand those binary classifiers to multi-class classification is
 the \textit{one-vs-all} and the \textit{one-vs-one} strategy. In the one-vs-all
-strategy $n$ classifiers have to be trained which can distingish one of the $n$
+strategy $n$ classifiers have to be trained which can distinguish one of the $n$
 classes against all other classes. In the one-vs-one strategy $\frac{n^2 - n}{2}$
 classifiers are trained; one classifier for each pair of classes.
 
@@ -64,7 +64,7 @@ A detailed description of \glspl{SVM} can be found in \cite{burges1998tutorial}.
 \Glspl{SVM} are used by \cite{yang2012layered} on the 2009 and 2010 PASCAL
 segmentation challenge~\cite{everingham2010pascal}. They did not hand their
 classifier in to the challenge itself, but calculated an average rank~of~7
-amongst the different categories.
+among the different categories.
 
 \cite{felzenszwalb2010object} also used an SVM based method and achieved the
-\nth{7}~rank in the 2010 PASCAL segmentation callenge by mean accuracy.
+\nth{7}~rank in the 2010 PASCAL segmentation challenge by mean accuracy.
