@@ -26,7 +26,7 @@
 
 ## TODO
 
-http://arxiv.org/pdf/1512.06735.pdf - Instance-Level Segmentation with Deep Densely Connected MRFs
+
 
 * Normalized cuts and image segmentation - Cited by 10801
 * Contour and texture analysis for image segmentation - Cited by 993
@@ -109,6 +109,7 @@ http://arxiv.org/pdf/1512.06735.pdf - Instance-Level Segmentation with Deep Dens
 
 ### Markov Fields
 
+* http://arxiv.org/pdf/1512.06735.pdf - Instance-Level Segmentation with Deep Densely Connected MRFs
 * Image segmentation using simple Markov field models - Cited by 121
 * Segmentation of brain MR images through a hidden Markov random field model
   and the expectation-maximization algorithm - Cited by 2886
