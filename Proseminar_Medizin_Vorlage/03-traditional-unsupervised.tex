@@ -38,11 +38,19 @@ density of points.
 Graph-based image segmentation algorithms typically interpret pixels as
 vertices and an edge weight is a measure of dissimilarity such as the
 difference in color~\cite{felzenszwalb2004efficient,FelzenszwalbGraphCode}.
-Connected components become clusters~\cite{pantofaru2005comparison}.
+There are several different candidates for edges. The 4-neighborhood (north,
+east, south west) or an 8-neighborhood (north, north-east, east, south-east,
+south, south-west, west, north-west) are plausible choices.
+One way to do the cuts is by building a minimum spanning tree and removing
+edges above a threshold. This threshold can either be constant, adapted to the
+graph or adjusted by the user. After the edge-cutting step, the connected
+components are the segments.
 
 A graph-based method which got the \nth{2} rank in the Pascal VOC 2010
 challenge~\cite{everingham2010pascal} is described
-in~\cite{carreira2010constrained}.
+in~\cite{carreira2010constrained}. The system makes heavy use of the multi-cue
+contour detector globalPb~\cite{4587420} and needs about \SI{10}{\giga\byte}
+of main memory~\cite{Carreira2011}.
 
 
 \subsubsection{Random Walks}
@@ -63,10 +71,11 @@ It was shown in~\cite{meilpa2001learning} that normalized cuts
 
 \subsubsection{Active Contour Models}
 
-\Glspl{ACM} are segmentation models segment images roughly along edges, but
-try also to minimize a so called \textit{energy function}. They were initially
-described in~\cite{kass1988snakes}. \Glspl{ACM} be used to segment an image or
-to refine segmentation as it was done in~\cite{atkins1998fully} for brain
+\Glspl{ACM} are algorithms which segment images roughly along edges, but try
+also try to find a border which is smooth. This is done by defining a so called
+\textit{energy function} which will get minimized. They were initially
+described in~\cite{kass1988snakes}. \Glspl{ACM} can be used to segment an image
+or to refine segmentation as it was done in~\cite{atkins1998fully} for brain
 \gls{MR} images.
 
 
@@ -79,7 +88,7 @@ must be dark on grayscale images. The algorithm starts to fill the basins from
 the lowest point. When two basins get connected, a watershed is found. The
 algorithm stops when the highest point is reached.
 
-A detailed description of the watershed segmentation algoritorithm is given
+A detailed description of the watershed segmentation algorithm is given
 in~\cite{roerdink2000watershed}.
 
 The watershed segmentation was used in~\cite{1260033} to segment white blood
