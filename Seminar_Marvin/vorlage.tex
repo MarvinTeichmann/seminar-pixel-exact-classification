@@ -1,0 +1,73 @@
+\documentclass[11pt, a4paper,twocolumn, DIV=14]{scrartcl} % Seminar
+
+% input
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% glossary
+\usepackage[xindy,toc]{glossaries}
+\loadglsentries[main]{glossary}
+\makeglossaries
+
+% additional helper packages
+
+\usepackage{tabularx}
+\usepackage{amsmath,amssymb}
+\usepackage[pdftex]{graphicx}
+\usepackage[nameinlink, noabbrev,capitalise]{cleveref}
+\usepackage{csquotes}
+\usepackage{microtype}
+\usepackage{eurosym}
+\usepackage{footnote}
+
+%\usepackage[inner=1.5cm,outer=2.5cm,top=2.5cm,bottom=2cm,includeheadfoot]{geometry}
+
+\usepackage{titling}
+
+% si stuff
+\usepackage[binary-units,group-separator={,}]{siunitx}
+\sisetup{per-mode=fraction,binary-units=true}
+\DeclareSIUnit\pixel{px}
+\usepackage{microtype}
+
+\DeclareGraphicsExtensions{.jpg}
+\DeclareMathOperator{\sgn}{sgn}
+
+% List stuff
+\usepackage{enumitem}
+\crefname{problemnr}{\textup{problem}}{\textup{problems}}
+\newlist{problemnr}{enumerate}{1}
+\setlist[problemnr]{label={P\arabic*}, ref=P\arabic*}
+\crefalias{problemnri}{problemnr}
+\makeatother
+
+
+
+% Document
+
+\title{Deep Neuronal Networks for Semantiv Segmentation in Medical Informatics}
+\author{Marvin Teichmann}
+\date{\today}
+
+
+
+
+
+\begin{document}
+\maketitle
+\input{00-abstract.tex}
+\input{04-nn-approaches.tex}
+
+
+%\input{04-nn-approaches}
+
+\cite{Dillmann2008}
+
+
+
+\newpage
+\bibliography{marvin}
+\bibliographystyle{alpha}
+\printglossaries%
+\end{document}

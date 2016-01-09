@@ -1,0 +1,179 @@
+%!TEX root = vorlage.tex
+% Martin Thoma
+
+\subsection{Markov Random Fields}\label{subsec:markov-random-fields}
+\Glspl{MRF} are undirected probabilistic graphical models. In the associated
+graph $G=(\mathcal{V}, \mathcal{E})$, nodes represent random variables and
+edges represent conditional dependencies. Inference is done with the \gls{MAP}
+estimation and training with a maximum likelihood approach (with gradient
+ascent, see L-BFGS~\cite{liu1989limited}) or \gls{ICM}~\cite{10.2307/2345426}.
+\Gls{MAP} is a substitute for \gls{MLE}.
+
+Typically, random variables $\mathbf{y}$ represent the class of a single pixel,
+random variables $\mathbf{x}$ represent a pixel values
+and edges represent pixel neighborhood in computer vision problems segmentation problems
+where \glspl{MRF} are used. The pixel neighborhood might either be a
+4-neighborhood (north, east, south west) or an 8-neighborhood (north,
+north-east, east, south-east, south, south-west, west, north-west).
+
+For example, say $\mathbf{x}$ is the feature vector from an image, $\mathbf{y}$
+is the vector of random variables. Then the conditional probability of $\mathbf{y}$
+given $\mathbf{x}$ can be expressed as
+\[P(\mathbf{y}|\mathbf{x}) = \frac{1}{Z(\mathbf{x})} \exp(-E(\mathbf{y};\mathbf{x}))\]
+where $Z(\mathbf{x}) = \sum_{\mathbf{y}} \exp(-E(\mathbf{y};\mathbf{x}))$ is
+a normalization term called the \textit{partition function}.
+
+Typically, the energy function $E$ is of the structure
+
+\[E(\mathbf{y}, \mathbf{x}) = \sum_{i \in \mathcal{V}} \psi_i^U (y_i; \mathbf{x}) + \sum_{ij \in \mathcal{E}} \psi_{ij}^P(y_i, y_j, \mathbf{x}) + \sum_{c \in \mathcal{C}} \psi_c^H(\mathbf{y}_c; \mathbf{x})\]
+
+where $\psi_i^U$ represents unary terms, $\psi_{ij}^P$ represents pairwise
+terms and $\psi_c^H$ represents higher-order terms. $\mathcal{C}$ is the set
+of all cliques in $G$.
+
+
+\Glspl{MRF} are a very wide-spread model in computer vision. Excellent
+introductions to \glspl{MRF} are given by
+\cite{blake2011markov,murphy2012machine}.
+
+
+% Where / how it was used.
+Grid-like / pairwise \gls{MRF} is used in~\cite{rother2004grabcut}.
+
+Other \glspl{MRF}: \cite{zhang2001segmentation} and \cite{moser2012markov}.
+
+\cite{shotton2006textonboost} uses a 4-connected grid.
+
+\Gls{PGM} have some problems:
+
+\begin{itemize}
+    \item Exact inference, that means computing \(P_\Phi(X=x)\), given a
+          \Gls{PGM} $P_\Phi$ and a variable \(X\) as well as a value \(x \in Val(X)\),
+          is NP-hard.
+    \item Approximate inference is NP-Hard
+\end{itemize}
+
+% Characterizations of MRF:
+% Label space: binary vs multi-label; homogeneous vs heterogeneous
+% Order: unary vs pairwise vs higher-order
+% Structure: chain vs tree vs grid vs general graph; neighborhood size
+% Potentials: submodular, convex, compressible
+
+
+
+% Markov Random Fields (A Rough Guide)
+% http://www.mee.tcd.ie/~sigmedia/pmwiki/uploads/Main.Tutorials/mrf_tutorial.pdf
+
+% Markov Random Fields and Stochastic Image Models
+% http://cis-linux1.temple.edu/~latecki/Courses/RobotFall08/Papers/MRFBauman.pdf
+
+% Markov Random Fields
+% http://signal.ee.psu.edu/mrf.pdf
+
+% Markov Random Fields for Computer Vision (Part 1)
+% http://users.cecs.anu.edu.au/~sgould/papers/part1-MLSS-2011.pdf  --- very nice!
+
+
+% Markov Random Fields and Stochastic Image Models
+% https://engineering.purdue.edu/~bouman/publications/tutorials/mrf_tutorial/view.pdf
+
+
+% Markov Random Fields in Image Segmentation
+% http://web.inf.u-szeged.hu/~ssip/2011/PDF/ssip2011_Kato.pdf
+
+% Book about markov random fields in computer vision:
+% https://mitpress.mit.edu/sites/default/files/titles/content/9780262015776_sch_0001.pdf
+
+
+\Glspl{CRF} and Boltzmann Machines are a variations of Markov random fields.
+
+% Markov Random Field Image Models and Their Applications to Computer Vision
+% http://www.mathunion.org/ICM/ICM1986.2/Main/icm1986.2.1496.1517.ocr.pdf
+%
+% Segmentation of brain MR images through a hidden Markov random field model
+% and the expectation-maximization algorithm \cite{zhang2001segmentation}
+
+% In short: specify locally and model globally.
+
+% define only local properties. allows by transitivity to get a model
+% for global properties.
+
+
+% \begin{itemize}
+%     \item What is your set of random models? (e.g. Ising model: one for each pixel)
+%           \begin{itemize}
+%               \item Irving-Model: \cite{boykov2000interactive}
+%               \item Potts-Model: \cite{boykov2001fast}
+%           \end{itemize}
+% \end{itemize}
+
+% On those, define an undirected hypergraph $G(V, E)$. $V$ are pixels, $E$ is
+% typically defined by neighboring pixels.
+
+% good:
+
+% \begin{itemize}
+%     \item Convenient modeling:Just write down energy function (in some cases)
+%           do define entire model
+%     \item fast inference (only 1 or 2 variants)
+%     \item sometimes good performance
+% \end{itemize}
+
+% bad:
+
+% \begin{itemize}
+%     \item learning is difficult
+% \end{itemize}
+
+
+% From \cite{yang2012layered}:
+
+% > In contrast, semantic segmentation models have largely been built on top of
+% Markov Random Field (MRF) models which enforce smoothness across pixel labels
+
+% \begin{itemize}
+%     \item A. Torralba, K. Murphy, and W. Freeman, “Contextual Models for
+%           Object Detection Using Boosted Random Fields,” Proc. Advances in
+%           Neural Information Processing Systems, 2004.
+%     \item S. Kumar and M. Hebert, “A Hierarchical Field Framework for
+%           Unified Context-Based Classification,” Proc. 10th IEEE Int’l Conf.
+%           Computer Vision, vol. 2, 2005.
+%     \item Z. Tu, “Auto-Context and Its Application to High-Level Vision
+%           Tasks,” Proc. IEEE Conf. Computer Vision and Pattern Recognition,
+%           2008.
+% \end{itemize}
+
+
+\subsection{Conditional Random Fields}\label{subsec:conditional-random-fields}
+
+\Glspl{CRF} are \glspl{MRF} where all clique potentials are conditioned on
+input features~\cite{murphy2012machine}. This means, instead of learning the
+distribution $P(\mathbf{Y}, \mathbf{X})$, the task is reformulated to learn the
+distribution $P(\mathbf{Y}| \mathbf{X})$. One consequence of this reformulation
+is that \glspl{CRF} need much less parameters as the distribution of $X$ does
+not have to be estimated. Another advantage of \glspl{CRF} compared to
+\glspl{MRF} is that no distribution assumption about $X$ has to be made.
+
+Formally, a \gls{CRF} is a set of factors
+
+\[\Phi = \Set{\phi_1(\mathbf{D}_1), \dots, \phi_k(\mathbf{D}_k)}\]
+
+together with a normalization function called \textit{partition function} $Z_\Phi$:
+\[Z_\Phi(\mathbf{X}) = \sum_{\mathbf{Y}} \tilde{P_\Phi} (\mathbf{X}, \mathbf{Y})\]
+
+which results in the joint probability distribution
+
+\[P_{\Phi}(\mathbf{Y} | \mathbf{X}) = \frac{1}{Z_\Phi(\mathbf{X})} \prod_{i=1}^k \phi_i(\mathbf{D}_i)\]
+
+
+\Glspl{CRF} are used in \cite{multiscale04,shotton2006textonboost}.
+
+\Glspl{CRF} as described in~\cite{associative09} have reached top performance
+in PASCAL VOC 2010~\cite{VOC2010Results}.
+
+% An Introduction to Conditional Random Fields
+% http://homepages.inf.ed.ac.uk/csutton/publications/crftutv2.pdf
+
+A method similar to \glspl{CRF} was proposed in~\cite{gonfaus2010harmony}.
+The system of Gonfaus~et.al. ranked~1st by mean accuracy in the segmentation
+task of the PASCAL VOC 2010 challenge~\cite{everingham2010pascal}.
