@@ -4,44 +4,29 @@
 %TODO: Type of MLP
 \section{Neural Networks for Segmentation}\label{sec:fcn}
 
-As descripted in ... the computer vision community had great success in applying \Glspl{CNN} to image classification problems. There have been quite a lot of efford to adopt these results to semantic segmantation. This is done by viewing semantic segmantation as a pixel-level classificion problem. 
-
-A recent break-through has been archived by Long, Shelhammer et. al with the design of Fully Convolutional Networks \cite{fcn}. 
+After the overwhelming successes of \Glspl{DCNN} in image classification, there as been a lot of effort to apply this models to further computer vision tasks. Early ideas include the use of \Glspl{CNN} based classifiers in combination with traditional classifiers \cite{RNN}. Other authors used the idea descripted in \cref{sec:tasks} to tackle segmentation as pixel-wise classification problem using a sliding-window approach together with a classification network \cite{fast_scanning}, \cite{overfeat}, \cite{bktt} \cite{highly}. These authors profit from the inherent sliding window efficenty of \Glspl{CNN}, descripted in \cref{sec:convnet}. A recent break-trough has been archieved with the novel \gls{FCN} \cite{fcn} architectures. \Gls{FCN} are an architecture specifically designed for Semantic Segmentation. \Gls{FCN} combine the sliding window efficenty with a deconvolution architecture for upsampling and a transfer learning approach. \glspl{FCN} and there deeper successors \cite{CRF1}, \cite{deconv1} \cite{googleSeg} are currently the state-of-the art in several semantic segmentation benchmarks. We will descripe the mechanics behind \glspl{FCN} in detail in \cref{sec:fcn_detail}.
 
 
-
- Inspired by these successes researchers have tried to benefit 
-
-Regarding the successes of \Glspl{CNN} in image classification researches have started adopting these  
-
-
+\iffalse
 
 As described in \Cref{sec:tasks} Semantic Segmentation can be views as a spatial version of classification, where a classification model can be transfered into a segmentation model using a sliding window approach. In \glspl{CNN} sliding window can be carried out very efficiently. Most CNN based segmentation approaches are using this insight to build models on the shoulders of AlexNet and its deeper successors. 
 
-\subsection{Sliding Window efficiency in CNNs}
+\fi
 
-%TODO: Directly copied from paper: overfeat
+\subsection{Sliding Window efficiency in CNNs} \label{sec:convnet}
 
-In contrast to many sliding-window approaches that compute an entire pipeline for each window that input one at a time, ConvNets are inherently efficient because they naturally share computations common to overlapping regions. 
+Opposed to other classification approaches ConvNets are inherently effecient when applied in sliding window fashion. Their translation invariant structure allows to benifit from computation on overlapping patches on the images. Of high practical relevants is also, that the result itselfe will be a ConvNet, that means any ConvNet $C$ can easily be transformed in a ConvNet $C'$, whose output is equal to applying $C$ in sliding window fashion. This idea can hence be very efficently implemented in any ConvNet framework, without much efford. The only downside is, that $C'$ will have a stride $s$ equal to the product of all strides in $C$.
 
-%TODO: Directly copied from paper: overfeat
+The reason for the efficienty is, that translation invariant computing is computational traceable. Let $F, G$ function, computing a layer as defined in \cref{sec:cnn_not}. Let $f,g$ kernels corresponding with sizes $k,k'$ and stride $s,s'$, corresponding to $F, G$ respectively. Than $F \circ G$ is obtained by the kernel $f \circ g$, which has kernel size $k + (k-1) s'$ using stride $s \cdot s'$. For networks only consisting of convolution and pooling layers one can therefore simple increase the size of the input layer at evaluation time. The output will be equivalent to apply the original network in sliding-window fashion. Common ConvNet architectures typically have one or more fully-connected layer producing the final classification output. This layers can be replaced by convolutional layers using the trick descripted in \cref{sec:fully_connected}. 
 
-This is because the convolution properties are computational traceable. Let $F, G$ be given by its kernel functions $f,g$ with sizes $k,k'$ and stride $s,s'$, respectively. Than $F \circ G$ is obtained by convolution with $f \circ g$, which has kernel size $k + (k-1) s'$ using stride $s \cdot s'$. A classification ConvNet with input layer of size $k \times k$, output of size $1 \times 1$ therefore computes a convolution with kernel size $k^2$ and stride $s$ equal to the product of strides inside the network. If fully connected layer are transformed into convolutional layer (as descripted in \Cref{sec:fully_connected_layer}), it is possible to apply this network on an input image of size $n \times m$ with $n,m \geq k$ and to obtain an output equal to a sliding window with stride $s$. 
+The main downside of this approach is the stride of the overall output stride. The output image of the transformed ConvNet $C'$ will be an low resolution image. The input image will be downsampled by a factor of $s$ corresponding to the product of all strides beeing applied in $C'$. On most network architectures $s$ becomes quite large, e.g. $32$ on VGG16, a network using pooling very cautiously. 
 
-The main drawback of this method is, that the stride $s$ becomes quite large, e.g. $32$ when using VGG16. There are two approaches to overcome this problem:
-
-\subsubsection{Shift-and-stitch} The idea of this approach is to feed each layer with stride $s$ with $s^2$ shifted versions of the input. This basically neglects the computational advantage of strides, but keeps the statistical relevant effects. Fast-scanning \cite{fast_scanning} descripes a trick to efficiently perform this computation.  This idea is used in several publications \cite{overfeat,huval}.
-
-\subsubsection{Upsampling} Alternatively one can use 
+To avoid downsampling while still profiting from the sliding window efficiently of \glspl{CNN} it is possible to use shift-and-stitch. Each layer which is associated with an stride $s$ is feeded with $s^2$ shifted versions of the input. (Each with a different shift in $x$ or $y$ dimension). The output can than be stitched together in order to obtain an image of original resolution. The result is than equivalent in applying sliding-window with stride 1. However the computational advatage of applying strided pooling is lost in the procedure (while the model advantage remains). Fast-scanning \cite{fast_scanning} descripes a trick to efficiently perform this computation.  This idea is used in several publications \cite{overfeat,huval}.
 
 
- add deconvolution layer on top of the ConvNet architecture. This enables the network to learn to upsample the coarse representation obtained by the sliding-window. This approach is introduced in (cite) and since used in a variety of publications (SegNET, ...)
+\subsection{FCN} \label{sec:fcn_detail}
 
-One advantage of the deconvolution approach is, that the original ConvNet can be trained using data labeled for the classification task, only the deconvolution layer .
-
-\subsection{FCN}
-
-A recent break-through has been achieved by Long, Shelhammer et. al \cite{fcn} by designing \gls{FCN} an architecture specifically framed towards semantic segmentation. Similar to the sliding-window based approaches, they are using a classification network to obtain a low-resolution feature map containing spatial informations about the objects. But opposed to earlier approaches they are using a trainable deconvolution layer to upsample this feature map.
+The \glspl{FCN} \cite{fcn} Architecture builds up on the ideas presented of \cref{sec:convnet}. Similar to earlier approaches they are using existing classification networks and transform them into segmentation networks using the inherent sliding-window efficientcy of ConvNets. However opposed to earlier approach they are not trying to avoid downsampling as part of the progress, but they are using a trainable upsampling layer to archive high resolution output. Further ingredients of their approach is a skip-architecture to  preserve fine-grained information and a transfer-learning approach making it possible to train a very deep net.
 
 
 \subsubsection{Deconvolution} Todo: detailed explanation of deconvolution
@@ -55,7 +40,7 @@ A recent break-through has been achieved by Long, Shelhammer et. al \cite{fcn} b
 \subsubsection{Transfer Learning} One of the strengthes of the FCN approach is the use of transfer learning. Training is done in two steps. First the classification network is done using weakly annotated data (i.e. classification labels). Afterwards the last layer of the architecture is replaced by a deconvolution layer. Only than the Network is fine-tuned on segmentation data. Usually weakly labeled data is much cheaper to obtain than fully labeled segmentation data making this approach very attractive for a lot of applications.
 
 
-In the publication several the FCN approach was applied to AlexNet, VGG16 and GoogLeNet. The best results where achieved on VGG16. A possible explanation for this is, that VGG16 uses stride and pooling most cautiously perserving lots of spatial information.
+In the publication several the FCN approach was applied to AlexNet, VGG16 and GoogLeNet. The best results where achieved on VGG16. A possible explanation for this is, that VGG16 uses stride and pooling most cautiously perserving spatial information best.
 
 
 

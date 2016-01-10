@@ -9,7 +9,7 @@ In order to reasonable train deep models on the high dimensional image data mode
 
 Stationarity of statistics is archived by applying a translation invariance functions on each layer. Locality of pixel dependencies is accomplish by making the kernel of this function only depend on a relative small and dense reception field. 
 
-\subsection{Definitions and Notation}
+\subsection{Definitions and Notation} \label{sec:cnn_not}
 
 Multi-Layer perceptrons operate in layer, each of shape $h \times w \times d$, where $h$ and $w$ are spatial coordinates and $d$ is the channel size. Let $x_{ij} \in R^d$ be the data of Layer $l$, than Layer $l+1$, given by $y_{ij} \in R^{d'}$ is given by computing a layer function 
 \begin{equation*}
