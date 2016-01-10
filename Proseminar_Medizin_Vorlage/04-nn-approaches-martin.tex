@@ -1,5 +1,4 @@
 %!TEX root = vorlage.tex
-% Martin Thoma
 
 \section{Neural Networks for Semantic Segmentation}
 
@@ -28,9 +27,9 @@ Krizhevsky~et~al. in~\cite{krizhevsky2012imagenet}. One major idea was a clever
 regularization called \textit{dropout training}, which set the output of neurons
 while training randomly to zero. Another contribution was the usage of an activation
 function called \textit{rectified linear unit}:
-\[\phi_{\text{ReLU}}(x) = \max(0, x)\]
+\[\varphi_{\text{ReLU}}(x) = \max(0, x)\]
 Those are much faster to train than the commonly used sigmoid activation functions
-\[\phi_{\text{Sigmoid}}(x) = \frac{1}{e^{-x} + 1}\] % other contributions: max pooling; ReLU; Dropout
+\[\varphi_{\text{Sigmoid}}(x) = \frac{1}{e^{-x} + 1}\]
 Krizhevsky~et~al. implemented those ideas and ran it participated in the
 \gls{ILSVRC}. The best other system, which used SIFT features and Fisher
 Vectors, had a performance of about \SI{25.7}{\percent} while the network by

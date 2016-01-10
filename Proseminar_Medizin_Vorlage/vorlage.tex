@@ -60,11 +60,12 @@
 \DeclareMathOperator*{\minimize}{minimize}
 \DeclareMathOperator*{\maximize}{maximize}
 
-% ORCID: http://orcid.org/0000-0002-6517-1690 Thoma, Martin
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
 
 \newcommand{\titleboth}{The State of the Art in Image Segmentation} %TODO: Really?
 \title{\titleboth}
-\author{Martin Thoma\\% ORCID: http://orcid.org/0000-0002-6517-1690
+\author{Martin Thoma\\% ORCID: http://orcid.org/0000-0002-6517-1690 Thoma, Martin
 info@martin-thoma.de
 }
 

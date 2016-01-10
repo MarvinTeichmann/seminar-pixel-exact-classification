@@ -4,24 +4,6 @@
   images and its application to evaluating segmentation algorithms and
   measuring ecological statistics.
 
-### PASCAL Visual Object Recognition Challenge (VOC)
-* 2009 and 2010 segmentation challenge data sets
-* M. Everingham, L. Van Gool, C.K.I. Williams, J. Winn, and A. Zisserman, “The
-  PASCAL Visual Object Classes Challenge 2010 (VOC ’10) Results,” 2010.
-* M. Everingham, L. Van Gool, C.K.I. Williams, J. Winn, and A. Zisserman, “The
-  Pascal Visual Object Classes Challenge 2009 (VOC ’09) Results,” 2009.
-
-> The competition contains 2,000 training and validation images along with
-> ground-truth labelings which give per-pixel labelings for 4,200 instances of
-> 20 object categories. Test annotations for the data set are not released.
-> Instead, benchmarking algorithm performance is done on a held-back test set
-> through a web interface.
-
-Source: Layered Object Models for Image Segmentation
-
-* http://host.robots.ox.ac.uk/pascal/VOC/
-
-
 ### Berkeley Segmentation Dataset and Benchmark
 > Our dataset for this evaluation is the Berkeley Segmentation Database [5],
 > whichcontains 300 natural images with multiple ground truth hand
@@ -45,12 +27,6 @@ Source: Layered Object Models for Image Segmentation
   pages = {416--423}
 }
 
-
-### Medicine
-
-*  http://mis.haifa.ac.il/~ishimshoni/SegmentCrypt/Download.htm
-
-
 #### Brain segmentation dataset
 
 > Segmentation of brain MR images: The IBSR real T1- weighted brain-MR dataset
@@ -69,29 +45,6 @@ Source: A pixel classification system for segmenting biomedical images using
 
 * The IBSR real T1-weighted brain-MR dataset: Internet Brain Segmentation
   Respository (IBSR), “http://www.cma.mgh.harvard.edu/ibsr,”
-
-
-#### Nuclei in fluorescence images
-
-> Segmentation of nuclei from fluorescence images: expert segmented nuclei
-images are available from Dr. Murphy’s group at Carnegie Mellon University
-[13]. The data consists of 48 2D images, out of which 6 images were randomly
-selected for training and the remaining images were used for test- ing. The
-results were assessed following Coelho et al. [13]. Three types of metrics are
-used for evaluation: (1) the Rand and Jaccard indices, which measure the
-fraction of the pixel pairs where the segmentation and the ground truth agree.
-The larger the value, the better the result. (2) Error Counting: split, merged,
-added, and missing, which counts the errors in segmenting nuclei. (3)
-Spatially-Aware Evaluation: NSD and Hausdorff metrics, which measure the
-distance of segmented nuclei to the ground truth. We calculate the mean values
-for all test images, and compare with the best results in [13].
-
-Source: A pixel classification system for segmenting biomedical images using
-        intensity neighborhoods and dimension reduction
-
-* L.P. Coelho, A. Shariff, and R.F. Murphy, “Nuclear segmentation in microscope
-  cell images: a hand-segmented dataset and comparison of algorithms,” in ISBI
-  2009. IEEE, 2009, pp. 518–521.
 
 
 ### LabelMe
@@ -121,29 +74,6 @@ database: Large-scale scene recognition from abbey to zoo. In
 CVPR, 2010. 5
 
 
-### Microsoft
-
-* http://research.microsoft.com/vision/cambridge/recognition/
-* 591 photographs of the following 21 object classes: building, grass, tree,
-  cow, sheep, sky, aeroplane, water, face, car, bike, flower, sign, bird, book,
-  chair, road, cat, dog, body, boat (fig. 1). The training images were
-  hand-labeled with the assigned colors acting as indices into the list of
-  object classes. Note that we consider completely general lighting conditions,
-  camera viewpoint, scene geom- etry, object pose and articulation. Our
-  database is split randomly into roughly 45% training, 10% validation and 45%
-  test sets, while ensuring approximately proportional contributions from each
-  class. Note that the ground-truth labeling of the 21-class database contains
-  pixels labeled as ‘void’. These were included both to cope with pixels that
-  do not belong to a database class, and to allow for a rough and quick
-  hand-segmentation which does not align exactly with the object boundaries.
-  Void pixels are ignored for both training and testing.
-  - Source: "Textonboost: Joint appearance, shape and context modeling for
-    multi-class object recognition and segmentation"
-
-#### MSRC 21-Class Database
-* http://research.microsoft.com/en-us/projects/objectclassrecognition/
-
-
 ### Corel database
 * For comparison with previous work we have also used the 7-class Corel data-
   base subset (where images are 180×120 pixels) and the 7-class Sowerby
@@ -163,7 +93,7 @@ CVPR, 2010. 5
 
 * http://rodrigob.github.io/are_we_there_yet/build/
 * http://homepages.inf.ed.ac.uk/rbf/CVonline/Imagedbase.htm
-* http://www2.warwick.ac.uk/fac/sci/dcs/research/combi/research/bic/glascontest/ - GlaS@MICCAI'2015: Gland Segmentation Challenge Contest
+* http://www.via.cornell.edu/databases/
 
 
 ## Papers for Classification
