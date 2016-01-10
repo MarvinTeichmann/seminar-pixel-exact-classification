@@ -1,6 +1,7 @@
+%!TEX root = vorlage.tex
 \section{Convolution Neuronal Networks}\label{sec:cnn}
 
-In order to reasonable train deep models on the high dimensional image data models which contain strong prior knowledge are required. Having prior knowledge about image data allows us to dramatically reduce the capacity (i.e. amount of parameters) without sacrificing much accuracy. CNNs rely on the following two strong assumptions.
+In order to reasonable train deep models on the high dimensional image data models which contain strong prior knowledge are required. Having prior knowledge about image data allows us to dramatically reduce the capacity (i.e. amount of parameters) without sacrificing much accuracy. CNN's rely on the following two strong assumptions.
 
 \begin{enumerate}
     \item translation invariance and stationarity of statistics
@@ -16,7 +17,7 @@ Multi-Layer perceptrons operate in layer, each of shape $h \times w \times d$, w
 y_{nm} := F_{nm} (\{ x_{ij} \}_{0 \leq i \leq h, 0 \leq j \leq w}   )
 \end{equation*}
 
-In CNNs $F_{ij}$ is chosen to be translation invariant. $F_{ij}$ can therefore be described by a kernel  operation $f: R^k \rightarrow R$. The meta-parameter $k$ is called \emph{kernel size}, it usually has shape $k = n \times n$ with $n << h,w$.  The function $f$ is than applied to every location in a sliding-window fashion. Sometimes $s$ pixel are skipped in each dimension resulting in a down-sampling of factor $s$. The meta-parameter $s$ is called \emph{stride}. Hence we obtain
+In CNN's $F_{ij}$ is chosen to be translation invariant. $F_{ij}$ can therefore be described by a kernel  operation $f: R^k \rightarrow R$. The meta-parameter $k$ is called \emph{kernel size}, it usually has shape $k = n \times n$ with $n << h,w$.  The function $f$ is than applied to every location in a sliding-window fashion. Sometimes $s$ pixel are skipped in each dimension resulting in a down-sampling of factor $s$. The meta-parameter $s$ is called \emph{stride}. Hence we obtain
 
 \begin{align*}
 y_{ij} &:= F_{nm} (\{ x_{ij} \}_{0 \leq i \leq h, 0 \leq j \leq w}   ) \\&\; = f_{ks} (\{x_{s \cdot n + i, s \cdot m + j}  \}_{0 \leq i,j \leq k} ).
@@ -26,11 +27,13 @@ Layer $l+1$ has hence shape $(h - k)/s \times (w-k)/s \times d'$, where $d'$ cor
 
 \subsection{Layer Types}
 
-CNNs are build using three different layer types. Namely these are \emph{convolutional}, \emph{pooling} and \emph{activation} layers.
+CNN's are build using three different layer types. Namely these are \emph{convolutional}, \emph{pooling} and \emph{activation} layers.
 
 \subsubsection{Convolutional Layer}
 
-Convolutional layer implement a learnable convolution operation inside the neural network model. To archive that $f_{ks}$ is chosen to be linear function (i.e. a matrix). Observe that this can be viewed as a special case of an MLP, where curtained weights are enforced to be equal or fixed to be zero. The parameters can therefore be learned using a back-propagation approach. In computer graphics convolutions are a very important tool. They can be used for a variety of tasks including edge and area detection, contrast sharpening and image blurring. Having learnable convolution kernels is therefore a very powerful tool. In convolutional layers stride is usually choose to be $s=1$ , unless the kernel-size is relatively big ($k \geq 7$).  (cite: AlexNet, VGG, GoogLeNET (LeNet?)).
+Convolutional layer implement a learnable convolution operation inside the neural network model. To archive that $f_{ks}$ is chosen to be linear function (i.e. a matrix). Observe that this can be viewed as a special case of an MLP, where curtained weights are enforced to be equal or fixed to be zero. The parameters can therefore be learned using a back-propagation approach. In computer graphics convolutions are a very important tool. They can be used for a variety of tasks including edge and area detection, contrast sharpening and image blurring. Having learnable convolution kernels is therefore a very powerful tool. In convolutional layers stride is usually choose to be $s=1$ , unless the kernel-size is relatively big ($k \geq 7$).  \cite{AlexNet,VGG16,googLeNeT}. 
+
+%TODO: LeNET
 
 %Recent networks.
  
@@ -38,18 +41,20 @@ Convolutional layer implement a learnable convolution operation inside the neura
 
 The pooling layer applies non-learnable function, which collects a summary statistic about a region of the feature map. Typical choices are max- or mean-pooling, computing the corresponding function on its input region. 
 
-For the pooling layer typically $s$ is choose to be $k$ (VGG, GoogLeNet, OverFeat),  although overlapping pooling has been successfully applied (Alexnet). Typical choices for the kernes size include $2 \times 2$ or $3 \times 3$. (cite).
+For the pooling layer typically $s$ is choose to be $k$ (VGG, GoogLeNet, OverFeat),  although overlapping pooling has been successfully applied (Alexnet). Typical choices for the kernel size include $2 \times 2$ or $3 \times 3$. (\cite{AlexNet,VGG16,googLeNeT}).
 
 Applying pooling has two  advantages: Firstly it naturally reduces the spatial dimension enabling the network to learn more compact representation if the data and decreasing the amount of parameters in the succeeding layers. Secondly it introduces robust translation invariant. Minor shifts in the input data will not result in the same activation after pooling. The drawback of pooling however is, that fine-grained spatial information are lost in the process. This is a negligible disadvantage for non-spatial tasks such as classification but comes severe in segmentation. 
 
  \subsubsection{Activation Layers}
  
- To enable the CNN to learn non-linear function it is crucial, that some kind of non-linearity is applied between layers. Otherwise the Network is equivalent to the concatenation of linear functions, hence a linear function itself which can be equally represented using a single layer. Non-linearities are usually one-dimensional functions $f: R \rightarrow R$, applied to each coordinate individually, hence they can be viewed as an kernel operation with size $k=1$ and stride $s=1$ in the above notation. 
+ To enable the CNN to learn nonlinear function it is crucial, that some kind of nonlinearity is applied between layers. Otherwise the Network is equivalent to the concatenation of linear functions, hence a linear function itself which can be equally represented using a single layer. Nonlinearities are usually one-dimensional functions $f: R \rightarrow R$, applied to each coordinate individually, hence they can be viewed as an kernel operation with size $k=1$ and stride $s=1$ in the above notation. 
  
-Classical choices for nonlinearities are the hyperbolic tangent \emph{tanh} and the sigmoid function $f(x) = (1- exp(-x))^{-1}$. Recently ReLU Nonlinearities (AlexNet, Bolzmann) have gained a lot of popularity (cite). ReLU Nonlinearities have several advantages over traditional nonlinearities. Firstly they are very fast and efficient to compute on GPU. Secondly it does not suffer from the gradient vanishing problem and lastly empirical results show, that training converges several times faster than with other Nonlinearities.
+Classical choices for nonlinearities are the hyperbolic tangent \emph{tanh} and the sigmoid function $f(x) = (1- exp(-x))^{-1}$. Recently ReLU Nonlinearities \cite{AlexNet}(AlexNet, Bolzmann) have gained a lot of popularity \cite{AlexNet,VGG16,googLeNeT}. ReLU Nonlinearities have several advantages over traditional nonlinearities. Firstly they are very fast and efficient to compute on GPU. Secondly it does not suffer from the gradient vanishing problem and lastly empirical results show, that training converges several times faster than with other Nonlinearities.
 
 \subsubsection{Fully Connected Layers}
 
+Todo: descripe fully connected layers and their relation to convolution layers
+
 \label{sec:fully_connected}
 
-\subsection{Relevant Network Architectures}
+% \subsection{Relevant Network Architectures}

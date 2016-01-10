@@ -1,4 +1,6 @@
-\documentclass[11pt, a4paper,twocolumn]{IEEEtran} % Seminar
+%\documentclass[11pt, a4paper,twoside]{scrartcl}
+\documentclass[a4paper,leqno]{scrartcl}
+% /packages
 
 % input
 \usepackage[utf8]{inputenc}
@@ -12,6 +14,7 @@
 
 % additional helper packages
 
+\usepackage{ae}
 \usepackage{tabularx}
 \usepackage{amsmath,amssymb}
 \usepackage[pdftex]{graphicx}
@@ -20,6 +23,9 @@
 \usepackage{microtype}
 \usepackage{eurosym}
 \usepackage{footnote}
+
+\usepackage[inner=3cm,outer=2.5cm,top=2.5cm,bottom=2cm,includeheadfoot]{geometry}
+
 
 %\usepackage[inner=1.5cm,outer=2.5cm,top=2.5cm,bottom=2cm,includeheadfoot]{geometry}
 
@@ -42,6 +48,10 @@
 \crefalias{problemnri}{problemnr}
 \makeatother
 
+\DeclareGraphicsExtensions{.jpg}
+
+\newcommand{\changefont}[3]{\fontfamily{#1} \fontseries{#2} \fontshape{#3} \selectfont}
+
 
 
 % Document
@@ -50,12 +60,19 @@
 \author{Marvin Teichmann}
 \date{\today}
 
+\usepackage{abstract}
+
 
 
 
 
 \begin{document}
+
 \maketitle
+
+\begin{abstract}
+In this work we evaluate the potential of \gls{DCNN} for segmentation applications in Medical Informatics. We give an overview of the most important publication in the fields, an comprehensive explanation of the most common approaches used  and a short review on how this techniques can be applied to tasks in the field of Medical Informatics.
+\end{abstract}
 \input{00-abstract.tex}
 \input{01-introduction}
 \input{02-tasks}
@@ -67,8 +84,10 @@
 %\input{04-nn-approaches}
 
 
+
 \newpage
+
 \bibliography{marvin}
-\bibliographystyle{alpha}
-\printglossaries%
+\bibliographystyle{IEEEtranSA}
+\printglossaries
 \end{document}
