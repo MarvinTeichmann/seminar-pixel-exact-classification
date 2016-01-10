@@ -6,7 +6,6 @@
 % packages
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{ae}
 \usepackage{tabularx}
 \usepackage{amsmath,amssymb}
 \usepackage[pdftex]{graphicx}
@@ -60,15 +59,13 @@
 % ORCID: http://orcid.org/0000-0002-6517-1690 Thoma, Martin
 
 \title{The State of the Art in automatic, fixed class, single-image Segmentation}
-\author{%
-\makebox[.4\linewidth]{Marvin Teichmann\thanks{\IEEEauthorrefmark{1} These authors contributed equally to this work}\IEEEauthorrefmark{1}} % ORCID: http://orcid.org/0000-0002-9178-2970
-\and \makebox[.4\linewidth]{Martin Thoma\IEEEauthorrefmark{1}}\\% ORCID: http://orcid.org/0000-0002-6517-1690
-\hspace{3.5cm}info@martin-thoma.de
+\author{Martin Thoma\\% ORCID: http://orcid.org/0000-0002-6517-1690
+info@martin-thoma.de
 }
 
 % arxiv doesn't like \sep
 \hypersetup{
-    pdfauthor   = {Marvin Teichmann, Martin Thoma},
+    pdfauthor   = {Martin Thoma},
     pdfkeywords = {semantic segmentation, pixelwise classification, pixel-level classification},
     pdfsubject  = {Segmentation},
     pdftitle    = {The State of the Art in automatic, fixed class, single-image Segmentation},
@@ -82,10 +79,11 @@
 \input{01-taxonomy}
 \input{02-0-evaluation-and-datasets}
 \input{03-traditional-approaches}
-\input{04-nn-approaches}
+%\input{04-nn-approaches}
+\input{04-nn-approaches-martin}
 \input{05-typical-problems}
-\input{06-speed-ups}
-\input{07-image-enhancement}
+% \input{06-speed-ups}
+% \input{07-image-enhancement}
 
 
 \newpage
