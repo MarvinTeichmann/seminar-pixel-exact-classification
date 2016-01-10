@@ -1,0 +1,49 @@
+%!TEX root = vorlage.tex
+% Martin Thoma
+
+\section{Neural Networks for Semantic Segmentation}
+
+Artificial neural networks are classifiers which are inspired by neurons.
+Every single neuron has some inputs which it sums up, applies a so called
+\textit{activation function} to it and gives an output. Those neurons can take
+either a feature vector as input or the output of other neurons. In this way,
+they build up feature hierarchies.
+
+The parameters they learn are the weights. They get learned by gradient
+descent. To do so, an error function --- usually cross-entropy or mean squared
+error --- is necessary. For the gradient descent algorithm, one sees the
+labeled training data as given, the weights as variables and the error function
+as a surface in this weight-space. Minimizing the error function in the weight
+space adapts the neural network to the problem.
+
+There are lots of ideas around neural networks like regularization, better
+optimization algorithms, automatically building up architectures, design
+choices for activation functions. I will not go into detail here, but I want to
+outline some of the mayor breakthroughs.
+
+\Glspl{CNN} are neural networks which learn image filters. They drastically
+reduce the number of parameters which have to be learned while being still
+general enough for the problem domain of images. This was shown by Alex
+Krizhevsky~et~al. in~\cite{krizhevsky2012imagenet}. One major idea was a clever
+regularization called \textit{dropout training}, which set the output of neurons
+while training randomly to zero. Another contribution was the usage of an activation
+function called \textit{rectified linear unit}:
+\[\phi_{\text{ReLU}}(x) = \max(0, x)\]
+Those are much faster to train than the commonly used sigmoid activation functions
+\[\phi_{\text{Sigmoid}}(x) = \frac{1}{e^{-x} + 1}\] % other contributions: max pooling; ReLU; Dropout
+Krizhevsky~et~al. implemented those ideas and ran it participated in the
+\gls{ILSVRC}. The best other system, which used SIFT features and Fisher
+Vectors, had a performance of about \SI{25.7}{\percent} while the network by
+Alex Krizhevsky~et~al. got \SI{17.0}{\percent} error rate on the ILSVRC-2010.
+As a preprocessing step, they downsampled all images to a fixed
+size of $\SI{256}{\pixel} \times \SI{256}{\pixel}$ before they fed the features
+into their network. This network is commonly known as \textit{AlexNet}.
+
+Another notable paper is~\cite{long2014fully}. The algorithm presented there
+makes use of a classifying network such as AlexNet, but applies the complete
+network as an image filter. This way, each pixel gets a probability
+distribution for each of the trained classes. By taking the most likely class,
+a semantic segmentation can be done with arbitrary image sizes.
+
+A very recent publication by Dai~et~al.~\cite{dai2015instance} showed that
+segmentation with much deeper networks is possible and achieves better results.
