@@ -1,3 +1,60 @@
 %!TEX root = vorlage.tex
-% Marvin Teichmann
+
 \subsection{Datasets}
+
+The computer vision community produced a couple of different datasets which are
+publicly available. In the following, only the most widely used ones are
+described. An overview over the quantity and the kind of data is given by
+\cref{table:segmentation-databases}.
+
+
+\subsubsection{PASCAL VOC}
+
+The PASCAL\footnote{\textbf{p}attern \textbf{a}nalysis, \textbf{s}tatistical
+modelling and \textbf{c}omput\textbf{a}tional \textbf{l}earning, an EU network
+of excellence} VOC\footnote{\textbf{V}isual \textbf{O}bject \textbf{C}lasses}
+challenge was organized eight times with different datasets: Once every year
+from 2005 to 2012~\cite{pascal-voc-2012}. Beginning with~2007, a segmentation
+challenge was added~\cite{pascal-voc-2007}.
+
+The dataset consists of annotated photographs from www.flicker.com, a photo
+sharing website. There are multiple challenges for PASCAL VOC. The 2012
+competition had 5~challenges of which one is a segmentation challenge where
+a single class label was given for each pixel.
+
+Although no new competitions will be held, new algorithms can be evaluated on
+the 2010, 2011 and 2012 data via
+\href{http://host.robots.ox.ac.uk:8080/}{http://host.robots.ox.ac.uk:8080/}
+
+The PASCAL VOC segmentation challenges use the \textit{segmentation over union}
+criterion (see \cref{subsec:quality-measures}).
+
+
+\subsubsection{MSRCv2}
+
+Microsoft Research has published a database of 591 photographs with pixel-wise
+annotation of 21~classes: aeroplane, bike, bird, boat, body,
+book, building, car, cat, chair, cow, dog, face, flower, grass, road, sheep,
+sign, sky, tree, water. Additionally, there is a \texttt{void} label for pixels
+which do not belong to any of the 21~classes or which are close to the
+segmentation boundary. This allows a \enquote{rough and quick hand-segmentation
+which does not align exactly with the object boundaries}~\cite{shotton2006textonboost}.
+
+The dataset is described in~\cite{shotton2006textonboost}.
+
+\subsubsection{Medical Databases}
+
+The Warwick-QU Dataset consists of 165~images with pixel-wise annotation of
+5~classes: \enquote{healthy, adenomatous, moderately differentiated,
+moderately-to-poorly differentiated, and poorly
+differentiated}~\cite{coelho2009nuclear}. This dataset is part of the
+Gland Segmentation (GlaS) challenge.
+
+The DIARETDB1~\cite{kalesnykiene2014diaretdb1} is a dataset of 89~images fundus
+images. Those images show the interior surface of the eye. Fundus images can
+be used to detect diabetic retinopathy. The images have four classes of coarse
+annotations: hard and soft exudates, hemorrhages and red small dots.
+
+20~test and additionally 20~training retinal fundus images are available
+through the DRIVE data set~\cite{staal2004ridge}. The vessels were annotated.
+Additionally, \cite{azzopardi2011detection} added vascular features.

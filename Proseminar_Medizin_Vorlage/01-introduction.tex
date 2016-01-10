@@ -1,12 +1,12 @@
 %!TEX root = vorlage.tex
-% Marvin Teichmann and Martin Thoma
+
 \section{Introduction}\label{sec:introduction}
 Semantic segmentation is the task of clustering parts of images together which
 belong to the same object class. This type of algorithm has several use-cases
-such as detecting road % detecting objects in robotics (TODO: cite),
-signs~\cite{4220659}, detecting tumors in medicine~\cite{moon2002automatic},
-detecting medical instruments in operations~\cite{wei1997automatic}, colon
-crypts segmentation~\cite{cohen2015memory}, land use and land cover
+such as detecting road signs~\cite{4220659}, detecting tumors in
+medicine~\cite{moon2002automatic}, detecting medical instruments in
+operations~\cite{wei1997automatic}, colon crypts
+segmentation~\cite{cohen2015memory}, land use and land cover
 classification~\cite{huang2002assessment}. In contrast, non-semantic
 segmentation only clusters pixels together based on general characteristics of
 single objects. Hence the task of non-semantic segmentation is not
@@ -21,27 +21,19 @@ certainly a big advantage when trying to get object instances, there are a
 couple of problems: neighboring pixels of the same class might belong to
 different object instances and regions which are not connected my belong to the
 same object instance. For example, a tree in front of a car which visually
-divides the car into two parts. Some papers report to have used
-both~\cite{tighe2014scene}.
+divides the car into two parts.
 
-% Pixelwise segmentation is an imporant sub-task of many applications and can
-% be applied to support even more applications: Understanding images (TODO:
-% Cite paper google automatically labeling images), object detection (TODO:
-% Cite a paper probably by Asfour), street detection (TODO: Cite), face
-% detection (TODO: cite) and medical instrument detection (TODO: cite) are only
-% a couple of the possible applications.
+This paper is organized as follows: It begins by giving a taxonomy of
+segmentation algorithms in \cref{sec:taxonomy}. A summary of quality measures
+and datasets which are used for semantic segmentation follows in
+\cref{sec:evaluation-and-datasets}. A summary of the most important traditional
+segmentation algorithm and their characteristics follows in
+\cref{sec:traditional-approaches}, as well as a very brief, non-exaustive
+summary of recently published semantic segmentation algorithms which are based
+on neural networks in \cref{sec:nn}. Finally, \cref{sec:problems} informs the
+reader about typical problematic cases for segmentation algorithms.
 
-% In many applications speed and accuracy is crucial. In this paper, we
-% summarize the current state of semantic segmentation.
-
-This paper is organized as follows: We begin by giving a taxonomy of
-segmentation algorithms. %in \cref{sec:taxonomy}.
-A summary of quality measures and datasets which are used for semantic
-segmentation. A summary of the most important traditional segmentation
-algorithm and their characteristics follows, as well as a similar summary of
-recently published semantic segmentation algorithms which are based on neural
-networks. The next section informs the reader about typical problematic cases
-for segmentation algorithms. As speed is one of the hard requirements in
-practical applications, we outline some of the actions that can be applied to
-improve the speed of segmentation algorithms. Finally, we mention some of the
-publications which examine automatic image enhancement.
+% TODO: As speed is one of the hard requirements in practical applications, we
+% outline some of the actions that can be applied to improve the speed of
+% segmentation algorithms. Finally, I mention some of the publications which
+% examine automatic image enhancement.

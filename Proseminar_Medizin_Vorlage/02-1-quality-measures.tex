@@ -1,5 +1,5 @@
 %!TEX root = vorlage.tex
-% Martin Thoma
+
 \subsection{Quality measures for evaluation}%
 \label{subsec:quality-measures}%
 A performance measure is a crucial part of any machine learning system, but
@@ -119,10 +119,6 @@ required time-constraints. Also, it should be noted if the algorithm can be
 executed in parallel as standard \glspl{GPU} on the consumer market can execute
 up to 256~kernels in parallel.
 
-% The \gls{CRF} approach presented in \cite{shotton2006textonboost} takes
-% approximately three minutes to segment per image on a \SI{2.1}{\giga\hertz}
-% machine with \SI{2}{\giga\byte} memory.
-
 
 \subsubsection{Stability}%
 \label{subsubsec:stability-quality-measure}%
@@ -138,13 +134,9 @@ also only result in minor differences of the resulting
 segmentations~\cite{pantofaru2005comparison}.
 
 
-\subsubsection{Memory and Power usage}
-Peak memory usage is important when segmentation algorithms get used in devices
-like smartphones or cameras, or when the algorithms have to finish in a given
-time frame, run on the \gls{GPU} and consume so much memory for single image
+\subsubsection{Memory usage}
+Peak memory usage matters when segmentation algorithms get used in devices like
+smartphones or cameras, or when the algorithms have to finish in a given time
+frame, run on the \gls{GPU} and consume so much memory for single image
 segmentation that only the latest graphic cards can be used. However, no
 publication we found mentioned the peak memory usage.
-
-Power usage is an important design choice for algorithms which run on mobile
-devices. Just like memory usage, it hasn't been reported in publications by
-now.

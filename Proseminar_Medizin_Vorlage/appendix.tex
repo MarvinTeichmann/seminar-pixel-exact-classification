@@ -1,0 +1,23 @@
+%!TEX root = vorlage.tex
+
+\clearpage\onecolumn
+\begin{appendices}
+\section{Tables}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{llrrcl}
+    \toprule
+    Database        & Image Resolution (width $\times$ height) & \parbox{1cm}{\centering Number of\\Images}  & \parbox{1cm}{\centering Number of\\Classes}  & Channels & Data source\\\midrule
+    Colon Crypt DB  & $(\SIrange{302}{1116}{\pixel}) \times (\SIrange{349}{875}{\pixel})$            & \num{389}  &  2 & 3        & \cite{colon-crypt-segmentation-db}\\
+    DIARETDB1       & $\SI{1500}{\pixel} \times \SI{1500}{\pixel}$                                   &  \num{89}  &  4 & 3        & \cite{kalesnykiene2014diaretdb1}\\
+    KITTI Road      & $(\SIrange{1226}{1242}{\pixel}) \times (\SIrange{370}{376}{\pixel})$           & \num{289}  &  2 & 3        & \cite{Fritsch2013ITSC}\\
+    MSRCv1          & $(\SIrange{213}{320}{\pixel}) \times (\SIrange{213}{320}{\pixel})$             &  \num{240} &  9 & 3        & \cite{MSRC-data}\\
+    MSRCv2          & $(\SIrange{213}{320}{\pixel}) \times (\SIrange{162}{320}{\pixel})$             & \num{591}  & 23 & 3        & \cite{MSRC-data}\\
+    PASCAL VOC 2012 & $(\SIrange{142}{500}{\pixel}) \times (\hphantom{0}\SIrange{71}{500}{\pixel})$  & \num{2913} & 20 & 3        & \cite{pascal-voc-2012-data}  \\
+    Warwick-QU      & $(\SIrange{567}{775}{\pixel}) \times (\SIrange{430}{522}{\pixel})$             & \num{165}  &  5 & 3        & \cite{coelho2009nuclear}\\
+    \bottomrule
+    \end{tabular}
+    \caption{An overview over publicly available image segmentation databases.}
+    \label{table:segmentation-databases}
+\end{table}
+\end{appendices}

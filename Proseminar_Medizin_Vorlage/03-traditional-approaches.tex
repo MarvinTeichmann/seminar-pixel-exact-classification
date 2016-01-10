@@ -1,9 +1,4 @@
 %!TEX root = vorlage.tex
-% Martin Thoma
-
-% definitions
-\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
-\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
 
 \section{Traditional Approaches}\label{sec:traditional-approaches}%
 Image segmentation algorithms which use traditional approaches, hence don't
@@ -17,17 +12,22 @@ Forests are described in \cref{subsec:random-forests}
  and \glspl{SVM} in
 \cref{subsec:trad-SVM}.
 Postprocessing is covered in \cref{subsec:post-processing-methods}.
-% The respective advantages of the classifiers are discussed in
+
+It should be noted that algorithms can use combination of methods. For example,
+\cite{tighe2014scene} makes use of a combination of a \gls{SVM} and a
+\gls{MRF}.
+
+% TODO: The respective advantages of the classifiers are discussed in
 % \cref{subsec:traditional-approaches-discussion}.
 
 \input{03-traditional-features}
 \input{03-traditional-unsupervised}
 \input{03-traditional-approaches-random-forests}
-% \input{03-traditional-approaches-markov-random-fields}
+% \input{03-traditional-approaches-markov-random-fields} TODO
 \input{03-traditional-approaches-svm}
 \input{03-traditional-post-processing}
 
-
+% TODO:
 % \subsection{Discussion}\label{subsec:traditional-approaches-discussion}%
 % According to \cite{pantofaru2005comparison}, the mean shift algorithm produces
 % segmentations that correspond well to human perception, but it is sensitive to
