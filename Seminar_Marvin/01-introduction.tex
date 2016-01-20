@@ -2,17 +2,19 @@
 % Marvin Teichmann and Martin Thoma
 \section{Introduction}\label{sec:introduction}
 
-In 2012 Krizhevsky et. al \cite{AlexNet} won with a new Architecture of CNN's ILSVRC-2012, the ImageNet Classification Challenge by an order of a magnitude. The surprising success marked the beginning of a Renaissance of deep CNN's in Computer Vision. Since than deep CNN's have broken new records in almost any domain of Computer Vision including Classification \cite{AlexNet,VGG16,googLeNeT}, Localization and Detection \cite{RNN,overfeat} and Segmentation \cite{fcn,CRF1,googleSeg}.
+This paper aimes to give a comprehensive introduction to neuronal network based semantic segmentation. It is directed to an audients, who is already familier with semantic segmentation using traditional shallow learning methods but not with the novel deep learning approaches. The work is specied with examples and framed around applications of the field medical informatics, however the presented theory generalizes easily to other fields. 
 
-TODO:
-\begin{itemize}
-\item some motivation  describing the purpose of this paper
-\item explain relevants of semantic segmentation in Medical Informatics
-\item Reference to Martin
-\end{itemize}
-%TODO: Describing the purpose of this paper.
+Deep Neuronal Networks and in particular \glspl{CNN} have been the driving factor of innovation in Computer Vision in the past years. Since Krizhevsky et. al \cite{AlexNet} proposed a novel and award winning Network architecture, Deep \glspl{CNN} have broken new records in many Computer Vision Domains including Classification \cite{AlexNet,VGG16,googLeNeT}, Localization and Detection \cite{RNN,overfeat} and Semantic Segmentation tasks \cite{fcn,CRF1,googleSeg}. 
 
-This paper is structured as fellows: \cref{sec:tasks} defines the most common Computer Visions Tasks and there relations. \cref{sec:cnn} briefly explains the mechanics of CNN's and gives a short overview of the most commonly used architectures. \Cref{sec:fcn} describes recent results in Semantic Segmentation using \Glspl{DCNN}. Finally \Cref{sec:application} outlines how this techniques can be applied on current challenges in Medical Informatics.
+Especially Semantic Segmentation does have several interesting applications in medical informatics, including ... . A recent survey of the traditionally used methods in this area are published in \cite{Martin}. Considering the very recent break-throughs in semantic segmentation using deep learning models \cite{fcn,CRF1}, the next logical step is to adapt such models to medical informatics tasks. This paper aims to help researchers in the field of medical informatics to do so. 
+
+\iffalse
+
+To archive that we will give a comprehensive introduction to neuronal network based semantic segmentation. As neuronal network based semantic segmentation is a very new method and most researches in the medical informatics community have little of new experience with these models. Additionally we are giving a short overview over neuronal network based semantic segmantation approaches already applied in medical informatics. Lastly we do a short case study on how the proposed method can be applied to a medical informatic task in the domain of computer assisted surgery.
+
+\fi
+
+This paper is structured as fellows: \cref{sec:tasks} defines classification, localization and semantic segmantation. These computer vision tasks are closely related to each other an deep learning based approaches to heavily take advantages of these relations. \cref{sec:cnn} gives a short introduction to neuronal networks and \glspl{CNN} in general. \Cref{sec:fcn} than explaines how deep \glspl{CNN} can be applied to Semantic Segmantation tasks. Finally \Cref{sec:application} discusses how medical informatics can benefit from neural network based semantic segmentation.
 
 
 \section{Computer Vision Tasks} \label{sec:tasks}
