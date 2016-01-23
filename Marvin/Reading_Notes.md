@@ -1,6 +1,5 @@
 # FCNN
 
-
 #### Ingradients
 
 * transfer learning (supervised classification pretraining; Segmentation fine-tuning)
@@ -12,8 +11,6 @@
 #### 
 
 * shift and stich architekture [13, 32]
-
-
 
 
 #### TOREAD
@@ -33,3 +30,66 @@
 
 Database:
 PASCAL VOC; NYUDv2; SIFT Flow
+
+# FCNN Similar Methods:
+
+## SegNET
+
+* Encoder-Decoder Architecture; upsampling is hardcoded and then convoluted
+* trained for autonomous driving
+
+* good review for a variety of VGG16 networks [2,9,10,13,14,16]
+
+## Learning Deconvolution Network for Semantic Segmentation
+
+Netzwerk mit tiefem Encoder; Trained End-End;
+
+## Decoupled DNN
+
+Making transfer learning in deep deconvolution possible
+
+
+
+### ToRead
+
+### FCNN like
+
+Predicting depth, surface normals and semantic labels with a common multi-scale convolutional architecture
+
+(Several Tasks in one objects)
+
+Learning Transferrable Knowledge for Semantic Segmentation with Deep Convolutional Neural Network
+
+# ToRead:
+
+Weakly- and Semi-Supervised Learning of a Deep Convolutional Network for Semantic Image Segmentation
+
+
+## Application to bio/medical
+
+Semantic Segmentation of Colon Glands with Deep Convolutional Neural Networks and Total Variation Segmentation
+
+http://arxiv.org/pdf/1511.05286v1.pdf
+(Microscopy Images)
+
+
+
+###### CRF
+
+* Semantic image segmentation with deep convolutional nets and fully
+connected crfs [important!]
+* conditional random fields as RNN
+* Efficient Inference in Fully Connected CRFs with Gaussian Edge Potentials
+
+
+Interesting: Unsupervised learning of invariant feature hierarchies with applications to object
+recognition 
+
+
+
+
+
+
+
+
+

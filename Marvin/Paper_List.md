@@ -48,6 +48,7 @@ FCNN: super-pixel [9,17]; proposals [17,15]; rf/lk [9,17]
 * 11.12. : OverFeat
 * 28.12. : FCNN
 * 29.12. : VGG16
-* 30.12. : 
+* 30.12. : SegNET 1
+* 04.12. : SegNET 2
 
 

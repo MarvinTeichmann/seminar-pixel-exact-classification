@@ -2,3 +2,5 @@
 * Sliding-Window trick (Reference)
 * What inspired AlexNET (Stack OverFlow)
 
+* Collect Architekutres
+
