@@ -55,6 +55,28 @@ Classical choices for nonlinearities are the hyperbolic tangent \emph{tanh} and 
 
 Todo: descripe fully connected layers and their relation to convolution layers
 
+\subsection{Fine-Tuning and Transfer Learning}
+
+One of the main disadvantages of deep learning based approaches is the large amount of labeled training data required to train a deep model. However this can be counterbalanced be utilizing the large amount of freely avaible image data. To archive this \emph{fine-tuning} and \emph{transfer learning}  are two very important deep learning training paradigmens.
+ 
+\subsubsection{Fine-Tuning}
+
+In fine-tuning a model is first trained with different image data. A model witch is supposed to classify organs, for example might first be trained using a subset of ImageNet of Cifar10 data. Although the data is quite different deep layers are still initialized usefully. Deep Layers are usually responsible for detection low level features such as edges and other simple patterns. 
+When training with the task related data, the network is than initialized with the weights obtained by the first training. In order to benefit from the feautes learned on the lower layers, the weights of this layers are sometimes fixed or learned with a lower rate. Additionally higher layers are sometimes discarded, if features of high abstractation are not usefull. 
+
+
+\subsubsection{Transfer Learning}
+
+As discussed in \Cref{sec:relation} there is a strong relation between different computer vision tasks. Deep Models can diretly benefit from these relations using \emph{transfer learning}.
+In \emph{transfer learning} one of the tasks is learned using data labeled for a different task. This can be done as deep features are shared between architectures. 
+
+In practise usually classification data is used to train segmentation of localization networks. This is done, as labeling classification data is much cheaper and therefore avaible in much larger amounts. 
+
+
+
+
+
+
 \label{sec:fully_connected}
 
 % \subsection{Relevant Network Architectures}

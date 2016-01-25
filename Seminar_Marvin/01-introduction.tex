@@ -48,8 +48,19 @@ This paper is structured as fellows: \cref{sec:tasks} defines classification, lo
 
 
 Three very important Computer Vision Tasks are \emph{Classification}, \emph{Detection} and \emph{Semantic Segmentation}. In all three tasks the algorithms receive a single image as input. However the output differs. In \emph{classification} a one-dimensional label is expected, representing the contained of the entire image in a single nominal value. The classes are usually choosen such that these values can be interpreted by humans (i.e. image of a car). In \emph{Localization} and \emph{Detection} the output of the algorithm is a set of bounding boxes, each assigned with a class label. 
+In the Large Scale Visual Recognition Challenge 2015 (ILSVRC2015) taxonomy the only difference between localization and detection is the evaluation. In localization false positives are not punished, but output is restricted to five bounding boxes. In Detection on the other Hand, arbitrary many bounding boxes are excepted as output, but wrong output gets punished. One challenge in Detection is, that the data-set contains images without any bounding-boxes. Hence, the algorithms need to learn an additional background class.
+In segmentation the output is dense. The task is to predict one label to each pixel of the image. 
+A comparision between the three task is visualized in \cref{fig:cvtasks}.
 
-\subsection{Relation between Tasks}
+
+\subsection{Relation between Tasks} \label{sec:relation}
+
+There is a hierarchie between the descripted tasks. In the order Classification, Localization, Detection and Segmentation each task can be viewed as subtask of the previous one. Where Localization and Detection introduce a spatial component to Classfication and Segmentation is a fine-grine version of Detection/Localization. Additionally a segmentation output can be easily transfered to a Detection output by computing the bounding boxes of the segmented area. Detection to Localization by selecting the five non-background bounding boxes with highest propability and segmentation to classification by choosing the class label of the largest bounding box as image label.
+
+Conversly it is also possible to build a segmentation algorithm given a perfekt classifikation oracle. On order to archive that, one just traines a classifier for each pixel individually and combines the result. In practise, this insight is usually utilised in a sliding window approach \cite{highly,bktt}. A classifier is trained to classifier the center pixel of quadratic image section (e.g. of size $50 \times 50$ pixel). The classifier is than applied on each spatial location of the image, like a convolution operation.   
+
+
+\iffalse
 
 \subsection{Datasets}
 
@@ -60,6 +71,8 @@ All of the three task have as input a single image, but differ in the expected o
 There is  a close 
 
 TODO: Finish paragraph
+
+\fi
 
 \iffalse
 
