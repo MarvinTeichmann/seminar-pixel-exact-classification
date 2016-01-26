@@ -1,10 +1,43 @@
 %!TEX root = vorlage.tex
 \section{Application in Medical Informatics}\label{sec:application}
 
+
+
+
 This section is structured as fellows: \Cref{sec:otherapp} described gives a brief overview where \gls{CNN} based semantic segmentation is already used. \Cref{sec:surgery} is a case study giving a detailed description fcn can be applied to a common task in Medical Informatics.
 
 \subsection{Applications in Literature} \label{sec:otherapp}
 
+Deep neural networks have been used in several recent publications in medical informatics and biotechnological science \cite{Brain_Tumor} \cite{Colon} \cite{Micro1} \cite{Wound} \cite{Micro2}. \cite{Wound} is using a decoder-encoder architecture similar to \cite{segnet} in order to automatical segment and analyse open wounds. 
 
 
 \subsection{FCNs for computed aided surgery} \label{sec:surgery}
+
+\begin{figure*}
+    \begin{subfigure}[t]{0.475\columnwidth}
+    \centering
+        \includegraphics[width=\columnwidth]{images/img_19_raw.png}
+        \caption{Bilddaten einer Operation.}
+        \label{fig:sfig1}
+    \end{subfigure}\hspace{0.05\textwidth}
+    \begin{subfigure}[t]{0.475\columnwidth}
+        \centering
+        \includegraphics[width=\columnwidth]{images/img_19_class.png}
+        \caption{Label der Operation. Die in Grau gezeichneten Instrumenten
+                 sollen erkannt werden.}
+        \label{fig:sfig2}
+    \end{subfigure}
+    \caption{Medizininformatik: Visuelle Erkennung von chirurgischen
+             Instrumenten zur Verbesserung von chirurgischen
+             Assistenzsystemen.}
+    \label{fig:medInfo}
+\end{figure*}
+
+Training FCNs on this data involves two main steps:
+
+\begin{enumerate}
+\item Train a Classification Network
+\item 
+\end{enumerate}
+
+
